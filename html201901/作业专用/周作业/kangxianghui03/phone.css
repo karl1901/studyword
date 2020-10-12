@@ -1,0 +1,130 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-image: url('http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NEueA8OQNmgEZSWu925kBNQfkLXeczNDdJFEj3FcJuEpKw*BSkDl3NFj2G1jIwmbbMUxS6ytEzDaRxMFasU.rbFo!/r');
+  background-size: cover;
+}
+
+.bj01 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bj02 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 4rem;
+  border: 3px solid rgb(23, 255, 23);
+  border-radius: 1rem;
+  border-left: 1px;
+  border-right: 1px;
+  box-shadow: 0rem 0.22rem 0.22rem 0.22rem #3effff;
+  color: #41ff5a;
+}
+
+.bj03 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 1.3rem;
+  color: rgb(255, 255, 31);
+}
+
+.bj04 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 2rem;
+  color: rgb(255, 255, 31);
+}
+
+.bj05 {
+  display: flex;
+  justify-content: right;
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-left: 15rem;
+  color: rgb(248, 250, 110);
+}
+
+.tou-a01 {
+  color:	#00FFFF;
+  text-decoration: none;
+}
+
+.loader
+{
+    display: flex;
+    justify-content:center;
+}
+
+.loader span
+{
+    width:14px;
+    height:14px;
+    background:rgb(4, 255, 4);
+    display:inline-block;
+    border-radius:50%;
+    animation:animate 2s linear infinite;
+    opacity:0;
+}
+
+.loader span:nth-child(1)
+{
+    animation-delay:0.8s;
+    background:#00c2ff;
+}
+
+.loader span:nth-child(2)
+{
+    animation-delay:0.4s;
+    background:#ffe837;
+}
+
+.loader span:nth-child(3)
+{
+    animation-delay:0.1s;
+    background:#ff1b78;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform:translateX(-100px);
+        opacity:0;
+    }
+    
+    25%
+    {
+        transform:translateX(0px);
+        opacity:1;
+    }
+    
+    50%
+    {
+        transform:translateX(0px);
+        opacity:1;
+    }
+    
+    75%
+    {
+        transform:translateX(0px);
+        opacity:1;
+    }
+    
+    100%
+    {
+        transform:translateX(100px);
+        opacity:0;
+    }
+}

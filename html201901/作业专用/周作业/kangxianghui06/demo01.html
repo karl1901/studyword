@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="iconfont.css">
+  <style>
+  .body01 {
+    background-image: url('https://cn.bing.com/th?id=OHR.FrenchColorado_ZH-CN9446885520_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+    background-size: cover;  
+    color: rgb(255, 255, 255);
+  }
+
+  .body02 {
+    background-image: url('http://img.mp.sohu.com/upload/20170807/c8101b6e42124464b442af752516439b_th.png');
+    background-size: cover;
+    color: rgb(255, 225, 57);
+  }
+
+  .yuan {
+    padding-top: 0.6rem;
+    padding-left: 0.4rem;
+  }
+   
+  .yuan img {
+    border: 5px solid rgb(4, 255, 242);
+    border-radius: 50%;
+  }
+
+  .myani1 img:hover {
+    animation: rot_test 3s infinite linear;
+  }
+
+  @keyframes rot_test {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  .yuan img:hover {
+    cursor: pointer;
+    transition: all 1s;
+    box-shadow: 0px 0px 1.5rem rgb(40, 255, 12);
+  }
+
+  .fsdq {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .kj {
+    font-size: 2rem;
+    padding-top: 2rem;
+    font-weight: bold;
+  }
+
+  .kj01 {
+    padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 1.2rem;
+    padding-top: 2rem;
+  }
+
+  @keyframes myani {
+      0% {
+        background-color: #18ff3f;
+      }
+      50% {
+        background-color: rgb(255, 154, 4);
+      }
+      100% {
+        background-color: #2dfff5;
+      }
+    }
+    
+    .myani {
+      animation: myani 2.6s infinite;
+    }
+
+  #rq {
+    font-size: 1rem;
+  }
+
+  #sj {
+    font-size: 1.5rem;
+  }
+
+  .jz {
+    text-align: center;
+    font-size: 1.4rem;
+    padding-top: 1.2rem;
+    font-weight: bold;
+  }
+
+  .jl {
+    padding-top: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .db {
+    position: fixed;
+    bottom: 0px;
+    padding-left: 43rem;
+    padding-bottom: 3rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .iconfont:hover {
+    cursor: pointer;
+  }
+  </style>
+
+</head>
+
+<body id="a" class="body01">
+
+  <section class="fsdq">
+
+    <div class="yuan myani1">
+      <img  id="qh" src="https://cn.bing.com/th?id=OIP.o_GadjUJqLm3DGwhjJc-jwHaHY&pid=Api&rs=1" alt="" width="80px" height="80px">
+    </div>
+
+    <div class="kj animated tada infinite">
+       karl的网站
+    </div>
+
+    <section class="kj01 myani">
+      <div id="rq"></div>
+      <div id="sj"></div>
+    </section>
+
+  </section>
+
+  <section class="jz">
+    <span id="qianming"></span>
+  </section>
+
+  <section class="jl">
+    <span id="zhengwen"></span>
+  </section>
+
+  <section class="db">
+    <i  id="an" class="iconfont" style="color: rgb(49, 255, 49);">&#xe61b;</i><span id="zan"></span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <i id="an01" class="iconfont" style="color: rgb(255, 104, 49) ;">&#xe61c;</i><span id="nozan"></span>
+  </section>
+
+
+  
+<script src="demo01.js"></script>
+
+</body>
+
+</html>

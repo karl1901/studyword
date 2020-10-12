@@ -1,0 +1,395 @@
+body {
+  /* 消除留白 */
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* 导航栏的样式 */
+nav {
+  /* 固定到下方 */
+  position: fixed;
+  bottom: 3rem;
+  width: 100%;
+  /* 固定到内容居中 */
+  display: flex;
+  justify-content: center;
+}
+
+.jz span{
+  /* 导航文字样式 */
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+}
+
+.jz span:hover{
+  /* 鼠标效果 */
+  cursor: pointer;
+  color: #ff1313;
+}
+
+.jz {
+  position: relative;
+}
+
+.hx {
+  /* 背景色宽度做下横线 */
+  background-color: #ff0000;
+  height: 0.23rem;
+  width: 20%;
+  /* 下横线的位置 */
+  position: absolute;
+  left: 0%;
+  transition: left 0.5s;
+}
+
+.hx01 {
+  /* 背景色宽度做下横线 */
+  background-color: #ff0000;
+  height: 0.23rem;
+  width: 20%;
+  /* 下横线的位置 */
+  position: absolute;
+  left: 20%;
+  transition: left 0.5s;
+}
+
+.hx02 {
+  /* 背景色宽度做下横线 */
+  background-color: #ff0000;
+  height: 0.23rem;
+  width: 20%;
+  /* 下横线的位置 */
+  position: absolute;
+  left: 40%;
+  transition: left 0.5s;
+}
+
+.hx03 {
+  /* 背景色宽度做下横线 */
+  background-color: #ff0000;
+  height: 0.23rem;
+  width: 20%;
+  /* 下横线的位置 */
+  position: absolute;
+  left: 60%;
+  transition: left 0.5s;
+}
+
+.hx04 {
+  /* 背景色宽度做下横线 */
+  background-color: #ff0000;
+  height: 0.23rem;
+  width: 20%;
+  /* 下横线的位置 */
+  position: absolute;
+  left: 80%;
+  transition: left 0.5s;
+}
+
+/* 标签渐变色动画 */
+@keyframes dh0001 {
+  40% {
+    color: rgb(21, 255, 13);
+  }
+  60% {
+    color: rgb(17, 255, 255);
+  }
+  80% {
+    color: rgb(255, 35, 255);
+  }
+  100% {
+    color: rgb(255, 126, 21);
+  }
+}
+
+/* 标签压力布局 */
+.juzuo {
+  /* 标签居右 */
+  text-align: right;
+  position: relative;
+  /* 高度设置为全屏 vh是浏览器可视区域高度百分比 */
+  height: 100vh;
+  /* 文字渐变色动画 */
+  animation: 2s dh0001 infinite;
+}
+
+/* 背景图片 */
+#bq {
+  /* 字体大小，字体加粗 */
+  font-size: 1.3rem;
+  font-weight: bold;
+  /* 背景图片 */
+  background-image: url('https://cn.bing.com/th?id=OHR.CharlestonAzaleas_ZH-CN3924268565_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  /* 位置和高宽 */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0%;
+}
+
+#bq01 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.LoughriggTarn_ZH-CN1404327665_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+}
+
+#bq02 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.SaltonSea_ZH-CN1265210111_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+}
+
+#bq03 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.Knowth_ZH-CN0295374506_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+}
+
+#bq04 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.EquinoxAngkor_ZH-CN1157590532_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+}
+
+#bq1 {
+  /* 字体大小，字体加粗 */
+  font-size: 1.3rem;
+  font-weight: bold;
+  /* 背景图片 */
+  background-image: url('https://cn.bing.com/th?id=OHR.CharlestonAzaleas_ZH-CN3924268565_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  /* 位置和高宽 */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+}
+
+#bq2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.LoughriggTarn_ZH-CN1404327665_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+}
+
+#bq3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.SaltonSea_ZH-CN1265210111_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+}
+
+#bq4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.Knowth_ZH-CN0295374506_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+}
+
+#bq5 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-image: url('https://cn.bing.com/th?id=OHR.EquinoxAngkor_ZH-CN1157590532_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+}
+
+/* 从左边移动出去的动画 */
+@keyframes move-out {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+/* 移动出去的class */
+.move-out {
+  animation: move-out 1s;
+  /* !important 表示强制样式生效  */
+  left: -100% !important;
+}
+
+/* 从右边进来的动画 */
+@keyframes move-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.move-in {
+  animation: move-in 1s;
+  left: 0% !important;
+}
+
+/* 从右边移动进来的动画 */
+@keyframes move-out-right {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* 移动出去的class */
+.move-out-right {
+  animation: move-out-right 1s;
+  /* !important 表示强制样式生效  */
+  left: 100% !important;
+}
+
+
+@keyframes move-in-right {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.move-in-right {
+  animation: move-in-right 1s;
+  left: 0% !important;
+}
+
+.jz01 {
+  /* 文字大小和颜色 */
+  font-weight: bold;
+  font-size: 2rem;
+  /* 固定中间 */
+  position: fixed;
+  bottom: 20rem;
+  width: 100%;
+  /* 固定到内容居中 */
+  display: flex;
+  justify-content: center;
+  /* 渐变色 */
+  animation: 3s dh0001 infinite;
+}
+
+.rightdian {
+  position: fixed;
+  bottom: 23rem;
+  right: 3.5rem;
+}
+
+.rightdian>div {
+  margin-top: 1.4rem;
+}
+
+.rightdian div:hover{
+  cursor: pointer;
+}
+
+#bq001,#bq002,
+#bq003,#bq004,
+#bq005 {
+  border-radius: 50%;
+  padding: 0.4rem;
+  border: 4px solid rgb(0, 255, 255);
+  background-color: rgb(251, 255, 0);
+}
+
+/* 从上面移动出去的动画 */
+@keyframes move-out01 {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+/* 移动出去的class */
+.move-out01 {
+  animation: move-out01 1s;
+  /* !important 表示强制样式生效  */
+  top: -100% !important;
+}
+
+/* 从右边进来的动画 */
+@keyframes move-in01 {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.move-in01 {
+  animation: move-in01 1s;
+  top: 0% !important;
+}
+
+/* 从右边移动进来的动画 */
+@keyframes move-out-top {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+/* 移动出去的class */
+.move-out-top {
+  animation: move-out-top 1s;
+  /* !important 表示强制样式生效  */
+  top: 100% !important;
+}
+
+
+@keyframes move-in-top {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.move-in-top {
+  animation: move-in-top 1s;
+  top: 0% !important;
+}

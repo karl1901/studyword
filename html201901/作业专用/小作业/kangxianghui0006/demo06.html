@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登陆提示</title>
+  <link rel="stylesheet" href="animate.css">
+  <style>
+    body {
+      background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('http://p0.qhmsg.com/t01b1a2741b7cc318f8.jpg');
+      background-size: cover;
+    }
+    
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+     
+    .bk {
+      width: 280px;
+    }
+
+    .biaoti {
+      display: flex;
+      justify-content: center;
+      border: 1px solid rgb(38, 56, 219);
+      border-radius: 0.9rem 0.9rem 0 0;
+      background-color: rgb(38, 56, 219);
+      color: rgb(250, 250, 250);
+      font-size: 1.2rem;
+      padding: 10px 40px 10px 40px;
+    }
+
+    .srk {
+       background-color: rgb(255, 255, 255);
+       text-align: center;
+       padding-top: 8px;
+       padding-bottom: 10px;
+    }
+
+    .srk input {
+      width: 250px;
+      height: 20px;
+      border: 1px solid rgb(156, 153, 153);
+      border-radius: 5px;
+    }
+
+    .srk>input{
+      margin: 6px;
+    }
+
+    .anniu {
+      background-color: rgb(38, 56, 219);
+      border-radius: 0 0 0.9rem 0.9rem;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0 13px;
+    }
+
+    .anniu>div{
+      width: 94px;
+      height: 29px;
+      background-color: rgb(231, 63, 63);
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+      border-radius: 6px;
+    }
+
+    .anniu>div:hover{
+      background-color: rgb(182, 57, 57);
+      cursor: pointer;
+    }
+
+    .ts {
+      display: flex;
+      justify-content: center;
+      padding-top: 6rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<main>
+
+  <div class="bk">
+
+    <div class="biaoti">
+      用户注册
+    </div>
+   
+    <div class="srk">
+      <input id="mingzi" type="text" placeholder="  请输入用户名">
+      <input id="mima" type="password" placeholder="  请输入密码">
+      <input id="nicheng" type="text" placeholder="  请输入昵称">
+    </div>
+
+    <div class="anniu">
+      <div id="zhuce">注册</div>
+      <div id="chongtian">重填</div>
+    </div>
+
+    <div class="ts">
+      <span id="tishi"></span>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="demo06.js"></script>
+
+</body>
+
+</html>

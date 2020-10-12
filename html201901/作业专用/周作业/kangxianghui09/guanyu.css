@@ -1,0 +1,123 @@
+/* body属性设置 背景设置 */
+body {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('http://demo.cssmoban.com/cssthemes6/oplv_2_html5updimension/images/bg.jpg');
+}
+
+.gy {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-top: -1rem;
+  color: rgb(255, 255, 255);
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.bh {
+  text-align: center;
+}
+
+.yl {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.yl>div {
+  border: 4px solid rgb(78, 117, 221);
+  border-radius: 22px;
+  padding: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255);
+}
+
+.yl span {
+  font-size: 1.5rem;
+  color: rgb(102, 116, 240);
+}
+
+.yl01 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.yl01>div {
+  border: 6px solid rgb(245, 122, 122);
+  border-radius: 6px;
+  padding: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255);
+}
+
+.yl01 span {
+  font-size: 1.5rem;
+  color: rgb(233, 90, 90);
+}
+
+.yl02 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.3rem;
+}
+
+.yl02>div {
+  border: 4px solid rgb(4, 255, 66);
+  border-radius: 15px;
+  padding: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255);
+}
+
+.yl03 {
+  display: flex;
+  justify-content: left;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.yl03 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.ys01 {
+  color: rgb(17, 46, 173);
+}
+
+.ys02 {
+  color: rgb(233, 39, 39);
+}
+
+.ys03 {
+  color: rgb(24, 185, 24);
+}
+
+.ys04 {
+  font-size: 1.2rem;
+  color: rgb(19, 109, 245);
+}
+
+.ys05 {
+  color: rgb(239, 58, 255);
+  font-size: 1.3rem;
+}
+
+.ys06 {
+  color: rgb(255, 40, 40);
+  font-size: 1.3rem;
+}
+
+.ys07 {
+  font-size: 1.3rem;
+  color: rgb(25, 223, 42);
+}

@@ -1,0 +1,142 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+header>div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ededed;
+  padding: 0.5rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.title {
+  /* 粗体 */
+  font-weight: bold;
+}
+
+.mr {
+   /* 右间距 */
+   margin-right: 1rem;
+
+}
+
+/* 下方固定菜单 */
+footer {
+  position: fixed;
+  /* position 占满屏幕，有多大占多大 */
+  width: 100%;
+  /* width:100%; 占满 */
+  bottom: 0px;
+}
+
+footer>div {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ededed;
+  padding: 0.5rem 0px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.active-icon {
+  /* 激活的图标 */
+  color: #08c261;
+}
+
+/* 
+选择器1 选择器2：表示选择器1中的选择器2元素
+只要是里面的，不区分有多少级
+例如 header div表示只有header里面的div套用
+和>号的区别就是：>号只影响第一级，空格是不区分层级
+*/
+footer .iconfont {
+  font-size: 2rem;
+}
+
+main {
+  margin-top: 2.6rem;
+  margin-bottom: 4rem;
+  background-color: #ebebeb;
+}
+
+.line {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.line .iconfont {
+  font-size: 3rem;
+}
+
+/* 
+伪类:第一个子元素:first-child
+.line是class="line"
+>表示里面的第一级
+:first-child,第一个子元素
+class="line"里面的第一个div
+*/
+.line>div:first-child {
+  padding: 0.5rem;
+}
+
+/* 伪类：最后一个子元素:last-child */
+.hy {
+  padding: 0.5rem;
+  /* 行高（当行高大于字的高度，字会在垂直轴居中） */
+  line-height: 3rem;
+  font-size: 1.2rem;
+  border-bottom: 1.2px solid #dcdcdc;
+  flex: 1;
+}
+
+.line01 {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.line01 .iconfont {
+  font-size: 3rem;
+}
+
+/* 
+伪类:第一个子元素:first-child
+.line是class="line"
+>表示里面的第一级
+:first-child,第一个子元素
+class="line"里面的第一个div
+*/
+.line01>div:first-child {
+  padding: 0.5rem;
+}
+
+/* 伪类：最后一个子元素:last-child */
+.hy01 {
+  padding: 0.5rem;
+  /* 行高（当行高大于字的高度，字会在垂直轴居中） */
+  line-height: 3rem;
+  font-size: 1.2rem;
+  flex: 1;
+}
+
+.name {
+  padding: 0.3rem;
+}
+
+.name01 {
+  padding: 5rem;
+}
+
+.hy02 {
+  font-size: 1.5rem;
+  color: #b6b6b6;
+  padding: 1rem;
+  border-bottom: 1.2px solid #dcdcdc;
+}
+
+.hy03 {
+  font-size: 1.5rem;
+  color: #b6b6b6;
+  padding: 1rem;
+}

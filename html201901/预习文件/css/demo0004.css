@@ -1,0 +1,46 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  min-height: 130vh;
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > div {
+  width: 20rem;
+  height: 20rem;
+  font-size: 5rem;
+  position: relative;
+}
+
+.container > div:after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(2px);
+}
+/* 
+.container .bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(2px);
+} */

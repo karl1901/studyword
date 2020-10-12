@@ -1,0 +1,199 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  /* 配色 */
+  background-color: #222222;
+  color: #9d9d9d;
+  /* 下边框 */
+  border: 1px solid #080808;
+  /* 压力居中 */
+  display: flex;
+  justify-content: center;
+  /* 留白 */
+  padding: 1rem;
+}
+
+header>div {
+  /* 菜单分开左右 */
+  display: flex;
+  justify-content: space-between;
+  /* 通过宽度对齐元素 */
+  width: 1200px;
+}
+
+header span {
+  /* 
+  显示模式，块级元素(p,div,section)默认是block
+  非块级元素（i,span,b,u）默认是inline
+  inline设置padding，margin会无法正确显示
+  inline-block会保留非块级元素的特征，又能留白
+  */
+  display: inline-block;
+  /* 分开span */
+  margin-left: 1rem;
+}
+
+header span:hover {
+   cursor: pointer;
+   color: #ffffff;
+}
+
+.header-title {
+  font-size: 1.2rem;
+}
+
+/* 调整上边距错开头不菜单 */
+main {
+  margin-top: 58px;
+}
+
+/* 大屏幕信息 */
+.top-info {
+  text-align: center;
+  background-image: url('bootcss01.jpg');
+  background-size: cover;
+  color: #ffffff;
+  padding: 5rem 0px;
+}
+
+/* 第一级标题 */
+.top-info-title {
+  padding: 1rem 0px;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+/* 第二级标题 */
+.top-info-second-title {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* 标题按钮 */
+.top-info-buttom {
+  padding-bottom: 1rem;
+}
+
+.top-info-buttom span {
+  display: inline-block;
+  background-color: #337ab7;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  /* box-shadow:阴影 里面元素：x y z轴 颜色 */
+  box-shadow: 0rem 0.4rem 0rem #23527c;
+}
+
+/* 鼠标放上去的按钮的颜色 */
+.top-info-buttom span:hover {
+  background-color: #2e6da4;
+}
+
+.top-info a {
+  text-decoration: none;
+  color: #adadad;
+}
+
+.top-info a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* 社区链接 */
+.links {
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  color: #555555;
+  border-bottom: 1px solid #dddddd;
+  height: 2.5rem;
+  display: flex;
+  padding-top: 19px;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.links a {
+  /* 
+  间距调整套式
+  display: inline-block;
+  margin: 0px 1rem; 
+  */
+  display: inline-block;
+  margin: 0px 1rem;
+  text-decoration: none;
+  color: #555555;
+}
+
+.links a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.project-info {
+  display: flex;
+  justify-content: center;
+}
+
+.project-info>div {
+  border-bottom: 0.8px solid #dfdfdf;
+  padding: 3rem 4rem 1rem 4rem;
+}
+
+.project-info-title  {
+  padding-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.projects>div {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project {
+  border: 1px solid #dddddd;
+  padding: 0.2rem;
+  width: 22%;
+  margin-bottom: 1rem;
+}
+
+.project img {
+  width: 100%;
+}
+
+.project a {
+  text-decoration: none;
+  color: #777777;
+}
+
+.project-line01 {
+   padding: 0.5rem;
+   padding-top: 1rem;
+   font-size: 1.8rem;
+}
+
+.project-line01 a {
+  color: #337ab7;
+}
+
+.project-line01 a:hover {
+  color: #23527c;
+}
+
+.project-line02 {
+  padding: 0.5rem;
+  font-size: 1.1em;
+}
+
+.project-line03 {
+  padding-bottom: 3rem;
+  color: #777777;
+}

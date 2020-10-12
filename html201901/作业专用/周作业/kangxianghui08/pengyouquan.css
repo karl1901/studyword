@@ -1,0 +1,93 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+.fs {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.4rem;
+}
+
+.fs>div{
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+.st {
+  display: block;
+  flex: 2;
+}
+
+main {
+  width: 100%;
+  height: 16rem;
+  background-image: url('http://www.xpgod.com/uploadfile/2017/1120/20171120041918913.jpg');
+  background-size: cover;
+}
+
+.mz {
+  color: #ffffff;
+  font-size: 1.4rem;
+  padding-top: 13.6rem;
+  padding-left: 14rem;
+}
+.tx {
+  display: flex;
+  margin-top: -3rem;
+  padding-left: 20rem;
+}
+
+.jx {
+  border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.nr {
+  display: flex;
+  margin-top: 0.9rem;
+}
+
+.tx01 {
+   padding-left: 0.9rem;
+}
+
+.kd {
+  padding-right: 0.9rem;
+  width: 20.6rem;
+  padding-left: 0.4rem;
+}
+
+.kd>div {
+  margin: 0.3rem;
+}
+
+.kd01 {
+  display: flex;
+  padding-left: 4.8rem;
+  margin: 0.4rem 0rem 0.7rem 0rem;
+}
+
+.dian {
+  margin-top: -0.2rem;
+  background-color: rgb(235, 235, 235);
+  margin-left: 14rem;
+  height: 1.4rem;
+}
+
+.dian i {
+   font-size: 1.6rem;
+   color: #616c99;
+   margin: 0.3rem;
+}
+
+.jk {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 5px;
+}

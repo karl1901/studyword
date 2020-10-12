@@ -1,0 +1,44 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body > section {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.jianbian01 {
+  background-image: linear-gradient(to right bottom, #ff0000, #ff00ff);
+}
+
+.jianbian02 {
+  background-image: linear-gradient(to left, #ff0000, #ff00ff, #ffff00);
+}
+
+.jianbian03 {
+  background-image: linear-gradient(to bottom, #ff0000, #ff00ff, #ffff00);
+}
+
+.jianbian04 {
+  background-image: linear-gradient(60deg, #ff0000, #ff00ff);
+}
+
+.jianbian05 {
+  background-image: linear-gradient(
+    to right,
+    #ff0000,
+    #ff00ff 20%,
+    #ffff00 80%,
+    #0000ff
+  );
+}
+
+.jianbian06 {
+  background-image: radial-gradient(#ff0000, #ff00ff, #ffff00);
+  height: 20rem;
+  width: 20rem;
+}

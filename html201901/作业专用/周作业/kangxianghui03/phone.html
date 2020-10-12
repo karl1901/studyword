@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>康翔辉的个人网站</title>
+  <link rel="stylesheet" href="iconfont.css">
+  <link rel="stylesheet" href="phone.css">
+  <link rel="stylesheet" href="animate.css">
+
+ <script type="text/javascript">
+  var curIndex = 0;
+  //时间间隔(单位毫秒)，每秒钟显示一张，数组共有3张图片放在img文件夹下
+  var timeInterval = 2000;
+  //定义一个存放照片位置的数组，可以放任意个，在这里放3个
+  var arr = new Array();
+  arr[0] = "http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NEueA8OQNmgEZSWu925kBNQfkLXeczNDdJFEj3FcJuEpKw*BSkDl3NFj2G1jIwmbbMUxS6ytEzDaRxMFasU.rbFo!/r";
+  arr[1] = "http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NEt2KXBVsXEvIguG6FSCltaLe9UMUGbyXU.K1QWUeOtxj5jiXlQcjAT1pcdffD2U14lYjpvTyLlZpVVdumqlYVv0!/r";
+  arr[2] = "http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NElxb4RJZkqlSs4v*dkWeB3BqmKYURL5Mvz.R*rZNng4lC7uz03ylS5Lv56tUUbh*FyH6Uihs8vOrcaZZ6iNvKq8!/r";
+  arr[3] = "http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NEn9GWSSEPo.cvjhW4kAD7Z4o25ZCjpw8DFwWJTl3KnZkgqjWIHPHLirk06nFf1czf*0mL48NcERyg3IR003NKOo!/r";
+  arr[4] = "http://r.photo.store.qq.com/psc?/V12XBfVo4NvMOF/4r5V*ti6WXpFIFXipK.NEmpDG.QMKS1n0YOVNjDbscCiZuyD.Gpm3mOcExsa81L*kii6V0mqkw5h4DcxLzf.CpCKdoVZfs4NgVZAPxcXHKY!/r";
+  setInterval(changeImg, timeInterval);
+  function changeImg() {
+  if (curIndex == arr.length - 1) {
+  curIndex = 0;
+  } else {
+  curIndex += 1;
+  }
+  //设置body的背景图片
+  document.body.style.backgroundImage = "URL("+arr[curIndex]+")"; 
+  //显示对应的图片
+  }
+  </script>
+
+  <style>
+  .mydiv {
+  /* 自定义动画时间长度 */
+  animation-duration: 3s;
+  }
+  
+  .mydiv01 {
+  /* 自定义动画时间长度 */
+  animation-duration: 2s;
+  }  
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 主要内容 -->
+<main>
+
+<div class="bj01 animated zoomInDown">
+  <a class="tou-a01" href="xinxi.html">
+    <i class="iconfont">&#xe609;</i>
+  </a>
+  <a class="tou-a01" href="poto.html">
+    <i class="iconfont">&#xe64c;</i>
+  </a>
+  <a class="tou-a01" href="haoyou.html">
+    <i class="iconfont">&#xe68f;</i>
+  </a>
+</div>
+
+<div class="bj02 animated bounceInDown">
+  康&nbsp;翔&nbsp;辉
+</div>
+
+<div class="loader">
+  <span></span>
+  <span></span>
+  <span></span>        
+</div>
+
+<div class="bj03 animated flash mydiv">
+     &nbsp;TO&nbsp;commemorate
+<br> &nbsp;the&nbsp;first&nbsp;memories
+<br> &nbsp;moved.
+</div>
+
+<div class="bj04 animated slideInLeft mydiv01">
+  让回忆纪念最初的感动
+</div>
+
+<div class="bj05">
+  <div class="animated bounce infinite">
+    <i class="iconfont">&#xe60c;</i>
+  </div>
+  <div class="animated flipInX">karl</div>
+</div>
+
+</main>
+
+<!-- 背景音乐 -->
+<audio autoplay loop src="https://klcxy.top/myoss/common/queryOssUrl?tbOssInfo.oiid=452&tbOssInfo.obid=4"></audio controls autoplay>
+
+</body>
+
+</html>

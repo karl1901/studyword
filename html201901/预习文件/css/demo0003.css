@@ -1,0 +1,23 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body > div {
+  min-height: 200vh;
+  position: relative;
+}
+
+body > div:after {
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  filter: blur(2px);
+  z-index: -1;
+}

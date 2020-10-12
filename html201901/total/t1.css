@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  clip-rule: #ffffff;
+}
+
+/* 压力布局 */
+.flex-box {
+  display: flex;
+}
+
+/* 背景颜色 */
+.bg01 {
+  background-color: rgb(19, 186, 192);
+}
+
+.bg02 {
+  background-color: rgb(29, 228, 161);
+}
+
+.bg03 {
+  background-color: rgb(252, 54, 192);
+}
+
+/* 压力布局与空白分配，水平轴对齐 */
+.flex-hbox01 {
+  display: flex;
+  /* 分散对齐，头尾元素靠边，空白平均分配 */
+  justify-content: space-between;
+}
+
+.flex-hbox02 {
+  display: flex;
+  /* 子元素在中间 */
+  justify-content: center;
+}
+
+.flex-hbox03 {
+  display: flex;
+  /* 空白平均分配到子元素两旁 */
+  justify-content: space-around;
+}
+
+.flex-hbox04 {
+  display: flex;
+  /* 空白平均分配 */
+  justify-content: space-evenly;
+}
+
+/* 
+压力值，只能用在父元素是压力盒子的情况
+有了压力值就没有空白空间，一定会占满父元素
+没有压力值的还是保留了内容决定宽度的特色
+而压力值越大分配空间越大
+（主要用于填满空白部分）
+ */
+.flex01 {
+  flex: 1;
+}
+
+.flex02 {
+  flex: 2;
+}

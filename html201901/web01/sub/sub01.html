@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>karl</title>
+    <style>
+    /* 去掉body的默认边框 */
+   body {
+     margin: 0px;
+     padding: 0px;
+   }
+
+   /* 头部返回菜单的样式 */
+   .tou {
+    background-color: rgb(61, 9, 182);
+    text-align: right;
+    /* 内边距 里面的元素分开一定的距离 padding
+    四个值分别对应到上下左右四个内边距 */
+   }
+
+   .tou-a {
+     /* 头超部链接样式 */
+     color: chartreuse;
+     text-decoration: none;
+   }
+
+   /* 网站标题样式 */
+   .title {
+     background-color: BLUE;
+     color: blanchedalmond;
+     font-size: 2rem;
+     /*padding可以简写成两个参数，分别代表上下和左右  */
+     text-align: center;
+     padding: 1rem 1rem;
+   }
+   /* 标题突出的显示文本 */
+   .title-text {
+     font-size: 1.2em;
+   }
+   /* 简介的样式 */
+   .info {
+     background-color: rgb(45, 24, 230);
+     font-size: 1rem;
+     color: rgb(250, 249, 245);
+     /* padding最后一种简写，一个参数，表示上左下右全都一样 */
+     padding: 0.5rem;
+   }
+
+  /* 调整视频播放界面大小 */
+  .mv {
+    width: 400px;
+  }
+
+   </style>
+
+</head>
+
+
+<body>
+  <!-- 头部，返回首页的超链接 -->
+  <header class="tou">
+    <a class="tou-a" href="index.html">返回</a>
+  </header>
+  
+  <!-- 网站的标题 -->
+  <section class="title">
+   <span class="title-text"> karl</span>的网站
+  </section>
+    
+  <!-- 简介 -->
+  <section class="info">
+  <p style="text-align: center;">
+      我是程序猿，我靠写代码吃饭。有人说我是修电脑的，也有人说我是码农的。
+      窝窝头，一块钱四个。嘿嘿
+  </p>
+  </section>
+
+  <hr>
+  <!-- 页面嵌入音频和视频 -->
+   <!-- 
+     audio 音频
+     src是音频文件地址
+     controls 表示出现音频播放的控制界面
+     autoplay 表示音乐会自动播放（谷歌禁用了该功能，必须用户操作后才行）
+     loop 表示音乐循环播放
+  -->
+   <audio controls autoplay loop src="https://klcxy.top/myoss/common/queryOssUrl?tbOssInfo.oiid=452&tbOssInfo.obid=4"></audio controls autoplay>
+  
+    <!-- 
+     video
+     src是视频文件地址
+     controls 是播放控制界面
+     -->
+     <video controls class="mv" src="https://v.qq.com/09ca1ca4-6315-4cd4-853e-8f9a6df6265a"></video>
+      
+</body>
+
+
+</html>

@@ -1,0 +1,213 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
+header>div {
+  display: flex;
+  background-color: #ededed;
+  padding: 0.25rem;
+  background-color: #1b82d1;
+}
+
+.jl {
+  margin-left: 6px;
+}
+
+.jl01 {
+  flex: 0.95;
+}
+
+/* 右边填满 */
+.main-right {
+  flex: 1;
+  color: #ffffff;
+}
+
+/* 右边每一行都是压力布局带分散对齐 */
+.main-right>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+
+/* 左边图片与顶端距离 */
+.main-left {
+  padding: 0.3rem;
+}
+
+/* 副文本样式 */
+.second-text {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* 下方固定菜单 */
+footer {
+  position: fixed;
+  /* position 占满屏幕，有多大占多大 */
+  width: 100%;
+  /* width:100%; 占满 */
+  bottom: 0px;
+}
+
+footer>div {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8fcff;
+  padding: 0.5rem 0px;
+  border-top: 1px solid #e2e6e9;
+}
+
+.active-icon {
+  /* 激活的图标 */
+  color: #25a3fa;
+}
+
+/* 
+选择器1 选择器2：表示选择器1中的选择器2元素
+只要是里面的，不区分有多少级
+例如 header div表示只有header里面的div套用
+和>号的区别就是：>号只影响第一级，空格是不区分层级
+*/
+footer .iconfont {
+  font-size: 2rem;
+}
+
+main {
+  margin-top: 2.6rem;
+  margin-bottom: 4rem;
+  background-color: #ebebeb;
+}
+
+.line {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.line .iconfont {
+  font-size: 2rem;
+}
+
+/* 
+伪类:第一个子元素:first-child
+.line是class="line"
+>表示里面的第一级
+:first-child,第一个子元素
+class="line"里面的第一个div
+*/
+.line>div:first-child {
+  padding: 0.5rem;
+}
+
+/* 伪类：最后一个子元素:last-child */
+.hy {
+  padding: 0.1rem;
+  /* 行高（当行高大于字的高度，字会在垂直轴居中） */
+  line-height: 3rem;
+  font-size: 1.1rem;
+  flex: 1;
+  border-bottom: 1px solid #dadada;
+}
+
+.line01 {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.line01 .iconfont {
+  font-size: 2rem;
+}
+
+/* 
+伪类:第一个子元素:first-child
+.line是class="line"
+>表示里面的第一级
+:first-child,第一个子元素
+class="line"里面的第一个div
+*/
+.line01>div:first-child {
+  padding: 0.4rem;
+}
+
+.jl02 {
+  padding-top: 104px;
+}
+
+/* 伪类：最后一个子元素:last-child */
+.hy01 {
+  padding: 0.1rem;
+  /* 行高（当行高大于字的高度，字会在垂直轴居中） */
+  line-height: 3rem;
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.name {
+  padding: 0.3rem;
+  background-color: #f5f5f5;
+}
+
+.name01 {
+  padding: 5rem;
+}
+
+.hy02 {
+  font-size: 1.5rem;
+  color: #b6b6b6;
+  padding: 1rem;
+}
+
+.hy03 {
+  padding: 0.3rem;
+  margin-right: 10px;
+}
+
+.hy031 {
+  font-size: 1rem;
+  color: #939393;
+}
+
+.hy032 {
+  font-size: 1.5rem;
+  color: #d3d3d3;
+}
+
+.hy033 {
+  margin-right: 10px;
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  color: #d3d3d3;
+}
+
+.hy0003 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 1rem;
+  padding-right: 10px;
+}
+
+.hy0001 {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.dx {
+  font-size: 9rem;
+}
+
+.jk {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.boder01 {
+  border-bottom: 1px solid #dadada;
+}

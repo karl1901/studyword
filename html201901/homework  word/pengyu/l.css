@@ -1,0 +1,34 @@
+
+
+.w1 {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.vhc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* css3带来的高度单位，浏览器试图的百分比 */
+  height: 80vh;
+}
+
+.t2 {
+
+  height: 12rem;
+  border: 1px solid #30a0bd;
+  width: 15rem;
+}
+
+.t3 {
+  display: flex;
+  justify-content: center;
+
+}
+
+.vh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0rem;
+}

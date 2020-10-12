@@ -1,0 +1,55 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-size: cover;
+}
+
+.bk {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0.3rem 0.1rem;
+  margin-top: 1.5rem;
+}
+
+.bk input{
+  border-color: transparent;
+  outline: none;
+  padding: 0.4rem;
+  width: 45vh;
+}
+
+.bk:focus-within{
+  border-color: rgb(40, 53, 228);
+}
+
+.bk01 {
+  border-radius: 9px;
+  margin-top: 2rem;
+  text-align: center;
+  align-items: center;
+  padding: 0.46rem;
+  background-color: rgb(53, 209, 32);
+  color: white;
+}
+
+.bk01:hover {
+  cursor: pointer;
+  background-color: rgb(48, 161, 20);
+}
+
+.flbk.bk{
+  border-color: rgb(255, 0, 0);
+}
+
+.flbk.bk:focus-within{
+  border-color: rgb(255, 0, 0);
+}
+
+.ys {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.hx hr{
+  border: 2px solid rgb(4, 255, 192);
+}

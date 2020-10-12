@@ -1,0 +1,5 @@
+/* 默认两个模块都不会显示 */
+.desktop,
+.phone {
+  display: none;
+}

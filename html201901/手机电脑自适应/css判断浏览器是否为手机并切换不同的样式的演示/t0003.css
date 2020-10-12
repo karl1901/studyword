@@ -1,0 +1,40 @@
+/* 默认两个模块都不会显示 */
+.desktop,
+.phone {
+  display: none;
+}
+
+/* 判断宽度不能超过768px为手机模式显示 */
+@media screen and (max-width: 767px) {
+  .phone {
+    display: block;
+  }
+}
+
+/* 判断宽度超过767px为电脑模式显示 */
+@media screen and (min-width: 768px) {
+  .desktop {
+    display: block;
+  }
+}
+
+/* 默认电脑风格，风格只是随意写的，方便演示再不同模式下可以写不同的样式 */
+.mystyle {
+  display: flex;
+  text-align: center;
+  color: #ff0000;
+}
+.mystyle > div {
+  border: 1px solid #0000ff;
+  width: 33.33333%;
+}
+
+/* 判断宽度不能超过768px为手机模式显示 */
+@media screen and (max-width: 767px) {
+  .mystyle {
+    flex-wrap: wrap;
+  }
+  .mystyle > div {
+    width: 100%;
+  }
+}

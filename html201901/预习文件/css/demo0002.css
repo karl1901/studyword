@@ -1,0 +1,29 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body > div {
+  min-height: 200vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border: 1px solid #ff0000;
+}
+
+.mydiv {
+  width: 20rem;
+  height: 20rem;
+  background-image: url('images/bg01.jpg');
+  /* background-size: cover; */
+  background-attachment: fixed;
+}
+
+.mydiv > div {
+  background-color: rgba(78, 47, 47, 0.6);
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  height: 20rem;
+}

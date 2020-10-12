@@ -1,0 +1,154 @@
+/* 背景切换css，背景设置和字体颜色 */
+.body01 {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('http://demo.cssmoban.com/cssthemes6/oplv_2_html5updimension/images/bg.jpg');
+  color: rgb(255, 255, 255);
+}
+
+.body02 {
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient( rgba(114, 114, 114, 0.2), rgba(114, 114, 114, 0.2) ), url('https://tse3-mm.cn.bing.net/th?id=OIP.99yEcMFUPvO4hz_a5b07PgHaNK&pid=Api&rs=1');
+  background-size: cover;
+  color: rgb(0, 0, 0);
+}
+
+.yl02 {
+  display: flex;
+}
+
+.myani01 {
+  font-size: 1.5rem;
+  animation: rot_test 2s infinite linear;
+  margin-left: 0.4rem;
+}
+
+/* 音乐符号旋转动画 */
+@keyframes rot_test {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.yl01 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.yl01>div {
+  margin: 1.555rem;
+}
+
+.xyz {
+  font-size: 1.3rem;
+}
+
+.xy {
+  font-size: 1.3rem;
+}
+
+.vip {
+  margin-top: 1rem;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sx {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: -1.4999999rem;
+}
+
+.hx01 {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: -2.22222rem; 
+}
+
+.bt01 {
+  display: flex;
+  justify-content: center;
+  margin-top: -2.46666rem;
+}
+
+.bt02 {
+  display: flex;
+  justify-content: center;
+  margin-top: -2.35555rem;
+}
+
+.bt03 {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.1111rem;
+}
+
+.hx02 {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: -2.22222rem; 
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.bh {
+  text-align: center;
+}
+
+.sx01 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin-top: -2.2222rem;
+}
+
+.dl {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.dl>div {
+  border: 2px solid;
+  padding: 0.5rem 2rem;
+}
+
+.sx02 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin-top: -0.555555rem;
+}
+
+.gy {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.gy>div {
+  border: 2px solid;
+  padding: 0.5rem 2rem;
+}
+
+.ys001 {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.ys002 {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
