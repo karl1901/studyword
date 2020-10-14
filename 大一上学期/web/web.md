@@ -1,6 +1,6 @@
 # 大一上学期web学习知识点
 
-- [返回首页](../../README.md)
+- [返回首页](/README.md)
 - [返回上一级](../year01.md)
 ---
 - [vscode基本配置](/大一上学期/web/.vscode/.vscode.md)
@@ -14,4 +14,4 @@
 - [QQ Email 邮箱](/大一上学期/web/web01/QQmail/qqemail.md)
 ---
 - [返回上一级](../year01.md)
-- [返回首页](../../README.md)
+- [返回首页](/README.md)

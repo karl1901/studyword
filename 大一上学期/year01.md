@@ -2,6 +2,6 @@
 
 - [返回](/README.md)
 ---
-  - [web知识点](/大一上学期/web/web.md)
+  - [web知识点](/web.md)
 ---
 - [返回](/README.md)
