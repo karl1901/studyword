@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_birt_zh"
+	label="Babel Language Pack for birt in Chinese (Simplified) (98.58%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="3.4.0.v20090215043402">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for birt in Chinese (Simplified)</description>
+	<plugin fragment="true" id="com.lowagie.itext.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1495" install-size="1495" />
+	<plugin fragment="true" id="org.apache.derby.core.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1505" install-size="1505" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.cshelp.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1542" install-size="1542" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.device.extension.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4286" install-size="4286" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.device.svg.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3132" install-size="3132" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.device.swt.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3138" install-size="3138" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.doc.isv.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1531" install-size="1531" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.engine.extension.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="5153" install-size="5153" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.engine.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="10166" install-size="10166" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.examples.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="5831" install-size="5831" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.integration.wtp.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4697" install-size="4697" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1501" install-size="1501" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.reportitem.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3857" install-size="3857" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.reportitem.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4501" install-size="4501" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.runtime.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1524" install-size="1524" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.ui.extension.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="15945" install-size="15945" />
+	<plugin fragment="true" id="org.eclipse.birt.chart.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4158" install-size="4158" />
+	<plugin fragment="true" id="org.eclipse.birt.core.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="2242" install-size="2242" />
+	<plugin fragment="true" id="org.eclipse.birt.core.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="2957" install-size="2957" />
+	<plugin fragment="true" id="org.eclipse.birt.cshelp.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1530" install-size="1530" />
+	<plugin fragment="true" id="org.eclipse.birt.data.aggregation.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3772" install-size="3772" />
+	<plugin fragment="true" id="org.eclipse.birt.data.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="10033" install-size="10033" />
+	<plugin fragment="true" id="org.eclipse.birt.data.tests.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1727" install-size="1727" />
+	<plugin fragment="true" id="org.eclipse.birt.doc.isv.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1517" install-size="1517" />
+	<plugin fragment="true" id="org.eclipse.birt.doc.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1511" install-size="1511" />
+	<plugin fragment="true" id="org.eclipse.birt.example.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1515" install-size="1515" />
+	<plugin fragment="true" id="org.eclipse.birt.integration.wtp.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="5849" install-size="5849" />
+	<plugin fragment="true" id="org.eclipse.birt.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1529" install-size="1529" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.adapter.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="2966" install-size="2966" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.jdbc.dbprofile.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3230" install-size="3230" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.jdbc.dbprofile.sampledb.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3408" install-size="3408" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.jdbc.dbprofile.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3456" install-size="3456" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.jdbc.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4694" install-size="4694" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.jdbc.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="5773" install-size="5773" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.sampledb.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1682" install-size="1682" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.sampledb.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3494" install-size="3494" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.xml.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3156" install-size="3156" />
+	<plugin fragment="true" id="org.eclipse.birt.report.data.oda.xml.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1755" install-size="1755" />
+	<plugin fragment="true" id="org.eclipse.birt.report.debug.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3559" install-size="3559" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.core.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="44361" install-size="44361" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1528" install-size="1528" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.tests.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="2668" install-size="2668" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.cubebuilder.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4527" install-size="4527" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.editor.script.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1437" install-size="1437" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.editor.xml.wtp.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1443" install-size="1443" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.editors.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1442" install-size="1442" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.editors.schematic.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1546" install-size="1546" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.ide.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1863" install-size="1863" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.lib.explorer.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1422" install-size="1422" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.lib.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1626" install-size="1626" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1912" install-size="1912" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.preview.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1589" install-size="1589" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.preview.web.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1604" install-size="1604" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.rcp.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3451" install-size="3451" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.samples.ide.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="3226" install-size="3226" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.samplesview.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="7115" install-size="7115" />
+	<plugin fragment="true" id="org.eclipse.birt.report.designer.ui.views.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1488" install-size="1488" />
+	<plugin fragment="true" id="org.eclipse.birt.report.engine.dataextraction.csv.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1404" install-size="1404" />
+	<plugin fragment="true" id="org.eclipse.birt.report.engine.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4282" install-size="4282" />
+	<plugin fragment="true" id="org.eclipse.birt.report.item.crosstab.core.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="4693" install-size="4693" />
+	<plugin fragment="true" id="org.eclipse.birt.report.item.crosstab.ui.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="6103" install-size="6103" />
+	<plugin fragment="true" id="org.eclipse.birt.report.model.adapter.oda.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1423" install-size="1423" />
+	<plugin fragment="true" id="org.eclipse.birt.report.model.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="40841" install-size="40841" />
+	<plugin fragment="true" id="org.eclipse.birt.report.runtime.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1529" install-size="1529" />
+	<plugin fragment="true" id="org.eclipse.birt.report.viewer.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="7842" install-size="7842" />
+	<plugin fragment="true" id="org.eclipse.birt.resources.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1623" install-size="1623" />
+	<plugin fragment="true" id="org.eclipse.birt.sdk.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1527" install-size="1527" />
+	<plugin fragment="true" id="org.mozilla.rhino.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1516" install-size="1516" />
+	<plugin fragment="true" id="org.w3c.sac.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="1492" install-size="1492" />
+</feature>

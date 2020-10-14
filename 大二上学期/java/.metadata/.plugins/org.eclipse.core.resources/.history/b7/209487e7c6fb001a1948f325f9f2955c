@@ -1,0 +1,20 @@
+package wrok001;
+
+import java.util.Scanner;
+
+public class Test {
+	
+
+	public static void main(String[] args) {
+		
+		//1.
+		Scanner a=new Scanner(System.in);
+		System.out.println("ÄãÊÇÄĞÈËÂğ£¿");
+		
+		
+		
+		
+		
+		
+	}
+}

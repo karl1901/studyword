@@ -1,0 +1,50 @@
+.images {
+  width:500px;
+  position: relative;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.images > div {
+  position: absolute;
+  width: 500px;
+  top: 0px;
+  left: 100%;
+}
+
+@keyframes move-out {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes move-in {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+.move-out {
+  animation: move-out 2s ease-in-out;
+  left: -100%;
+}
+
+.move-in {
+  animation: move-in 2s ease-in-out;
+  left: 0px;
+}

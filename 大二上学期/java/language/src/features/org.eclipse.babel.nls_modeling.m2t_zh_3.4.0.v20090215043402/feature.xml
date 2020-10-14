@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_modeling.m2t_zh"
+	label="Babel Language Pack for modeling.m2t in Chinese (Simplified) (11.05%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="3.4.0.v20090215043402">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for modeling.m2t in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.m2t.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="5333" install-size="5333" />
+</feature>

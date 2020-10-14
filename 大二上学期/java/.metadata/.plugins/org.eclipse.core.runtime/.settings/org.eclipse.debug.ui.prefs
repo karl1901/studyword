@@ -1,0 +1,15 @@
+#Thu Oct 08 15:20:54 CST 2020
+org.eclipse.debug.ui.consoleBackground=0,0,0
+org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+org.eclipse.debug.ui.outColor=255,255,255
+Console.highWaterMark=88000
+org.eclipse.debug.ui.MemoryHistoryUnknownColor=150,154,163
+org.eclipse.debug.ui.changedDebugElement=255,128,128
+org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND=182,73,119
+org.eclipse.debug.ui.MemoryHistoryKnownColor=238,238,238
+preferredTargets=default\:default|
+eclipse.preferences.version=1
+org.eclipse.debug.ui.save_dirty_editors_before_launch=always
+org.eclipse.debug.ui.errorColor=235,20,80
+org.eclipse.debug.ui.inColor=255,255,0
+org.eclipse.debug.ui.user_view_bindings=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<viewBindings>\r\n<view id\="org.eclipse.ui.console.ConsoleView">\r\n<perspective id\="org.eclipse.jdt.ui.JavaPerspective" userAction\="opened"/>\r\n</view>\r\n</viewBindings>\r\n

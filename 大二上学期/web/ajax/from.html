@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原始表单from</title>
+</head>
+
+<body>
+  <!-- 
+  表单:可以访问后端服务，并提交数据
+  action的值就是后端服务的url地址
+  method的值是访问后端服务的方式，一般是POST/GET
+  效果有点像超链接，都会跳转页面
+ -->
+  <form action="POST" action="https://huhuiyu.cn/teach-ajax-demo/">
+    <input type="text" name="echo">
+    <input type="submit">
+  </form>
+
+  <!-- get提交form -->
+  <form method="GET" action="https://huhuiyu.cn/teach-ajax-demo/test/imageCode">
+    <!-- 下面的表单元素只是为了get演示，服务器不需要 -->
+    <input type="text" name="test.abc">
+    <input type="text" name="echo">
+    <input type="submit" value="get提交">
+  </form>
+
+  <!-- 
+https://huhuiyu.cn/teach-ajax-demo/
+
+
+POST和GET
+POST提交数据是发送内容体的里面，不会体现在url中
+可以提交大量的数据甚至是文件!!!所以比较常用
+GET提交数据会出现在地址栏的url中(放在?的后面)
+长度会有限制，且不能有复杂的数据
+发送的数据都是下面的格式
+表单元素的name=表单元素的value&name1=value1...
+所以需要提交数据的表单元素都必须指定name属性
+ -->
+
+  <!-- <img src="data:image/jpg;base64,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" alt=""> -->
+
+   <!-- 隐藏表单提交 -->
+   <form
+   id="myfrom"
+   style="display: none;"
+   method="POST"
+   action="https://huhuiyu.cn/teach-ajax-demo/">
+             <input id="myecho" type="text" name="echo">
+   </form>
+
+   <button id="mybtn">隐藏提交</button>
+
+   <script>
+     let myfrom=document.getElementById('myfrom');
+     let myecho=document.getElementById('myecho');
+     let mybtn=document.getElementById('mybtn');
+
+     mybtn.addEventListener('click',function(){
+       myecho.value=Math.random();
+       //form对象特有的方法submit,触发表单提交动作
+       myfrom.submit();
+     });
+
+   </script>
+
+</body>
+
+</html>

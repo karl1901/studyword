@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax复习-后端数据获取和呈现</title>
+</head>
+
+<body>
+  <select id="selPageSize">
+    <option value="5">每页5笔记录</option>
+    <option value="10">每页10笔记录</option>
+    <option value="20">每页20笔记录</option>
+  </select>
+
+  <!-- json数据数组初始化select元素 -->
+  <select id="selJson"></select>
+
+  <button onclick="query()">刷新</button>
+  <hr>
+  <!-- ajax查询数据到表格 -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>商品名称</th>
+        <th>商品描述</th>
+        <th>价格</th>
+        <th>数量</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="tbData">
+      <!-- <tr>
+      <td>可口可乐</td>
+      <td>好喝的可乐</td>
+      <td>1.9</td>
+      <td>12345</td>
+      <td>
+        <button>修改</button>
+      </td>
+    </tr> -->
+    </tbody>
+  </table>
+
+  <script src="js/qs.min.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="js/tools.js"></script>
+
+  <script src="js/ajax04.js"></script>
+
+</body>
+
+</html>

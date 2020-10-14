@@ -1,0 +1,88 @@
+/**
+ * 
+ */
+package com.karl;
+
+import java.util.Scanner;
+
+/**
+ * @author 23712
+ * 
+ */
+public class Test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner mys = new Scanner(System.in);
+		System.out.println("请输入年份：");
+		int year = mys.nextInt();
+		System.out.println("请输入月份：");
+		int month = mys.nextInt();
+
+		// 求出年份前总天数
+		int ysum = 0;
+		for (int i = 1900; i < year; i++) {
+			ysum += 365;
+			if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+				ysum++;
+			}
+		}
+
+		// 求出月份总天数
+		int msum = 0;
+		for (int i = 1; i < month; i++) {
+			if (i == 1 || i == 3 || i == 5 || i == 7 || i == 8 || i == 10
+					|| i == 12) {
+				msum += 31;
+			}
+			if (i == 4 || i == 6 || i == 9 || i == 11) {
+				msum += 30;
+			}
+			if (i == 2) {
+				msum += 28;
+				if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+					msum++;
+				}
+			}
+		}
+
+		// 当月的总天数
+		int dsum = 0;
+		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
+				|| month == 10 || month == 12) {
+			dsum = 31;
+		}
+		if (month == 4 || month == 6 || month == 9 || month == 11) {
+			dsum = 30;
+		}
+		if (month == 2) {
+			dsum = 28;
+			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+				dsum++;
+			}
+		}
+
+		int sum = ysum + msum + 1;
+		int x = sum % 7;
+
+		// 输出样式
+		System.out.println("日\t" + "一\t" + "二\t" + "三\t" + "四\t" + "五\t"
+				+ "六\t");
+		for (int i = 1; i <= x + dsum; i++) {
+			if (i <= x) {
+				System.out.print("\t");
+			} else {
+				System.out.print((i - x) + "\t");
+			}
+			if (i % 7 == 0) {
+				System.out.println();
+			}
+		}
+
+	}
+
+}

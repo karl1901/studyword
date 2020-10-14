@@ -1,0 +1,5 @@
+#Tue Sep 29 10:31:28 CST 2020
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression="Java \u7F16\u8F91\u5668"

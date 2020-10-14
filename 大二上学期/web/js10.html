@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第三方库导入</title>
+  <!-- 一般来说，第三方的先导入，自己的后导入 -->
+  <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="swiper/animate.min.css">
+  <link rel="stylesheet" href="css/js10.css">
+</head>
+
+<body>
+  <div class="flex-center-box">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- swiper-animate-effect：切换效果，例如 fadeInUp  -->
+          <!-- swiper-animate-duration：可选，动画持续时间（单位秒），例如 0.5s -->
+          <!-- swiper-animate-delay：可选，动画延迟时间（单位秒），例如 0.3s -->
+          <div class="ani" 
+          swiper-animate-effect="fadeInUp" 
+          swiper-animate-duration="0.5s" 
+          swiper-animate-delay="0.3s">第一块</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ani"
+          swiper-animate-effect="fadeInUp">
+            第二块
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>第三块</div>
+        </div>
+        <div class="swiper-slide">
+          <div>NO.4</div>
+        </div>
+      </div>
+
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+    </div>
+  </div>
+
+
+  <script src="swiper/swiper-bundle.min.js"></script>
+  <script src="swiper/swiper.animate1.0.3.min.js"></script>
+  <script src="js/js10.js"></script>
+</body>
+
+</html>

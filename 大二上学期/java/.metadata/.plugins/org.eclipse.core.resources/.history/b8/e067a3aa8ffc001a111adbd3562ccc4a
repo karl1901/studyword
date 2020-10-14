@@ -1,0 +1,32 @@
+package wrok001;
+
+import java.sql.Blob;
+import java.util.Scanner;
+
+public class Test {
+	
+
+	public static void main(String[] args) {
+		
+		//1.
+
+
+		//
+
+		Scanner mys=new Scanner (System.in) ;
+		String str="true";
+		 String stt="false";
+		 System.out.println("你是男人吗? ");
+		 String s=mys.next() ;
+		 if (str.equals(s)) {
+		System. out .println("原来你是男人呀，呵呵") ; 
+		}else if (stt.equals(s)) {
+		System. out .println ("你的性别难道是女?") ; }
+		else{
+		System. out.println("你输入的信息有误") ; }
+		
+		
+		
+		
+	}
+}

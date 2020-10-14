@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_dsdp.tm_zh"
+	label="Babel Language Pack for dsdp.tm in Chinese (Simplified) (19.47%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="3.4.0.v20090215043402">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for dsdp.tm in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.tm.core.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="14867" install-size="14867" />
+	<plugin fragment="true" id="org.eclipse.tm.rse.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="42506" install-size="42506" />
+</feature>

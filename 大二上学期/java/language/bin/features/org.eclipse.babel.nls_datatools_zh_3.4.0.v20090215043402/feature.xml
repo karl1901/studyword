@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_datatools_zh"
+	label="Babel Language Pack for datatools in Chinese (Simplified) (100%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="3.4.0.v20090215043402">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for datatools in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.datatools.build.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="2212" install-size="2212" />
+	<plugin fragment="true" id="org.eclipse.datatools.connectivity.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="66122" install-size="66122" />
+	<plugin fragment="true" id="org.eclipse.datatools.enablement.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="64834" install-size="64834" />
+	<plugin fragment="true" id="org.eclipse.datatools.modelbase.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="12457" install-size="12457" />
+	<plugin fragment="true" id="org.eclipse.datatools.sqltools.nl_zh" unpack="false" version="3.4.0.v20090215043402" download-size="90350" install-size="90350" />
+</feature>
