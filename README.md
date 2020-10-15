@@ -13,7 +13,6 @@
 ## 大一上学期
 
 - **web知识点**
-  - [vscode配置文件](/大一上学期/web/.vscode/README.md)
   - [ajax-后端基础知识点](/大一上学期/web/ajax/README.md)
 
 ## 大一下学期
