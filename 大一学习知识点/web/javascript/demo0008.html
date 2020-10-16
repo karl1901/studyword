@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主播-流程控制-动画</title>
+  <link rel="stylesheet" href="animate.css">
+  <style>
+  body {
+    background-color: rgb(47, 173, 64);
+  }
+  
+    /* 文字居中 */
+  .tc {
+    display: flex;
+    justify-content: center;
+    padding-left: 8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* 图片容器 */
+  .images {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 图片统一高度0.1 */
+  .images img {
+    height: 10rem;
+    border: 5px solid rgb(40, 248, 255);
+  }
+
+  /* 支持按钮样式 */
+  #btn01 {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: 2px solid rgb(102, 255, 97);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  #btn01:hover {
+    background-color: rgb(46, 190, 183);
+  }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="tc">
+    当前人气值；
+    <span id="sprq">0</span>
+  </section>
+  <section class="images">
+    <div>
+      <img id="img01" src="https://cn.bing.com/th?id=OIP.Uum_CKzP0-mAsLlQhAL4EgHaEo&pid=Api&rs=1" alt="">
+      <span id="btn01">支持主播转身</span>
+      <img id="img02" src="http://upload.ct.youth.cn/2015/1230/1451455451835.jpg" alt="">
+    </div>
+  </section>
+
+  <script src="demo0008.js"></script>
+  
+</body>
+
+</html>
