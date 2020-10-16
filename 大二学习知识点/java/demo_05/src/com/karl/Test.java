@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.katl;
+package com.karl;
 
 import java.util.Scanner;
 
