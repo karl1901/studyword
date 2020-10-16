@@ -30,6 +30,12 @@ context.strokeText('奥特曼',300,10);
 //通过js加载图片到绘图
 //创建图片对象
 let img=new Image();
-
+// 监听图片加载是否完成
+img.addEventListener('load',function(){
+  console.log('加载图片完成');
+  //绘制图片
+  context.drawImage(img,10,100,240,100);
+});
 //加载图片
+console.log('加载图片')
 img.setAttribute('src','../image/205856-1581166736a416.jpg');
