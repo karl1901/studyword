@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue数据绑定</title>
+</head>
+
+<body>
+  <div id="app" style="text-align: center;">
+    <h1>
+      <!-- 
+        属性  v-text="data中的值"
+        表示将data中的值放到元素里面
+      -->
+      {{welcome}}-<span v-text="title"></span>
+    </h1>
+    <input type="text" v-model="user.username" placeholder="用户名"><br><br>
+    <input type="password" v-model="user.password" placeholder="密码"><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button @click="login">登陆</button>
+    &nbsp;&nbsp;
+    <button>重置</button><br><br>
+    <div></div>
+    <hr>
+    <div>
+      {{user}}
+    </div>
+    <hr>
+    <div>
+      {{htmlinfo}}
+    </div>
+    <div v-text="htmlinfo"></div>
+    <!-- 慎用!!! html内容会生效 -->
+    <div v-html="htmlinfo"></div>
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/vue02.js"></script>
+</body>
+
+</html>
