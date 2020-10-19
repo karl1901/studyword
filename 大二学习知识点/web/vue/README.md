@@ -1,6 +1,7 @@
 # vue学习
 
-> **vue:是一套用于构建用户界面的渐进式框架**
+> **vue:**  
+> **是一套用于构建用户界面的渐进式框架**
 
 - [vue官方网站](https://cn.vuejs.org/)
 - [bootcdn官网](https://www.bootcdn.cn/)
