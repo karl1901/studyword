@@ -43,7 +43,11 @@ public class Test {
 		// x[3]=16;
 		// x[4]=83;
 		// x[5]=9379;
-		// 数组创建后，每个元素会有默认值 int 声明后，若没有赋值，int的默认值为0
+		
+		// 数组创建后，每个元素会有默认值 int 声明后，若没有赋值，就会有默认值。
+		// int的默认值为0  string默认值：null（空）    char默认值：口     
+		// double默认值：0.0   boolean默认值：false
+		
 		// for (int i = 0; i < x.length; i++) {
 		// System.err.println(i); //x数组所以下标
 		// System.out.println(x[i]); //拿到数组所有元素
@@ -79,19 +83,77 @@ public class Test {
 //		}
 //		System.out.println("最大值："+max);
 		
-		int[] a=new int[5];  //给定数组的大小（长度）
-		Scanner mys=new Scanner(System.in);  //用户输入构造器
-		for (int i = 0; i < a.length; i++) {  //输入次数与数组长度相等
-			System.out.println("请输入录入的数：");  //提示用户录入数
-			a[i]=mys.nextInt();  //把用户录入的数给相对应的位置
-		}
-		int min=a[0];  //赋值数组第一个数为最小值
-		for (int i = 0; i < a.length; i++) {  //循环次数=数组长度
-			if (min>a[i]) {  //判断数组里面的数是否比现有（数组第一个数）小---与现有最小值比较，若小，则赋值给最小值
-				min=a[i];  //赋值满足条件的数给最小值
-			}
-		}
-		System.out.println("录入的最小数为："+min);  //打印录入的数组里面的最小数
+//		int[] a=new int[5];  //给定数组的大小（长度）
+//		// 求数组里面的最小值
+//		Scanner mys=new Scanner(System.in);  //用户输入构造器
+//		for (int i = 0; i < a.length; i++) {  //输入次数与数组长度相等
+//			System.out.println("请输入录入的数：");  //提示用户录入数
+//			a[i]=mys.nextInt();  //把用户录入的数给相对应的位置
+//		}
+//		int min=a[0];  //赋值数组第一个数为最小值
+//		for (int i = 0; i < a.length; i++) {  //循环次数=数组长度
+//			if (min>a[i]) {  //判断数组里面的数是否比现有（数组第一个数）小---与现有最小值比较，若小，则赋值给最小值
+//				min=a[i];  //赋值满足条件的数给最小值
+//			}
+//		}
+//		System.out.println("录入的最小数为："+min);  //打印录入的数组里面的最小数
+		
+//		int[] y={12,34,35,67,11,4};
+//		//求数组的和，平均数
+//		int sum=0;
+//		int avg=0;
+//		for (int i = 0; i < y.length; i++) {
+//			sum+=y[i];
+//		}
+//		avg=sum/y.length;
+//		System.out.println(sum);
+//		System.out.println(avg);
+		
+//		//数组元素替换
+//		String[] s={"张三","李四","王五","赵六"};
+//		//把数组里面叫"李四"的替换为"杜牧"
+//		//先找到 李四
+//		boolean f=false; //表示人没有找到
+//		int z=0; //找人方式2  装找到人的下标
+//		for (int i = 0; i < s.length; i++) {
+//			if ("李四".equals(s[i])) {  //判断数组里面的元素是否为李四
+//				System.out.println("找到了："+i);
+////				s[i]="杜牧";  //人找到就改名   改名方式1
+//				z=i; //方式2  把找到人的下标给z
+//				break;
+//			}
+//		}
+//		
+//		if (f==false) {  //人没有找到
+//			System.out.println("人没有找到");
+//		}
+//		
+//		if (f==true) {  //判断找到了
+//			s[z]="李白";  //方式2 改名为李白
+//		}
+//		
+//		//用来打印数组元素的for循环的子循环
+//		for (String x : s) {  //(数据类型 循环变量-数组内所有元素 : 数组变量名-这里是s)			
+//		   System.out.println(x);
+//		}
+//		
+		
+//		//数组的扩容(给数组s里面加入一个杜甫，不能覆盖其他名字)
+//		String[] s={"张三","李四","王五","赵六"};  //现在的数组长度为：四
+//		//扩容是用新的数组来装旧数组
+//		String[] str=new String[s.length+1];
+//		for (int i = 0; i < s.length; i++) {  //循环s数组长度，循环4次
+//			str[i]=s[i];  //复制，把s数组里面所有元素给str数组
+//		}
+//		
+//		str[str.length-1]="杜甫";  //把数组str最后一个元素赋值为"杜甫"
+//		
+//		for (String x : str) {
+//			System.out.println(x);
+//		}
+		
+		
+		
 		
 		
 		
