@@ -4,6 +4,7 @@
 package com.karl;
 
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
 import java.util.zip.ZipEntry;
 
 import javax.swing.text.html.MinimalHTMLWriter;
@@ -206,10 +207,42 @@ public class Test {
 		// x[i]=60; //若小于60分，元素修改为60
 		// }
 		// }
-		//		
+		//				
 		// //打印修改后的数组，查看是否修改成功
 		// for (int a : x) {
 		// System.out.println(a);
+		// }
+
+		// 综合版本：
+		// String[] str=new String[6];
+		// int[] x=new int[6];
+		// Scanner mys=new Scanner(System.in);
+		// int sum=0;
+		// int avg=0;
+		// for (int i = 0; i < x.length; i++) {
+		// System.out.println("请输入学生姓名：");
+		// str[i]=mys.next();
+		// System.out.println("请输入成绩：");
+		// x[i]=mys.nextInt();
+		// sum+=x[i];
+		// }
+		// avg=sum/x.length;
+		// System.out.println("总成绩："+sum);
+		// System.out.println("平均分："+avg);
+		//		
+		// //打印不及格成绩
+		// for (int i = 0; i < x.length; i++) {
+		// if (x[i]<60) {
+		// System.out.println("不及格成绩："+x[i]);
+		// }
+		// }
+		//		
+		// //把不及格的成绩设置为60
+		// for (int i = 0; i < x.length; i++) {
+		// if (x[i]<60) {
+		// x[i]=60;
+		// }
+		// System.out.println("修改后的成绩："+x[i]);
 		// }
 
 		// 课后作业
@@ -301,7 +334,7 @@ public class Test {
 		// double sum = 0; // 声明小数类型的sum装学生总成绩，初始值为0
 		// for (int i = 0; i < name.length; i++) { // 按循环录入学生的姓名和成绩
 		// System.out.println("请输入录入学生姓名：");
-		// name[i] = mys.next();
+		// name[i] = m ys.next();
 		// System.out.println("请输入录入的学生的成绩：");
 		// a[i] = mys.nextInt();
 		// sum += a[i]; // 把录入的成绩加到成绩和里，后用于计算平均分
@@ -365,6 +398,32 @@ public class Test {
 		//		
 		// for (int x : b) {
 		// System.out.print("整型数组b："+x+"\t");
+		// }
+
+		// 8、声明一个字符串的数组，空间为5个。使用循环接收五个学生的姓名。再使用循环输出这五个学生的姓名。(接收的学生姓名不能同名)
+		// String[] str=new String[5]; //声明长度为5的str字符串数组，装学生姓名
+		// Scanner mys=new Scanner(System.in); //用户输入构造器
+		// for (int i = 0; i < str.length; i++) { //循环录入学生姓名，次数就是声明数组长度
+		// System.out.println("请输入姓名：");
+		// String a=mys.next(); //赋值到str数组前，需判断用户名是否已存在，这里声明一样类型的a，先获取用户输入的姓名
+		// for (int j = 0; j < str.length; j++) { //获取姓名到a后，循环判断用户名是否已存在
+		// if (str[j]!=null) { //用户名不为空(省去判断空元素)，已有元素
+		// if (a.equals(str[j])) { //判断输入的姓名在数组str中是否已存在
+		// System.out.println("用户名已存在"); //用户已存在则输出此项
+		// i--; //存在后不会进入下一个下标的录入，所以这里i=i-i;回复到刚才的下标值继续输入
+		// break; //执行完后直接跳转到最外层for循环判断
+		// }
+		// }
+		// if (str[j]==null) { //用户名为空，数组内没有元素
+		// str[j]=a; //把录入的姓名a赋值到str数组里面
+		// break; //执行完后跳到最外层for循环
+		// }
+		// }
+		// }
+		//		
+		// //打印录入姓名后的数组str:
+		// for (String x : str) {
+		// System.out.println(x);
 		// }
 
 	}
