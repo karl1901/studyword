@@ -272,28 +272,28 @@ public class Test {
 		// 80 90 95 82 96
 		// 平均分是：？？
 
-		Scanner mys = new Scanner(System.in);
-		int[] a = new int[5];
-		String[] name = new String[5];
-		double sum = 0;
-		for (int i = 0; i < name.length; i++) {
-			System.out.println("请输入学生姓名：");
-			name[i] = mys.next();
-			System.out.println("请输入成绩：");
-			a[i] = mys.nextInt();
-			sum += a[i];
-			if (i == (name.length - 1)) {
-				for (int j = 0; j < name.length; j++) {
-					System.out.print(name[j] + "\t");
-				}
-				System.out.println();
-				for (int j = 0; j < name.length; j++) {
-					System.out.print(a[j] + "\t");
-				}
-				System.out.println();
-				System.out.println("平均分是：" + sum / name.length);
-			}
-		}
+		// Scanner mys = new Scanner(System.in);
+		// int[] a = new int[5];
+		// String[] name = new String[5];
+		// double sum = 0;
+		// for (int i = 0; i < name.length; i++) {
+		// System.out.println("请输入学生姓名：");
+		// name[i] = mys.next();
+		// System.out.println("请输入成绩：");
+		// a[i] = mys.nextInt();
+		// sum += a[i];
+		// if (i == (name.length - 1)) {
+		// for (int j = 0; j < name.length; j++) {
+		// System.out.print(name[j] + "\t");
+		// }
+		// System.out.println();
+		// for (int j = 0; j < name.length; j++) {
+		// System.out.print(a[j] + "\t");
+		// }
+		// System.out.println();
+		// System.out.println("平均分是：" + sum / name.length);
+		// }
+		// }
 
 		// Scanner mys = new Scanner(System.in); // 输入构造器
 		// String[] name = new String[5]; // 声明字符串数组长度为5，装学生名字
@@ -355,8 +355,8 @@ public class Test {
 		//		
 		// System.out.println(); //空行
 		//		
-		// //声明新数组b
-		// int[] b=new int[5];
+		// //声明新数组b,且长度与数组a一样
+		// int[] b=new int[a.length];
 		//		
 		// //复制a数组元素到数组b
 		// for (int i = 0; i < a.length; i++) {
