@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue基本指令二</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-model="user.name">
+      <input type="text" v-model="user.pwd">
+      <button @click="login">确定</button>
+    </div>
+    <!-- 
+      单个v-if指令
+      如果逻辑表达式为false，元素将会移除！！！
+      如果逻辑表达式为true，元素将会添加！！！
+      和v-show的区别就是v-show只会显示或者隐藏显示
+     -->
+    <!-- 
+       vue的特点就是数据和显示逻辑分离
+       v-if用于页面呈现的逻辑判断
+       而vue的js只需要修改对应的数据值就能控制页面效果
+       只要js在任意时候将error的值修改成name
+       下面的div中的第一个就会显示出来
+      -->
+    <div v-if="error=='name'">用户名必须写</div>
+    <div v-if="error=='pwd'">密码必须填写</div>
+    <div v-if="error=='check'">用户名或者密码错误</div>
+
+    <div>{{user}}--{{error}}</div>
+    <hr>
+
+    <!-- select的model就是选中的option的value -->
+    <select v-model="selectedInfo">
+      <option value="1">第一页</option>
+      <option value="2">第二页</option>
+      <option value="3">第三页</option>
+    </select>
+    {{selectedInfo}}
+
+    <!-- checkbox的model默认为是否选中 -->
+    <input type="checkbox" v-model="checkedInfo">
+    {{checkedInfo}}
+
+    <textarea v-model="taInfo" rows="5" cols="80"></textarea>
+    <div>
+      {{taInfo}}
+    </div>
+    <pre>
+      {{taInfo}}
+    </pre>
+
+  </div>
+
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/vue05.js"></script>
+</body>
+
+</html>

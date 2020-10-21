@@ -41,6 +41,24 @@
     <div v-show="showindex==1">区块一</div>
     <div v-show="showindex==2">区块二</div>
     <div v-show="showindex==3">区块三</div>
+    <div>{{showindex}}</div>
+    <hr>
+    <!-- 
+      v-bind:属性名称="data中值"
+      表示将对应的属性值绑定为data中的数据
+      v-bind:属性名称可以简写成：属性名称
+     -->
+    <p v-bind:title="info">鼠标放上去的显示信息是vue绑定的</p>
+    <button :disabled="btnEnable">按钮状态</button>
+    <!-- v-on:事件名称可以简写成@事件名称 -->
+    <button v-on:click="btnEnable=!btnEnable">切换按钮状态</button>
+    <!-- 简单的组合使用 -->
+    <div>
+      <input type="text" v-model="userinfo.name">
+      <input type="password" v-model="userinfo.pwd">
+      <button :disabled="userinfo.name=='' || userinfo.pwd==''">确定</button>
+      {{userinfo}}
+    </div>
   </div>
 
   <script src="js/vue.min.js"></script>
