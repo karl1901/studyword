@@ -11,7 +11,7 @@ let app = new Vue({
       passwrod: '',
     },
     //带有html内容的信息
-    htmlinfo:'<h1>abc<br>123</h1>'
+    htmlinfo: '<h1>abc<br>123</h1>',
   },
   methods: {
     login: function () {
@@ -20,6 +20,13 @@ let app = new Vue({
       //上面this和app效果是一样的
       //考据到this关键字受回调影响会变化
       //所以建议统一使用app这种vue实例变量
-    }
+    },
+    reset: function () {
+      //重置数据
+      this.user = { username: '', passwrod: '' };
+      //等效代码
+      this.user.username = '';
+      this.user.passwrod = '';
+    },
   },
 });

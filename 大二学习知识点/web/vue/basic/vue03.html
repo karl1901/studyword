@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue数据表格,对照</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1 v-text="title"></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>姓名</th>
+          <th>性别</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 
+          v-for指令表示循环
+          循环每一笔数据的变量名 in 数组变量(data里的定义的)
+         -->
+        <tr v-for="data in list">
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          <!-- {{这里支持运算和逻辑表达式}} -->
+          <td>{{data.sex=='m'?'男':'女'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<script src="js/vue.min.js"></script>
+<script src="js/vue03.js"></script>
+
+</body>
+
+</html>

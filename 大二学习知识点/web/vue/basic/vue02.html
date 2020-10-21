@@ -21,7 +21,13 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <button @click="login">登陆</button>
     &nbsp;&nbsp;
-    <button>重置</button><br><br>
+    <button @click="reset">重置</button><br><br>
+    <!-- 
+      v-model其实就是双向绑定
+      也是mvvm框架的一个核心
+      视图就是页面数据变化会同步给js中对应的值
+      反过来，js修改值也会在页面同步体现
+     -->
     <div></div>
     <hr>
     <div>

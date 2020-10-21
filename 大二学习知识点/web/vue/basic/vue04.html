@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue常用指令</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 
+      如果事件需要执行的代码非常非常的少
+      那么事件可以不用指向methods中的function
+      而是简单的一段js代码
+     -->
+    <button @click="showdiv=true;">显示一</button>
+    <button @click="showdiv=false;">显示二</button>
+    <!-- 
+      v-show指令
+      v-show="一个逻辑表达式"
+      表达式为true,元素显示，否则不显示
+     -->
+    <div v-show="showdiv">
+      区块一
+    </div>
+    <div v-show="!showdiv">
+      区块二
+    </div>
+    <hr>
+    <!-- 
+      v-show里面是逻辑表达式
+      js的逻辑表达式不严谨，所以一定注意
+      单个=号是赋值操作,不是逻辑表达式
+      两个==才是是否相等的测试
+      所以单击事件是赋值操作，而v-show是逻辑表达式
+     -->
+    <button @click="showindex=1">显示一</button>
+    <button @click="showindex=2">显示二</button>
+    <button @click="showindex=3">显示三</button>
+    <div v-show="showindex==1">区块一</div>
+    <div v-show="showindex==2">区块二</div>
+    <div v-show="showindex==3">区块三</div>
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/vue04.js"></script>
+</body>
+
+</html>
