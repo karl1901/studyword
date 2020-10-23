@@ -1,0 +1,35 @@
+.infos {
+  /* 显示信息的容器 */
+  display: flex;
+  /* 容器换行 */
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.infos>div {
+  /* 单个信息的容器 */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.infos>div>div:first-child {
+  /* 边框模拟分隔线 */
+  margin-bottom: 5px;
+  padding: 5px;
+  border-bottom: 2px solid #0000ff;
+}
+
+.infos>div span{
+  display: inline-block;
+  margin: 2px;
+  padding: 2px;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.infos>div span:hover{
+  background-color: rgb(106, 189, 89);
+}

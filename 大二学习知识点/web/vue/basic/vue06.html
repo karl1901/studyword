@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue指令三</title>
+    <link rel="stylesheet" href="css/vue06.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <div class="infos">
+            <!-- 
+                v-for="变量名 in vue中的数组变量"
+                等同于js中
+                for(let i=0;i<list.length;i++){
+                    let d=list[i];
+                }
+                v-for指令所在元素会被循环创建出来
+             -->
+            <div v-for="d in list">
+                <div>编号{{d.id}}</div>
+                <div>{{d.name}}({{d.sex=='m'?'男':'女'}})</div>
+                <div>
+                    <!-- 需要参数事件处理 -->
+                    <span @click="showInfo(d)">循环事件处理</span>
+                </div>
+                <!-- <div>{{d}}</div> -->
+            </div>
+        </div>
+        <div>点击的值是: {{clickInfo}}</div>
+        <div>
+            <ul>
+                <!-- 
+                    v-for="(循环变量，索引下标) in 数组"
+                 -->
+                <li v-for="(abc,index) in list" :title="abc.id">
+                    {{index+1}}:{{abc.name}}
+                </li>
+            </ul>
+        </div>
+        <!-- 带参数的事件二 -->
+        <div>
+            <div>
+                <button @click="changeIndex(1)">区块一</button>
+                <button @click="changeIndex(2)">区块二</button>
+                <button @click="changeIndex(3)">区块三</button>
+            </div>
+            <!-- 
+                v-if v-else-if ... v-else
+                就是js中的 if else if阶梯
+                需要注意的是，阶梯必须是相邻的元素！！！
+             -->
+            <div v-if="showIndex==1">哈哈哈哈</div>
+            <div v-else-if="showIndex==2">嘻嘻嘻</div>
+            <div v-else="showIndex==1">嘿嘿嘿嘿</div>
+            <div>{{showIndex}}</div>
+        </div>
+    </div>
+
+
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue06.js"></script>
+</body>
+
+</html>
