@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue计算和监听</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <input type="text" v-model="numa">
+    +
+    <input type="text" v-model="numb">
+    =
+    <span>{{addNumb}}</span>
+    <!-- 等效代码，字符串加法 -->
+    ---
+    <span>{{numa+numb}}</span>
+    ({{numa}},{{numb}})
+    <hr>
+    <input type="text" v-model="message">
+    {{message}}-{{rev}}
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/vue08.js"></script>
+</body>
+
+</html>

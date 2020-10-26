@@ -1,0 +1,23 @@
+.style1 {
+  display: inline-block;
+  padding: 3px; 
+  border: 1px solid #2f00ff;
+  background-color: #1eff00;
+  color: aliceblue;
+}
+
+.myspan {
+  display: inline-block;
+  border: 1px solid rgb(0, 225, 255);
+  padding: 5px;
+}
+
+.style-2 {
+  background-color: #ffae00;
+  color: aliceblue;
+}
+
+.style-3 {
+  background-color: #ff3300;
+  color: aliceblue;
+}

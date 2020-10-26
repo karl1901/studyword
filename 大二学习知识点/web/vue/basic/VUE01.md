@@ -25,7 +25,7 @@ html中导入vue的js：`<script src="js/vue.min.js"></script>`
 
 页面的js添加vue初始化代码
 
-```javascript
+```html
 new Vue({
   el:'#app',
   data:{

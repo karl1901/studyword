@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue控制样式</title>
+  <link rel="stylesheet" href="css/vue07.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <!-- 
+      最简单的动态class属性注入
+      不常用，但是可以很方便修改值来控制样式
+     -->
+    <span :class="class1">不常用方式，动态属性</span>
+    <button @click="class1=''">修改动态样式</button>
+    <!-- 通过表达式控制 -->
+    <hr>
+    <label>
+      <input type="checkbox" v-model="styleEnable">
+    </label>
+    <!-- 
+      由于class属性的特殊性，vue对它的动态注入做了增强
+      第一，不会覆盖本来class属性
+      :class的计算结果是动态追加的
+      第二，不单单可以注入变量值，还可以使用json表达式控制
+      {'样式名称':样式是否添加的逻辑表达式}
+     -->
+    <span class="myspan" :class="{'style-2':styleEnable}">切换样式效果</span>
+    {{styleEnable}}
+    <hr>
+    <button @click="changeStyle">切换样式</button>
+    <span class="myspan" :class="{'style-2':style2,'style-3':style3}">样式会来回切换</span>
+    <!-- class注入也支持数组格式 -->
+    <hr>
+    <span class="myspan" :class="[styleEnable?'style-2':'style-3']">
+      数组注入一组样式，支持逻辑表达式计算
+    </span>
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/vue07.js"></script>
+</body>
+
+</html>
