@@ -25,7 +25,7 @@
     - 多少级都没问题
 
 [4399小游戏](https://www.4399.com)
-![图片](https://cn.bing.com/th?id=OHR.PisgahNationalForest_ZH-CN0944504238_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp)
+![图片](/大二学习知识点/web/image/205856-1581166736a416.jpg)
 
 > 名人名言  
 > 哈哈哈哈  
