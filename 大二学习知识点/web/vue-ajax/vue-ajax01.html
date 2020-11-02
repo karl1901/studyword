@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue和ajax</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{title}}</h1>
+    <div>
+      <input type="text" v-model="echo">
+      <button @click="test">ajax请求</button>
+      <hr>
+      <pre>{{result}}</pre>
+      {{echo}}
+    </div>
+  </div>
+  
+
+  <script src="lib/qs.min.js"></script>
+  <script src="lib/axios.min.js"></script>
+  <script src="lib/vue.min.js"></script>
+  <script src="js/huhuiyu.js"></script>
+  
+  <script src="js/vue-ajax01.js"></script>
+</body>
+
+</html>
