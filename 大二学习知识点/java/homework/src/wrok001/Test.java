@@ -573,13 +573,6 @@ public class Test {
 
 		// Ñ­»·(while do while for )
 		
-		int name[]={1,4,5,7};
-		for (int i = 0; i < name.length; i++) {
-			System.out.print(name[i]+"\t");
-		}
-		
-		
-		
 		
 		
 
