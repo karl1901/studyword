@@ -1,0 +1,61 @@
+# vuecli初始化教程
+
+- [vue脚手架官方网站](https://cli.vuejs.org/zh/)
+- 执行`npm install -g @vue/cli`全局安装vue脚手架
+- 执行`vue --version`查看vue脚手架版本，正常安装才会显示
+
+- 通过vue脚手架创建项目
+  - 执行`vue create 项目名称`开始命令模式创建项目 
+  - 方向键是移动选项，回车就确认选择项完成，多选项是空格切换选项
+  - 第一个选项是预设值和手动选择项模式选择
+    - `Manually select features`是手动选择项，第一次最好选它
+    - 其它项都是预设值
+  - 第二个是多选项，是项目要添加的模块
+    - `Choose Vue version`是否提供vue版本选择，选中
+    - `Babel`是否启用新版本js语法兼容转换工具，选中
+    - `TypeScript`是否支持TypeScript(js超集)，如果会就选中
+    - `Progressive Web App (PWA) Support`渐进式网页应用支持，不需要选中
+    - `Router`vue路由功能，选中，后续会出来对应配置选项
+    - `Vuex`vue状态管理功能，不要选中，官方说明是超大项目才需要
+    - `CSS Pre-processors`css预处理器，学过才启用
+    - `Linter / Formatter`语法检查和格式化，选中
+    - `Unit Testing`测试框架，不选
+    - `E2E Testing`测试框架，不选
+  - 第三项，vue版本选择
+    - 2.x，选中
+    - 3.x，还是预览版，不要选
+  - 第四项，路由模式配置，是否启用history模式，输入n后回车，不要启动该模式，
+    正式发布需要后端服务器配合
+  - 第五项，格式化和语法检查
+    - 选`ESLint + Prettier`，因为我们用Prettier插件格式化代码
+    - 选`Lint on save`，表示文件保存的时候检查语法
+  - 第六项，配置文件位置
+    - `In dedicated config files`，独立配置文件，选它
+    - `In package.json`，全部在package.json中，不合适
+  - 第七项，是否保存配置项到预设值
+    - `y`就会提示保存，输入预设值名称后就会保存下来
+    - `n`默认值，不保存
+  - 创建完成后，控制台会出现下面两个指令
+    - `cd 项目目录名称`，表示进入创建的项目目录
+    - `npm run serve`，表示启动vue项目
+    - 一次执行上面的指令就会启动项目
+    - 启动成功后，控制台会显示网站的访问地址
+      - Local:   http://localhost:8080/  本地
+      - Network: http://192.168.43.92:8080/  网络
+- vue开发用插件：`vetur`,`vsvode-element-helper`
+- vue脚手架创建路由项目的文件和目录说明
+  - `public`目录是原生文件所在位置，里面的所有文件都是标准html项目访问方式
+  - `src`目录是vue源码目录
+    - `assets`目录是放图片，视频，其他等非源码文件的目录
+    - `components`是vue公用组件目录
+    - `router`是路由配置文件目录
+    - `views`是vue视图页面目录
+  - `App.vue`初始化页面，就是index.html页面的app绑定页面，一般只需要路由视图标记和全局样式
+  - `main.js`vue项目主配置js文件
+  - `.browserslistrc`项目browsers中启动配置
+  - `.eslintrc.js`重要！！！！语法检测配置，要和格式化配合
+  - `.gitignore`git提交忽略列表配置
+  - `.prettierrc.js`prettier格式化配置，和语法检测要一致
+  - `bable.config.js`bable(js编译器)配置
+  - `package*.json`npm安装项配置
+  - `vue.config.js`vue核心配置文件
