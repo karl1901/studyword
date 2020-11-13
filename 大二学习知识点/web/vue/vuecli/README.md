@@ -1,7 +1,11 @@
 # vue带路由模板项目
 
+---
+
 - [返回](https://code.aliyun.com/kangxianghui/studywrod/tree/master/%E5%A4%A7%E4%BA%8C%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/web/vue)
 - [首页](https://code.aliyun.com/kangxianghui/studywrod/tree/master)
+
+---
 
 - 第一次打开项目需要执行`npm install`初始化项目
   - 如果项目出现非源码错误只要删除`node_modules`目录后再执行`npm install`重新初始化项目
