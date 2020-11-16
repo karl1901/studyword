@@ -19,6 +19,15 @@
        -->
       <a v-for="m in menus" :key="m.link" :href="m.link">{{ m.text }}</a>
     </div>
+    <div>
+      <!-- 路由版本的页面跳转 -->
+      <span v-for="m in routerMenus" :key="m.path" @click="toPage(m.path)">
+        {{m.text}}
+      </span>
+      <span @click="toPage('/basic/v01')">
+        测试路由跳转
+      </span>
+    </div>
   </div>
 </template>
 <script>
@@ -36,6 +45,12 @@ export default {
         // link就是跳转页面地址，text是链接提示文本
         { link: '/#/basic/v01', text: 'vue基础复习一' },
         { link: '/#/basic/v02', text: 'vue基础复习二' }
+      ],
+      //路由版本的页面跳转
+      routerMenus: [
+        // 路由的path是在router中配置的信息
+        { path: '/basic/v01', text: 'vue基础复习一' },
+        { path: '/basic/v02', text: 'vue基础复习二' }
       ]
     };
   },
@@ -43,6 +58,11 @@ export default {
   methods: {
     test() {
       window.open('https://huhuiyu.top');
+    },
+    toPage(path){
+      //$router是vue实例内置对象，作用是处理路由相关功能
+      //push方法是跳转页面，单一字符串参数为router里面配置的path信息
+      this.$router.push(path);
     }
   }
 };
