@@ -23,6 +23,12 @@ const routes = [
     path: '/basic/v02',
     name: 'BasicV02',
     component: () => import('../views/basic/V02.vue')
+  },
+  {
+    // http://localhost:8080/#/test
+    path: '/test',
+    name: 'Test',
+    component: () => import('../views/test/Home.vue')
   }
 ];
 

@@ -5,28 +5,28 @@
     <!-- 事件处理 -->
     <button @click="test">打开黑暗骑士的个人网站</button>
     <!-- 路由跳转 -->
-    <!--     
+    <!-- 
       <a href="/#/basic/v01">vue基础复习一</a>
       <a href="/#/basic/v02">vue基础复习二</a> 
     -->
-    <!-- {{ menus }} -->
+    <!-- {{menus}} -->
     <div class="menus">
       <!-- 
         通过menus数据循环生成超链接
         vue为了避免循环产生元素管理出现问题
         强制要求附加一个不能重复的key属性来标识元素
         由于菜单项的link值没有相同的，可以用于key属性
-       -->
-      <a v-for="m in menus" :key="m.link" :href="m.link">{{ m.text }}</a>
+      -->
+      <a v-for="m in menus" :key="m.link" :href="m.link">
+        {{ m.text }}
+      </a>
     </div>
     <div>
       <!-- 路由版本的页面跳转 -->
       <span v-for="m in routerMenus" :key="m.path" @click="toPage(m.path)">
-        {{m.text}}
+        {{ m.text }}
       </span>
-      <span @click="toPage('/basic/v01')">
-        测试路由跳转
-      </span>
+      <span @click="toPage('/basic/v01')">测试路由跳转</span>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
         { link: '/#/basic/v01', text: 'vue基础复习一' },
         { link: '/#/basic/v02', text: 'vue基础复习二' }
       ],
-      //路由版本的页面跳转
+      // 路由版本的页面跳转
       routerMenus: [
         // 路由的path是在router中配置的信息
         { path: '/basic/v01', text: 'vue基础复习一' },
@@ -59,8 +59,8 @@ export default {
     test() {
       window.open('https://huhuiyu.top');
     },
-    toPage(path){
-      //$router是vue实例内置对象，作用是处理路由相关功能
+    //$router是vue实例内置对象，作用是处理路由相关功能
+    toPage(path) {
       //push方法是跳转页面，单一字符串参数为router里面配置的path信息
       this.$router.push(path);
     }
@@ -77,7 +77,6 @@ export default {
   align-items: center;
   font-size: 2rem;
 }
-
 .menus > a {
   display: inline-block;
   margin: 5px;
@@ -85,9 +84,8 @@ export default {
   text-decoration: none;
   border: 2px solid #ff0000;
   border-radius: 5px;
-  color: black;
+  color: #000000;
 }
-
 .menus > a:hover {
   border-color: transparent;
   text-decoration: underline;

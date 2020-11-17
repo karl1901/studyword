@@ -5,26 +5,32 @@
     </div>
     {{ title }}
     <div>
-      <!-- blur丢失焦点触发,focus获取焦点触发 -->
+      <!-- blur丢失焦点触发，focus获取焦点触发 -->
       <input type="text" v-model="user.name" />
-      <input type="password" v-model="user.pwd" />
+      <input type="text" v-model="user.pwd" />
       <button @click="login">确定</button>
       <!-- class属性的注入可以是数组 -->
-      <pre :class="[check?'success':'error']">
-        {{ user }}-{{check}}
+      <pre :class="[check ? 'success' : 'error']">
+         {{ user }}-{{ check }}
       </pre>
-      <hr>
-      <!-- if阶梯 -->
-      <div v-if="user.name==''" class="error">
+      <hr />
+      <!-- if和if阶梯 -->
+      <div v-if="user.name == ''" class="error">
         请输入用户名
       </div>
-      <div v-else-if="user.pwd==''" class="error">
+      <div v-if="user.pwd == ''" class="error">
+        请输入密码
+      </div>
+      <hr />
+      <div v-if="user.name == ''" class="error">
+        请输入用户名
+      </div>
+      <div v-else-if="user.pwd == ''" class="error">
         请输入密码
       </div>
       <div v-else>
         输出正确
       </div>
-      <hr>
     </div>
   </div>
 </template>
@@ -46,17 +52,16 @@ export default {
     };
   },
   methods: {
-    //所有的function都可以简写掉function关键字
+    // 所有的function都可以简写掉function关键字
     login() {
       this.check = this.user.name.trim() != '' && this.user.pwd.trim() != '';
     }
   }
 };
 </script>
-
 <style scoped>
 .success {
-  color: #089c1c;
+  color: #009900;
 }
 .error {
   color: #ff0000;
