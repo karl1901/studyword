@@ -1,6 +1,6 @@
 // 公用的工具类js
 import qs from 'qs';
-// import axios from 'axios';
+import axios from 'axios';
 
 let tools = {
   name: '黑暗骑士的工具类',
@@ -59,6 +59,34 @@ let tools = {
     params = qs.stringify(params, { allowDots: true });
     // method默认处理
     method = method ? method : 'post';
+    // ajax请求
+    let promise = axios({
+      // 补全地址
+      url: url,
+      data: params,
+      method: method,
+      // token需要通过头信息传回服务器
+      headers: {
+        token: tools.loadToken()
+      }
+    });
+    // 应答结果处理
+    promise
+      .then(function(resp) {
+        console.log('应答结果：', resp.data);
+        // 保存token信息
+        tools.saveToken(resp.data);
+        // 回调处理
+        callback(resp.data);
+      })
+      .catch(function(error) {
+        callback({
+          code: 500,
+          success: false,
+          message: '处理发生错误',
+          error: error
+        });
+      });
   }
 };
 

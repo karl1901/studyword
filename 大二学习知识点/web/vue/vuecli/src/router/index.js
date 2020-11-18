@@ -29,6 +29,12 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: () => import('../views/test/Home.vue')
+  },
+  {
+    // http://localhost:8080/#/test/ajax
+    path: '/test/ajax',
+    name: 'TestAjax',
+    component: () => import('../views/test/Ajax.vue')
   }
 ];
 
