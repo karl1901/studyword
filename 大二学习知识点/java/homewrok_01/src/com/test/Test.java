@@ -85,24 +85,27 @@ public class Test {
 		// }
 
 		// entity类
-		entity en = new entity();
-		int[] x = { 1, 3, 2, 4, 6, 5, 12 };
-		en.objcet(x);
-		String[] y = { "啊", "从", "的", "从" };
-		en.str(y);
-		int[] z = { 1, 3, 5, 6, 8, 7, 11 };
-		en.js(z);
+		// entity en = new entity();
+		// int[] x = { 1, 3, 2, 5, 7, 6, 8, 10, 9, 4 };
+		// en.objcet(x);
+		// String[] y = { "abc", "呵呵", "李艾" };
+		// en.str(y);
+		// int[] z = { 1, 6, 5, 12, 8, 7 };
+		// int[] y1=en.js(z);
+		// for (int i : y1) {
+		// System.out.print(i+" ");
+		// }
 
 		// class类
 		// * 8、编写测试类， 实例化一个班级，添加25个学生到班级的学生数组当中
-		// Classz cl=new Classz();
-		// for (int i = 0; i < 25; i++) {
-		// Random ran=new Random();
-		// int age=ran.nextInt(20);
-		// Stu stu=new Stu("老王", "男", age);
-		// cl.addStu(stu);
-		// }
-		// cl.printStu();
+		Classz cl = new Classz();
+		for (int i = 0; i < 25; i++) {
+			Random ran = new Random();
+			int age = ran.nextInt(20);
+			Stu stu = new Stu("老萌", "男", age);
+			cl.addStu(stu);
+		}
+		cl.printStu();
 
 	}
 
