@@ -4,8 +4,11 @@
     <div>
       <input type="text" v-model="echo" />
       <button @click="send">发送ajax请求</button>
-      <pre>{{ result }}</pre>
+      <hr />
+      <img :src="imgcode" />
+      <a @click="loadImg" href="javascript:void(0)">换一张</a>
     </div>
+    <pre>{{ result }}</pre>
   </div>
 </template>
 
@@ -17,6 +20,7 @@ export default {
     return {
       title: 'ajax测试',
       echo: '',
+      imgcode:'',
       result: {}
     };
   },
@@ -34,6 +38,20 @@ export default {
         // 用正确的app变量方法vue实例对象
         app.result = data;
       });
+    },
+    loadImg() {
+      // 图片校验码获取
+      let app = this;
+      tools.ajax(
+        '/tools/imageCode',
+        {},
+        function(data) {
+          app.result = data;
+          // 应答结果中的message就是图片
+          app.imgcode = data.message;
+        },
+        'get'
+      );
     }
   }
 };
