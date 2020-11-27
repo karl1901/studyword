@@ -13,12 +13,14 @@ public interface IStu {
 	public void get();
 	
 	// 学生的增删改查
-	public abstract void addStu(Stu stu);
+	public abstract int addStu(Stu stu);
 	
-	public abstract void delStu(int sid);
+	public abstract int delStu(int sid);
 	
-	public abstract void updateStu(int sid,Stu stu);
+	public abstract int updateStu(int sid,Stu stu);
 	
-	public abstract void selStu(int sid);
+	public abstract Stu selStu(int sid);
+	
+	public abstract void getAll();
 
 }
