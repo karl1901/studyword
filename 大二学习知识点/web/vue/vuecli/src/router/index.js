@@ -43,10 +43,16 @@ const routes = [
     component: () => import('../views/ajax/Link.vue')
   },
   {
-    // http://localhost:8080/#/ajax/Link
+    // http://localhost:8080/#/ajax/MyFilter
     path: '/ajax/filter',
     name: 'MyFilter',
     component: () => import('../views/ajax/MyFilter.vue')
+  },
+  {
+    // http://localhost:8080/#/ajax/MyDirective
+    path: '/ajax/mydirective',
+    name: 'MyDirective',
+    component: () => import('../views/ajax/MyDirective.vue')
   }
 ];
 
