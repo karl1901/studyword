@@ -1,9 +1,14 @@
 // 公用的工具类js
 import qs from 'qs';
 import axios from 'axios';
+import jsmd5 from 'js-md5';
 
 let tools = {
   name: '黑暗骑士的工具类',
+  // md5加密信息
+  md5(info) {
+    return jsmd5(info);
+  },
   // 格式化日期的方法，date为日期信息，可以是时间戳（数值）或者是Date类型
   // format为格式，不给默认为yyyy-MM-dd hh:mm:ss
   formatDate(date, format) {

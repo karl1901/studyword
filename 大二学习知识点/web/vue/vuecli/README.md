@@ -9,3 +9,4 @@
 - 通过npm导入第三方js
   - qs库:`npm install --save qs`
   - axios库:`npm install --save axios`
+  - md5加密库：`npm install --save js-md5`
