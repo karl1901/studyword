@@ -1,0 +1,38 @@
+# vue模板项目
+
+- 模板项目创建过程
+  - 终端执行`vue create vue-router-template`开始创建
+  - 选项，回车是确认选项，方向键移动选项，多选项用空格控制
+    - 1:`Manually select features`
+    - 2:选中`Babel`,`Router`,`Linter / Formatter`
+    - 3:`2.x`
+    - 4:输入`n`后回车确定
+    - 5:`ESLint + Prettier`
+    - 6:`Lint on save`
+    - 7:`In dedicated config files`
+    - 8:输入`n`后回车确定
+  - 创建完成后使用vscode单独打开`vue-router-template`文件夹
+- 项目配置流程
+  - vscode插件
+    - `Vetur`
+    - `Prettier - Code formatter`
+  - 工作区配置文件打开方式
+    - 文件菜单-->首选项-->设置
+    - 单击工作区，点击右上角打开设置(json)按钮
+  - [vscode工作区配置文件](vue-router-template/.vscode/settings.json)
+  - 项目相关配置部分
+    - 创建[.prettierrc.js](vue-router-template/.prettierrc.js)
+    - 修改[.eslintrc.js](vue-router-template/.eslintrc.js)
+    - 创建[vue.config.js](vue-router-template/vue.config.js)
+  - 项目内容配置部分
+    - 修改[public/index.html](vue-router-template/public/index.html)
+    - 删除`public/favicon..ico`
+    - 删除`src/assets`目录里面的所有文件
+    - 删除`src/components`目录里面的所有文件
+    - 删除`src/views/About.vue`文件
+    - 修改[src/views/Home.vue](vue-router-template/src/views/Home.vue)
+    - 创建[src/css/common.css](vue-router-template/src/css/common.css)
+    - 修改[src/App.vue](vue-router-template/src/App.vue)
+    - 修改[src/router/index.js](vue-router-template/src/router/index.js)
+    - 格式化上面所有文件
+    - 执行`npm run serve`启动项目
