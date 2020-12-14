@@ -1,0 +1,25 @@
+# vue带路由模板项目
+
+- 项目基本指令
+  - 初始化：`npm install`，项目依赖错误，或者node_modules目录删除损害都需要重新执行本指令
+  - 开发模式：`npm run serve`，每次开发都要执行本指令，项目编译严重出错，需要终止本指令(Ctrl+C，输入y回车)后重新执行
+  - 发布项目：`npm run build`
+- 项目依赖的插件安装
+  - `npm install --save qs`
+  - `npm install --save axios`
+  - `npm install --save js-md5`
+- 路由配置部分
+  - 创建[测试页面目录](src/views/test/)
+  - 创建[测试页面首页](src/views/test/Home.vue)
+  - 创建[404错误页](src/views/error/Error404.vue)
+  - 创建[测试路由配置文件](src/router/test.js)
+  - 创建[错误路由配置文件](src/router/error.js)
+- 模板项目的使用方式
+  - 注意！！！！vscode的格式化配置一定要和项目的eslint配置完全一致！！！！
+  - 点击[查看工作配置文件](settings.json)
+  - 第一步：复制本文件夹到新位置(不要复制node_modules文件夹)
+  - 第二步：用vscode打开复制到新位置的文件夹
+  - 第三步：用上面的[工作区配置文件](settings.json)配置工作区设置(文件-->首选项-->设置，点击工作区，点击打开设置(json)按钮)
+  - 第四步：修改package.json中的name属性为新项目名称
+  - 第五步：执行`npm install`完成项目初始化
+  - 第六步：修改README.md文件内容为项目自己的内容
