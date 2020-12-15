@@ -53,7 +53,7 @@ public class Pet {
 				return true;
 			}
 		}
-		return false0;
+		return false;
 	}
 
 }
