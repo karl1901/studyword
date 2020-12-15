@@ -5,7 +5,15 @@
     <div>
       <input type="text" v-model="tbDept.deptName" placeholder="部门名称" />
       <input type="text" v-model="tbDept.deptInfo" placeholder="部门信息" />
-      <button @click="addInfo">添加</button><button>重置</button>
+      <button @click="addInfo">添加</button><button @click="resetAdd">重置</button>
+    </div>
+
+    <!-- 修改的表单 -->
+    <div v-if="mvisible">
+      <input type="text" v-model="mdept.deptName" />
+      <input type="text" v-model="mdept.deptInfo" />
+      <button @click="modifyInfo">保存</button>
+      <button @click="mvisible = false">关闭</button>
     </div>
 
     <!-- 数据表格 -->
@@ -21,7 +29,7 @@
         <td>{{ d.deptInfo }}</td>
         <td>{{ d.lastupdate | formatDate }}</td>
         <td>
-          <button>修改</button>
+          <button @click="showModify(d)">修改</button>
           <button @click="delInfo(d)">删除</button>
         </td>
       </tr>
@@ -58,10 +66,31 @@ export default {
       tbDept: {
         deptInfo: '',
         deptName: ''
-      }
+      },
+      // 修改的信息
+      mdept: {},
+      // 是否显示修改的表单
+      mvisible: false
     };
   },
   methods: {
+    resetAdd() {
+      this.tbDept = {
+        deptInfo: '',
+        deptName: ''
+      };
+    },
+    modifyInfo() {
+      let app = this;
+      tools.ajax('/dept/update', { tbDept: this.mdept }, function(data) {
+        alert(data.message);
+        app.query();
+      });
+    },
+    showModify(info) {
+      this.mdept = info;
+      this.mvisible = true;
+    },
     delInfo(info) {
       console.log('要删除的记录：', info);
       // confirm：确认对话框，返回值为用户是否点击的是确认按钮

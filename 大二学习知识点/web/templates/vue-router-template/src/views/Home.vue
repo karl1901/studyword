@@ -5,6 +5,8 @@
     </div>
     <div>
       <a href="/#/employee/dept">部门管理</a>
+      |
+      <a href="/#/employee/emp">员工管理</a>
     </div>
   </div>
 </template>

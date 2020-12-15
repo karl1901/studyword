@@ -3,8 +3,13 @@ const routes = [
   {
     path: '/employee/dept',
     name: 'Dept',
-    component: () => import('../views/employee/Dept.vue'),
+    component: () => import('../views/employee/Dept.vue')
   },
+  {
+    path: '/employee/emp',
+    name: 'Emp',
+    component: () => import('../views/employee/Emp.vue')
+  }
 ];
 
 export default routes;
