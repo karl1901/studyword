@@ -42,6 +42,7 @@ public class Pet {
 		this.type = type;
 	}
 
+	// ÷ÿ–¥equals∑Ω∑®
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub

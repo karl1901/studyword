@@ -27,8 +27,11 @@ public class Test {
 	 * 
 	 * OOP：(面向对象的编程)
 	 * 三大基本原则：封装、继承、多态
-	 *
-	 *  
+	 * 继承：子类继承于父类，继承父类非私有化属性或方法。(优化代码，减少重复代码)
+	 * 
+	 * 接口与继承的区别？
+	 * 子类继承父类是单继承。子类去实现接口，多实现
+	 * 
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
