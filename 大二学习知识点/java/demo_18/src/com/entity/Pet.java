@@ -42,6 +42,11 @@ public class Pet {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "Pet [name=" + name + ", sex=" + sex + ", type=" + type + "]";
+	}
+
 	// ÷ÿ–¥equals∑Ω∑®
 	@Override
 	public boolean equals(Object obj) {

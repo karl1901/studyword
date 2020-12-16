@@ -54,7 +54,7 @@ public class PersonDao implements IPerson {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < pets.length; i++) {
 			if (pets[i] != null) {
-				pets[i].toString();
+				System.out.println(pets[i].toString());
 			}
 		}
 	}
