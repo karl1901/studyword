@@ -7,11 +7,12 @@ import java.util.Scanner;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-import com.entity.Car;
+import com.entity.Cat;
 import com.entity.Dog;
 import com.entity.Person;
 import com.entity.Pet;
-import com.serlet.PersonDao;
+import com.serlet.StuDao;
+import com.serlet.TerDao;
 
 /**
  * @author 23712
@@ -57,15 +58,15 @@ public class Test {
 		 * 
 		 */
 		
-		PersonDao pd = new PersonDao();
+		StuDao sd = new StuDao();
+		TerDao td = new TerDao();
 		Scanner mys = new Scanner(System.in);
 		while (true) {
 			System.out.println("欢迎你的到来，请选择你的操作：1、学生(养狗)  2、老师(养猫) 3、退出系统");
 			int x = mys.nextInt();
 			if (x == 1) {
 				while (true) { // 学生选择养狗
-					System.out
-							.println("输入你的选择：1、增加宠物狗  2、送走宠物狗  3、修改宠物狗名字   4、查看单个宠物的信息  5、查看所有宠物的信息  6、返回上一级");
+					System.out.println("输入你的选择：1、增加宠物狗  2、送走宠物狗  3、修改宠物狗名字   4、查看单个宠物的信息  5、查看所有宠物的信息  6、返回上一级");
 					int y = mys.nextInt();
 					if (y == 1) { // 增加宠物
 						Pet dog = new Dog(); // 历史替换原则-典型的多态
@@ -78,7 +79,7 @@ public class Test {
 						System.out.println("请输入狗的品种：");
 						String type = mys.next();
 						dog.setType(type);
-						int n = pd.addPet(dog);
+						int n = sd.addPet(dog);
 						if (n == -1) {
 							System.out.println("增加失败!");
 						} else {
@@ -96,7 +97,7 @@ public class Test {
 						System.out.println("请输入狗的品种：");
 						String type = mys.next();
 						dog.setType(type);
-						int n = pd.delPer(dog);
+						int n = sd.delPer(dog);
 						if (n == -1) {
 							System.out.println("删除失败!");
 						} else {
@@ -116,7 +117,7 @@ public class Test {
 						dog.setType(type);
 						System.out.println("请输入新的昵称：");
 						String newname = mys.next();
-						int n = pd.updatePet(dog, newname);
+						int n = sd.updatePet(dog, newname);
 						if (n == -1) {
 							System.out.println("修改失败!");
 						} else {
@@ -126,7 +127,7 @@ public class Test {
 					if (y == 4) { // 查看单个宠物狗信息
 						System.out.println("请输入你要查看狗的昵称：");
 						String name = mys.next();
-						Pet dog = pd.getPet(name);
+						Pet dog = sd.getPet(name);
 						if (dog != null) {
 							System.out.println(dog.toString());
 						} else {
@@ -134,7 +135,7 @@ public class Test {
 						}
 					}
 					if (y == 5) { // 查看所有宠物狗信息
-						pd.getAll();
+						sd.getAll();
 					}
 					if (y == 6) {
 						break;
@@ -148,7 +149,7 @@ public class Test {
 							.println("输入你的选择：1、增加宠物猫  2、送走宠物猫  3、修改宠物猫名字   4、查看单个宠物的信息  5、查看所有宠物的信息  6、返回上一级");
 					int y = mys.nextInt();
 					if (y == 1) { // 增加宠物
-						Pet car = new Car();
+						Pet car = new Cat();
 						System.out.println("请输入猫的昵称：");
 						String name = mys.next();
 						car.setName(name);
@@ -158,7 +159,7 @@ public class Test {
 						System.out.println("请输入猫的品种：");
 						String type = mys.next();
 						car.setType(type);
-						int n = pd.addPet(car);
+						int n = td.addPet(car);
 						if (n == -1) {
 							System.out.println("增加失败!");
 						} else {
@@ -166,7 +167,7 @@ public class Test {
 						}
 					}
 					if (y == 2) { // 送走宠物
-						Pet car = new Car();
+						Pet car = new Cat();
 						System.out.println("请输入猫的昵称：");
 						String name = mys.next();
 						car.setName(name);
@@ -176,7 +177,7 @@ public class Test {
 						System.out.println("请输入猫的品种：");
 						String type = mys.next();
 						car.setType(type);
-						int n = pd.delPer(car);
+						int n = td.delPer(car);
 						if (n == -1) {
 							System.out.println("删除失败!");
 						} else {
@@ -184,7 +185,7 @@ public class Test {
 						}
 					}
 					if (y == 3) { // 修改宠猫狗名字
-						Pet car = new Car();
+						Pet car = new Cat();
 						System.out.println("请输入猫的昵称：");
 						String name = mys.next();
 						car.setName(name);
@@ -196,7 +197,7 @@ public class Test {
 						car.setType(type);
 						System.out.println("请输入新的昵称：");
 						String newname = mys.next();
-						int n = pd.updatePet(car, newname);
+						int n = td.updatePet(car, newname);
 						if (n == -1) {
 							System.out.println("修改失败!");
 						} else {
@@ -206,7 +207,7 @@ public class Test {
 					if (y == 4) { // 查看单个宠物猫信息
 						System.out.println("请输入你要查看猫的昵称：");
 						String name = mys.next();
-						Pet car = pd.getPet(name);
+						Pet car = td.getPet(name);
 						if (car != null) {
 							System.out.println(car.toString());
 						} else {
@@ -214,7 +215,7 @@ public class Test {
 						}
 					}
 					if (y == 5) { // 查看所有宠物狗信息
-						pd.getAll();
+						sd.getAll();
 					}
 					if (y == 6) {
 						break;
