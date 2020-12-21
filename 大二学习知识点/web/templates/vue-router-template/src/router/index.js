@@ -6,6 +6,8 @@ import test from './test';
 import error from './error';
 // 员工管理路由配置
 import employee from './employee';
+// 用户管理路由配置
+import user from './user';
 
 Vue.use(VueRouter);
 
@@ -14,9 +16,10 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home.vue'),
-  },
+    component: () => import('../views/Home.vue')
+  }
 ]
+  .concat(user)
   .concat(employee)
   .concat(test)
   .concat(error)
@@ -25,12 +28,12 @@ const routes = [
     // redirect表示匹配后转向到对应的路由路径
     {
       path: '*',
-      redirect: '/error/404',
-    },
+      redirect: '/error/404'
+    }
   ]);
 
 const router = new VueRouter({
-  routes,
+  routes
 });
 
 export default router;
