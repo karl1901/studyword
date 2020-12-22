@@ -1,19 +1,19 @@
 package com.entity;
 
-public class Stu {
+public class Stu extends Clazz{
 
 	private int sid;
 	private String sname;
 	private int age;
 	private String sex;
-	private int score;
+	private double score;
 	private int cid;
 
 	public Stu() {
 
 	}
 
-	public Stu(int sid, String sname, int age, String sex, int score, int cid) {
+	public Stu(int sid, String sname, int age, String sex, Double score, int cid) {
 		super();
 		this.sid = sid;
 		this.sname = sname;
@@ -55,11 +55,11 @@ public class Stu {
 		this.sex = sex;
 	}
 
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(Double score) {
 		this.score = score;
 	}
 

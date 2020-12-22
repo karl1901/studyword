@@ -31,16 +31,18 @@ public class Test {
 		// }
 		// System.out.println(strings[i]);
 		// }
-		String[] string = { null, "李白", null, "杜甫" };
+		// String[] string = { null, "李白", null, "杜甫" };
 		// 在数组中找到名字叫张三的人
-		for (int i = 0; i < string.length; i++) {
-			if (string[i] != null) {  // 这个位置有人
-				if (string[i].equals("张三")) {  // 判断是否与找的人名一样
-					string[i] = "曹操";
-				}
-			}
-			System.out.println(string[i]);
-		}
+		// for (int i = 0; i < string.length; i++) {
+		// if (string[i] != null) { // 这个位置有人
+		// if (string[i].equals("张三")) { // 判断是否与找的人名一样
+		// string[i] = "曹操";
+		// }
+		// }
+		// System.out.println(string[i]);
+		// }
+		
+		
 		
 		
 
