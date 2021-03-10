@@ -3,6 +3,9 @@
  */
 package com.test;
 
+import com.dao.StuDao;
+import com.entity.Stu;
+
 /**
  * @author 23712
  *
@@ -182,6 +185,50 @@ public class Test {
 //			System.out.println(i);
 //		}
 		
+		// OOP：面向对象
+		/*
+		 * 类与对象 
+		 * java三大原则：1、封装：私有化属性，公开get/set方法。  作用：保护类的属性
+		 * 方法：1、重载：同一个类，方法名一致，参数个数和参数类型不一致。  作用：减少方法名的个数，便于记忆
+		 *      2、重写：子类重写父类，方法名、返回类型、参数个数、参数类型都一致，方法体里面的内容不一致
+		 * 
+		 * 
+		 */
+		// 创建一个学生对象
+		StuDao sd = new StuDao();
+		Stu stu = new Stu(1, "小明", "男", 23, "2018-1-1", "2020-1-1-");
+
+		// 调用增加的方法
+		int n = sd.addStu(stu);
+		if (n > 0) {
+			System.out.println("增加成功!");
+		} else {
+			System.out.println("增加失败!");
+		}
+
+		// 增加同一个学生
+		Stu stu1 = new Stu(1, "小明", "男", 23, "2018-1-1", "2020-1-1-");
+		int m = sd.addStu(stu1);
+		if (m > 0) {
+			System.out.println("增加成功!");
+		} else {
+			System.out.println("增加失败!");
+		}
+
+		// 调用打印所有学生的方法
+		sd.getAll();
+
+		// 删除学生
+		Stu stu2 = new Stu(1, "小华", "男", 23, "2018-1-1", "2020-1-1-");
+		int s = sd.addStu(stu1);
+		if (s > 0) {
+			System.out.println("删除成功!");
+		} else {
+			System.out.println("删除失败!");
+		}
+
+		// 调用打印所有学生的方法
+		sd.getAll();
 		
 		
 		
