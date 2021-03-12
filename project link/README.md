@@ -4,7 +4,7 @@
 
 ### Study-Computer学习知识点项目
 - **https：**  
-> **https://code.aliyun.com/kangxianghui/studywrod.git**  
+**https://code.aliyun.com/kangxianghui/studywrod.git**  
 
 ---
 
