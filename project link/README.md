@@ -3,10 +3,12 @@
 ---
 
 ### Study-Computer学习知识点项目
-- **https：**  
+- **阿里云-https：**  
 **https://code.aliyun.com/kangxianghui/studywrod.git**  
 - **Github-https**  
 **https://github.com/karl1901/studyword.git**  
+- **Gitee-https**  
+**https://gitee.com/kang-xianghui/studyword.git**  
 
 ---
 
