@@ -19,7 +19,9 @@
           </el-form-item>
 
           <el-form-item v-loading="imgLoading">
-            <el-input v-model="imgcode" placeholder="图片校验码"></el-input>
+            <el-input v-model="imgcode" placeholder="图片校验码">
+              <i slot="prefix" class="el-input__icon el-icon-picture-outline"></i>
+            </el-input>
           </el-form-item>
 
           <el-form-item class="jz">
