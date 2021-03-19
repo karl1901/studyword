@@ -2,16 +2,16 @@
 
 ---
 
-- Date类：
+- Date类：  
 `getYear`：获取年份  
 `getMonth`：获取月份  
 `getDate`：获取日期  
 `getDay`：获取星期几  
 `toString`：获取当前系统时间  
 `getTime`：获取毫秒  
-- DateFormat类：
+- DateFormat类：  
 `DAY_OF_YEAR_FIELD`：获取当前系统时间  
-- Calendar类：
+- Calendar类：  
 `get(Calendar.YEAR)`：获取年份
 
 ---
