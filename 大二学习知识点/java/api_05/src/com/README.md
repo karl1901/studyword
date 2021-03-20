@@ -14,11 +14,11 @@
 ## 用法：
 `add`：插入  
 `remove`：根据下标删除  
-`remove`根据内容删除(不适用于整形集合)  
-`removeAll`删除所有  
+`remove`：根据内容删除(不适用于整形集合)  
+`removeAll`：删除所有  
 `toString`：打印所有内容  
-`indexOf`找到对应元素的下标  
-`set`修改  
+`indexOf`：找到对应元素的下标  
+`set`：修改  
 `lastIndexOf`：最后这个元素所在位置  
 `isEmpty`：去空格  
 
