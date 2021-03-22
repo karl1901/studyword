@@ -8,6 +8,8 @@ import user_routes from './user';
 import euser_routes from './euser';
 // 数据联动路由配置
 import link_routes from './link';
+// 员工信息相关路由配置
+import employee_routes from './employee';
 
 Vue.use(VueRouter);
 
@@ -22,7 +24,8 @@ const routes = [
   .concat(test_routes)
   .concat(user_routes)
   .concat(euser_routes)
-  .concat(link_routes);
+  .concat(link_routes)
+  .concat(employee_routes);
 
 const router = new VueRouter({
   routes

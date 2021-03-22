@@ -11,10 +11,22 @@
     </div>
 
     <div>
-      <el-select v-model="deptId">
+      <el-select v-model="deptId" @change="queryEmp">
         <el-option v-for="d in deptList" :key="d.deptId" :label="d.deptName" :value="d.deptId"></el-option>
       </el-select>
     </div>
+
+    <el-table :data="empList">
+      <el-table-column label="部门编号" prop="deptId"></el-table-column>
+      <el-table-column label="员工编号" prop="employeeId"></el-table-column>
+      <el-table-column label="姓名" prop="employeeName"></el-table-column>
+      <el-table-column label="电话" prop="phone"></el-table-column>
+      <el-table-column label="信息最后修改时间">
+        <template slot-scope="scope">
+          {{ scope.row.lastupdate | formatDate }}
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
@@ -39,6 +51,23 @@ export default {
     };
   },
   methods: {
+    queryEmp() {
+      this.loading = true;
+      this.$ajax(
+        '/linkinfo/queryEmployeeByDept',
+        {
+          'tbEmployee.deptId': this.deptId
+        },
+        function(data) {
+          this.loading = false;
+          if (!data.success) {
+            this.$message.error(data.message);
+            return;
+          }
+          this.empList = data.resultData.list;
+        }
+      );
+    },
     queryDept() {
       this.loading = true;
       this.$ajax('/linkinfo/queryAllDept', {}, function(data) {
@@ -49,6 +78,7 @@ export default {
         }
         this.deptList = data.resultData.list;
         this.deptId = this.deptList[0].deptId;
+        this.queryEmp();
       });
     },
     queryCity() {
