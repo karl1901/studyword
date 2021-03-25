@@ -7,7 +7,7 @@
 **url：**`jdbc:mysql://localhost:3306/your database name?&useSSL=false&serverTimezone=UTC&serverTimezone=GMT%2B8`  
 - **localhost：主机名**
 - **3306：端口号**
-- ***your database name：你要连接的数据库名**
+- **your database name：你要连接的数据库名**
 
 ---
 
