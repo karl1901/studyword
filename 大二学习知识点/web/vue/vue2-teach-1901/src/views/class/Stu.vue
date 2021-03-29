@@ -1,22 +1,18 @@
 <template>
-  <!-- 
-    作业，完成班级和学生信息管理功能
-    学生所在班级需要显示成班级名称
-  -->
-  <div v-loading="loading">
-    <div>员工管理</div>
+  <div v-loading="loading" class="body">
+    <div class="title">学生管理</div>
     <!-- 查询表单 -->
-    <div>
+    <div class="selbd">
       <el-form :inline="true">
         <el-form-item>
-          <el-select v-model="queryInfo.deptId">
-            <el-option label="===请选择部门===" :value="-1"></el-option>
-            <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
+          <el-select v-model="queryInfo.cid">
+            <el-option label="===请选择班级===" :value="-1"></el-option>
+            <el-option v-for="d in classList" :key="d.cid" :value="d.cid" :label="d.cname"></el-option>
           </el-select>
         </el-form-item>
 
         <el-form-item>
-          <el-input v-model="queryInfo.employeeName" placeholder="员工姓名模糊查询"></el-input>
+          <el-input v-model="queryInfo.sname" placeholder="学生姓名模糊查询"></el-input>
         </el-form-item>
 
         <el-form-item>
@@ -25,9 +21,8 @@
 
         <el-form-item>
           <el-button @click="query">查询</el-button>
-          <el-button @click="addVisible = true">添加员工</el-button>
+          <el-button @click="addVisible = true">添加学生</el-button>
         </el-form-item>
-        <!-- {{ queryInfo.deptId }} -->
       </el-form>
     </div>
 
@@ -36,18 +31,30 @@
       <el-dialog title="添加员工" @closed="query" :visible.sync="addVisible" :close-on-click-modal="false">
         <el-form>
           <el-form-item>
-            <el-select v-model="addInfo.deptId">
-              <el-option label="===请选择部门===" :value="-1"></el-option>
-              <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
+            <el-select v-model="addInfo.cid">
+              <el-option label="===请选择班级===" :value="-1"></el-option>
+              <el-option v-for="d in classList" :key="d.cid" :value="d.cid" :label="d.cname"></el-option>
             </el-select>
           </el-form-item>
 
           <el-form-item>
-            <el-input v-model="addInfo.employeeName" placeholder="员工姓名"></el-input>
+            <el-input v-model="addInfo.sname" placeholder="学生姓名"></el-input>
+          </el-form-item>
+
+          <el-form-item>
+            <el-input v-model="addInfo.address" placeholder="家庭地址"></el-input>
           </el-form-item>
 
           <el-form-item>
             <el-input v-model="addInfo.phone" placeholder="电话"></el-input>
+          </el-form-item>
+
+          <el-form-item>
+            <el-input v-model="addInfo.qq" placeholder="QQ"></el-input>
+          </el-form-item>
+
+          <el-form-item>
+            <el-input v-model="addInfo.wechat" placeholder="微信"></el-input>
           </el-form-item>
 
           <el-form-item>
@@ -59,25 +66,28 @@
     </div>
 
     <!-- 员工信息表格和分页 -->
-    <div>
+    <div class="bd">
       <el-table :data="list">
-        <el-table-column label="所属部门">
+        <el-table-column label="所属班级">
           <template slot-scope="scope">
-            {{ scope.row.deptId }}
+            {{ scope.row.cid }}
             -
-            {{ showDeptName(scope.row.deptId) }}
+            {{ showDeptName(scope.row.cid) }}
           </template>
         </el-table-column>
 
-        <el-table-column label="过滤器版本部门">
+        <el-table-column label="过滤器版本班级">
           <template slot-scope="scope">
-            <!-- 给过滤器传入当前页面的部门列表给过滤器处理信息 -->
-            {{ scope.row.deptId | showDeptName(deptList) }}
+            <!-- 给过滤器传入当前页面的列表给过滤器班级处理信息 -->
+            {{ scope.row.cid | showDeptName(classList) }}
           </template>
         </el-table-column>
 
-        <el-table-column label="姓名" prop="employeeName"></el-table-column>
+        <el-table-column label="姓名" prop="sname"></el-table-column>
+        <el-table-column label="家庭地址" prop="address"></el-table-column>
         <el-table-column label="电话" prop="phone"></el-table-column>
+        <el-table-column label="QQ" prop="qq"></el-table-column>
+        <el-table-column label="微信" prop="wechat"></el-table-column>
 
         <el-table-column label="最后修改时间">
           <template slot-scope="scope">
@@ -100,22 +110,33 @@
 
     <!-- 修改对话框 -->
     <div>
-      <el-dialog title="员工信息修改" :visible.sync="modifyVisible" :close-on-click-modal="false" @closed="query">
+      <el-dialog title="学生信息修改" :visible.sync="modifyVisible" :close-on-click-modal="false" @closed="query">
         <div>
           <el-form>
-            <!-- element-ui-helper -->
             <el-form-item>
-              <el-select v-model="modifyInfo.deptId">
-                <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
+              <el-select v-model="modifyInfo.cid">
+                <el-option v-for="d in classList" :key="d.cid" :value="d.cid" :label="d.cname"></el-option>
               </el-select>
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.employeeName"></el-input>
+              <el-input v-model="modifyInfo.sname"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+              <el-input v-model="modifyInfo.address"></el-input>
             </el-form-item>
 
             <el-form-item>
               <el-input v-model="modifyInfo.phone"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+              <el-input v-model="modifyInfo.qq"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+              <el-input v-model="modifyInfo.wechat"></el-input>
             </el-form-item>
 
             <el-form-item>
@@ -130,16 +151,19 @@
 </template>
 <script>
 export default {
-  name: 'Employee',
+  name: 'Stu',
   data() {
     return {
       modifyVisible: false,
       modifyInfo: {},
       addVisible: false,
       addInfo: {
-        deptId: -1,
-        employeeName: '',
-        phone: ''
+        cid: -1,
+        sname: '',
+        address: '',
+        phone: '',
+        qq: '',
+        wechat: ''
       },
       loading: false,
       page: {
@@ -147,37 +171,37 @@ export default {
         pageSize: 5
       },
       queryInfo: {
-        deptId: -1,
-        employeeName: '',
+        cid: -1,
+        sname: '',
         phone: ''
       },
-      deptList: [],
+      classList: [],
       list: []
     };
   },
   methods: {
-    //通过方法完成部门编号到部门名称的显示
-    showDeptName(deptId) {
-      for (let i = 0; i < this.deptList.length; i++) {
-        let dept = this.deptList[i];
-        if (dept.deptId == deptId) {
-          return dept.deptName;
+    showDeptName(cid) {
+      for (let i = 0; i < this.classList.length; i++) {
+        let dept = this.classList[i];
+        if (dept.cid == cid) {
+          return dept.cname;
         }
       }
-      return '查无部门';
+      return '查无班级';
     },
     del(info) {
       console.log(info);
       let app = this;
-      this.$confirm('是否删除员工：' + info.employeeName, '员工删除', { type: 'warning' })
+      this.$confirm('是否删除学生：' + info.sname, '学生删除', { type: 'warning' })
         .then(function() {
           app.$ajax(
-            '/employee/delete',
+            '/student/delete',
             {
-              'tbEmployee.employeeId': info.employeeId
+              'tbStudent.sid': info.sid
             },
             function(data) {
               app.$message(data.message);
+              this.query();
             }
           );
         })
@@ -191,9 +215,9 @@ export default {
     modify() {
       this.loading = true;
       this.$ajax(
-        '/employee/update',
+        '/student/update',
         {
-          tbEmployee: this.modifyInfo
+          tbStudent: this.modifyInfo
         },
         function(data) {
           this.loading = false;
@@ -204,23 +228,32 @@ export default {
     add() {
       this.loading = true;
       this.$ajax(
-        '/employee/add',
+        '/student/add',
         {
-          tbEmployee: this.addInfo
+          tbStudent: this.addInfo
         },
         function(data) {
           this.loading = false;
           this.$message(data.message);
+          this.addInfo = {
+            cid: -1,
+            sname: '',
+            address: '',
+            phone: '',
+            qq: '',
+            wechat: ''
+          };
+          this.query();
         }
       );
     },
     query() {
       this.loading = true;
       this.$ajax(
-        '/employee/queryAll',
+        '/student/queryAll',
         {
           page: this.page,
-          tbEmployee: this.queryInfo
+          tbStudent: this.queryInfo
         },
         function(data) {
           this.loading = false;
@@ -229,7 +262,7 @@ export default {
             return;
           }
           this.page = data.resultData.page;
-          this.deptList = data.resultData.deptList;
+          this.classList = data.resultData.classList;
           this.list = data.resultData.list;
         }
       );
@@ -241,8 +274,41 @@ export default {
 };
 </script>
 <style scoped>
+.body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(69, 64, 70);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.selbd {
+  display: flex;
+  justify-content: center;
+  padding: 1.3rem;
+}
+
+.bd {
+  padding-left: 15rem;
+  width: 73%;
+}
+
+.el-table {
+  border-radius: 1.2rem;
+  border: 3px solid rgb(44, 42, 42);
+  box-shadow: 0 0 1.2rem rgb(251, 255, 21);
+}
+
 .page {
   display: flex;
   justify-content: center;
+  padding-top: 1.3rem;
 }
 </style>
