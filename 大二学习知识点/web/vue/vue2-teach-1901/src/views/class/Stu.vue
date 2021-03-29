@@ -1,6 +1,6 @@
 <template>
   <div v-loading="loading" class="body">
-    <div class="title">学生管理</div>
+    <div class="title">学生信息管理</div>
     <!-- 查询表单 -->
     <div class="selbd">
       <el-form :inline="true">
@@ -21,14 +21,15 @@
 
         <el-form-item>
           <el-button @click="query">查询</el-button>
-          <el-button @click="addVisible = true">添加学生</el-button>
+          <el-button type="success" @click="addVisible = true">添加学生</el-button>
+          <el-button type="success" @click="classtz">班级管理</el-button>
         </el-form-item>
       </el-form>
     </div>
 
     <!-- 添加的表单对话框 -->
     <div>
-      <el-dialog title="添加员工" @closed="query" :visible.sync="addVisible" :close-on-click-modal="false">
+      <el-dialog title="添加学生" @closed="query" :visible.sync="addVisible" :close-on-click-modal="false">
         <el-form>
           <el-form-item>
             <el-select v-model="addInfo.cid">
@@ -70,8 +71,6 @@
       <el-table :data="list">
         <el-table-column label="所属班级">
           <template slot-scope="scope">
-            {{ scope.row.cid }}
-            -
             {{ showDeptName(scope.row.cid) }}
           </template>
         </el-table-column>
@@ -97,14 +96,14 @@
 
         <el-table-column>
           <template slot-scope="scope">
-            <el-button type="danger" @click="del(scope.row)">删除</el-button>
-            <el-button type="info" @click="showModify(scope.row)">修改</el-button>
+            <el-button type="danger" @click="del(scope.row)" class="bt" plain>删除</el-button>
+            <el-button type="primary" @click="showModify(scope.row)" class="bt01" plain>修改</el-button>
           </template>
         </el-table-column>
       </el-table>
 
       <nav class="page">
-        <el-pagination :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" @current-change="query"></el-pagination>
+        <el-pagination background layout="prev, pager, next" :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" @current-change="query"></el-pagination>
       </nav>
     </div>
 
@@ -180,6 +179,9 @@ export default {
     };
   },
   methods: {
+    classtz() {
+      this.$router.push('/class/class');
+    },
     showDeptName(cid) {
       for (let i = 0; i < this.classList.length; i++) {
         let dept = this.classList[i];
@@ -277,7 +279,8 @@ export default {
 .body {
   min-width: 100vw;
   min-height: 100vh;
-  background-color: rgb(69, 64, 70);
+  background-image: url('https://file.moyublog.com/d/file/2021-03-29/cbbb60ba25e7af3da4be4b88a78dab56.jpg');
+  background-size: cover;
 }
 
 .title {
@@ -286,7 +289,7 @@ export default {
   font-size: 2.3rem;
   font-weight: bold;
   padding-top: 2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(82, 97, 231);
 }
 
 .selbd {
@@ -297,13 +300,25 @@ export default {
 
 .bd {
   padding-left: 15rem;
-  width: 73%;
+  width: 75%;
 }
 
 .el-table {
   border-radius: 1.2rem;
-  border: 3px solid rgb(44, 42, 42);
-  box-shadow: 0 0 1.2rem rgb(251, 255, 21);
+  border: 0.22rem solid rgb(15, 151, 15);
+  box-shadow: 0 0 1.3rem rgb(255, 255, 255);
+}
+
+.bt {
+  display: block;
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+.bt01 {
+  margin-top: 0.13rem;
+  display: block;
+  width: 98.5%;
 }
 
 .page {

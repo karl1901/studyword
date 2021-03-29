@@ -1,16 +1,15 @@
 <template>
   <!-- 
-    作业，完成班级和学生信息管理功能
-    学生所在班级需要显示成班级名称
+    作业：完成班级和学生管理功能，学生所在班级要求显示成名称
   -->
   <div v-loading="loading">
-    <div>员工管理</div>
-    <!-- 查询表单 -->
+    <div>员工信息管理</div>
+    <!-- 查询的表单 -->
     <div>
       <el-form :inline="true">
         <el-form-item>
           <el-select v-model="queryInfo.deptId">
-            <el-option label="===请选择部门===" :value="-1"></el-option>
+            <el-option label="===请选择===" :value="-1"></el-option>
             <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
           </el-select>
         </el-form-item>
@@ -20,25 +19,34 @@
         </el-form-item>
 
         <el-form-item>
-          <el-input v-model="queryInfo.phone" placeholder="电话模糊查询"></el-input>
+          <el-input v-model="queryInfo.phone" placeholder="员工电话模糊查询"></el-input>
         </el-form-item>
 
         <el-form-item>
           <el-button @click="query">查询</el-button>
-          <el-button @click="addVisible = true">添加员工</el-button>
+          <el-button @click="addVisible = true">添加</el-button>
         </el-form-item>
-        <!-- {{ queryInfo.deptId }} -->
       </el-form>
     </div>
-
-    <!-- 添加的表单对话框 -->
+    <!-- 修改的对话框 -->
     <div>
-      <el-dialog title="添加员工" @closed="query" :visible.sync="addVisible" :close-on-click-modal="false">
+      <el-dialog title="修改员工信息" :close-on-click-modal="false" :visible.sync="modifyVisible" @closed="query">
+        <div>
+          <el-form>
+            修改信息表单
+          </el-form>
+        </div>
+      </el-dialog>
+    </div>
+
+    <!-- 添加的对话框 -->
+    <div>
+      <el-dialog title="添加员工信息" :close-on-click-modal="false" :visible.sync="addVisible" @closed="query">
         <el-form>
           <el-form-item>
             <el-select v-model="addInfo.deptId">
-              <el-option label="===请选择部门===" :value="-1"></el-option>
-              <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
+              <el-option label="===请选择===" :value="-1"></el-option>
+              <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName" :title="d.deptInfo"></el-option>
             </el-select>
           </el-form-item>
 
@@ -47,84 +55,54 @@
           </el-form-item>
 
           <el-form-item>
-            <el-input v-model="addInfo.phone" placeholder="电话"></el-input>
+            <el-input v-model="addInfo.phone" placeholder="员工电话"></el-input>
           </el-form-item>
 
           <el-form-item>
             <el-button @click="addVisible = false">关闭</el-button>
-            <el-button @click="add">保存</el-button>
+            <el-button @click="add">添加</el-button>
           </el-form-item>
         </el-form>
       </el-dialog>
     </div>
 
-    <!-- 员工信息表格和分页 -->
+    <!-- 查询结果和分页信息 -->
     <div>
       <el-table :data="list">
-        <el-table-column label="所属部门">
+        <el-table-column label="部门">
           <template slot-scope="scope">
-            {{ scope.row.deptId }}
-            -
             {{ showDeptName(scope.row.deptId) }}
           </template>
         </el-table-column>
 
-        <el-table-column label="过滤器版本部门">
+        <el-table-column label="部门过滤器模式">
           <template slot-scope="scope">
-            <!-- 给过滤器传入当前页面的部门列表给过滤器处理信息 -->
-            {{ scope.row.deptId | showDeptName(deptList) }}
+            {{ scope.row.deptId }}
+            -
+            {{ scope.row.deptId | deptName(deptList) }}
           </template>
         </el-table-column>
 
         <el-table-column label="姓名" prop="employeeName"></el-table-column>
         <el-table-column label="电话" prop="phone"></el-table-column>
 
-        <el-table-column label="最后修改时间">
+        <el-table-column label="信息最后更新时间">
           <template slot-scope="scope">
-            {{ scope.row.lastupdate | formatDate() }}
+            {{ scope.row.lastupdate | formatDate }}
           </template>
         </el-table-column>
 
         <el-table-column>
           <template slot-scope="scope">
             <el-button type="danger" @click="del(scope.row)">删除</el-button>
-            <el-button type="info" @click="showModify(scope.row)">修改</el-button>
+            <el-button type="success" @click="showModify(scope.row)">修改</el-button>
           </template>
         </el-table-column>
       </el-table>
 
-      <nav class="page">
-        <el-pagination :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" @current-change="query"></el-pagination>
+      <nav>
+        <el-pagination :page-size.sync="page.pageSize" :total="page.total" :current-page.sync="page.pageNumber" @current-change="query"></el-pagination>
       </nav>
-    </div>
-
-    <!-- 修改对话框 -->
-    <div>
-      <el-dialog title="员工信息修改" :visible.sync="modifyVisible" :close-on-click-modal="false" @closed="query">
-        <div>
-          <el-form>
-            <!-- element-ui-helper -->
-            <el-form-item>
-              <el-select v-model="modifyInfo.deptId">
-                <el-option v-for="d in deptList" :key="d.deptId" :value="d.deptId" :label="d.deptName"></el-option>
-              </el-select>
-            </el-form-item>
-
-            <el-form-item>
-              <el-input v-model="modifyInfo.employeeName"></el-input>
-            </el-form-item>
-
-            <el-form-item>
-              <el-input v-model="modifyInfo.phone"></el-input>
-            </el-form-item>
-
-            <el-form-item>
-              <el-button @click="modifyVisible = false">关闭</el-button>
-              <el-button @click="modify">保存</el-button>
-            </el-form-item>
-          </el-form>
-        </div>
-      </el-dialog>
     </div>
   </div>
 </template>
@@ -133,51 +111,77 @@ export default {
   name: 'Employee',
   data() {
     return {
-      modifyVisible: false,
-      modifyInfo: {},
-      addVisible: false,
-      addInfo: {
-        deptId: -1,
-        employeeName: '',
-        phone: ''
-      },
+      // 控制加载页面
       loading: false,
+      // 分页
       page: {
         pageNumber: 1,
         pageSize: 5
       },
+      // 查询过滤条件
       queryInfo: {
         deptId: -1,
         employeeName: '',
         phone: ''
       },
+      // 查询结果
       deptList: [],
-      list: []
+      list: [],
+      // 修改相关
+      modifyInfo: {},
+      modifyVisible: false,
+      // 添加相关
+      addInfo: { deptId: -1 },
+      addVisible: false
     };
   },
   methods: {
-    //通过方法完成部门编号到部门名称的显示
-    showDeptName(deptId) {
-      for (let i = 0; i < this.deptList.length; i++) {
-        let dept = this.deptList[i];
-        if (dept.deptId == deptId) {
-          return dept.deptName;
+    // 添加员工
+    add() {
+      // 加载页面
+      this.loading = true;
+      // ajax请求后端添加数据
+      this.$ajax(
+        '/employee/add',
+        {
+          // 添加的数据
+          tbEmployee: this.addInfo
+        },
+        // ajax请求回来的处理
+        function(data) {
+          // 关闭加载效果
+          this.loading = false;
+          // 返回结果为成功的情况
+          if (data.success) {
+            // 重置添加信息
+            this.addInfo = { deptId: -1 };
+            // 显示服务器端消息
+            this.$message(data.message);
+            return;
+          }
+          // 失败的消息显示
+          this.$message.error(data.message);
         }
-      }
-      return '查无部门';
+      );
     },
     del(info) {
       console.log(info);
       let app = this;
-      this.$confirm('是否删除员工：' + info.employeeName, '员工删除', { type: 'warning' })
+      app
+        .$confirm('是否删除员工：' + info.employeeName, '删除员工', { type: 'warning' })
         .then(function() {
+          app.loading = true;
           app.$ajax(
             '/employee/delete',
             {
               'tbEmployee.employeeId': info.employeeId
             },
             function(data) {
-              app.$message(data.message);
+              app.loading = false;
+              app.$message({
+                message: data.message,
+                onClose: app.query
+              });
             }
           );
         })
@@ -185,37 +189,21 @@ export default {
     },
     showModify(info) {
       console.log(info);
-      this.modifyInfo = JSON.parse(JSON.stringify(info));
       this.modifyVisible = true;
     },
-    modify() {
-      this.loading = true;
-      this.$ajax(
-        '/employee/update',
-        {
-          tbEmployee: this.modifyInfo
-        },
-        function(data) {
-          this.loading = false;
-          this.$message(data.message);
+    modify() {},
+    showDeptName(deptId) {
+      for (let i = 0; i < this.deptList.length; i++) {
+        let dept = this.deptList[i];
+        if (deptId == dept.deptId) {
+          return dept.deptName;
         }
-      );
-    },
-    add() {
-      this.loading = true;
-      this.$ajax(
-        '/employee/add',
-        {
-          tbEmployee: this.addInfo
-        },
-        function(data) {
-          this.loading = false;
-          this.$message(data.message);
-        }
-      );
+      }
+      return deptId;
     },
     query() {
       this.loading = true;
+
       this.$ajax(
         '/employee/queryAll',
         {
@@ -235,14 +223,9 @@ export default {
       );
     }
   },
+  // created方法是vue对象创建完毕后自动执行的方法
   created() {
     this.query();
   }
 };
 </script>
-<style scoped>
-.page {
-  display: flex;
-  justify-content: center;
-}
-</style>

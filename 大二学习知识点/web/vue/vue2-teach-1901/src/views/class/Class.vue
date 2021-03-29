@@ -5,7 +5,7 @@
     <div class="add-from" v-loading="addLoading">
       <el-form :inline="true">
         <el-form-item>
-          <el-input v-model="addInfo.cname" placeholder="请输入名称"></el-input>
+          <el-input v-model="addInfo.cname" placeholder="请输入班级名称"></el-input>
         </el-form-item>
 
         <el-form-item>
@@ -13,8 +13,9 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="success" @click="add">添加</el-button>
-          <el-button @click="query" v-loading="loading">刷新</el-button>
+          <el-button type="success" @click="add" round>添加</el-button>
+          <el-button type="success" @click="query" v-loading="loading" icon="el-icon-refresh-right" round></el-button>
+          <el-button type="success" @click="stutz" round>学生管理</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -33,13 +34,13 @@
         <el-table-column label="操作" prop="cname">
           <template slot-scope="scope">
             <el-button type="danger" @click="showDel(scope.row)">删除</el-button>
-            <el-button type="indo" @click="showModify(scope.row)">修改</el-button> </template
+            <el-button type="primary" @click="showModify(scope.row)">修改</el-button> </template
           >(scope.row)
         </el-table-column>
       </el-table>
 
       <nav class="page">
-        <el-pagination :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" :page-sizes="[2, 5, 10]" layout="prev,pager,sizes,next,jumper,total" @size-change="query" @current-change="query"></el-pagination>
+        <el-pagination background layout="prev, pager, next" :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" @size-change="query" @current-change="query"></el-pagination>
       </nav>
     </div>
     <!-- 修改的对话框 -->
@@ -48,7 +49,7 @@
         <div>
           <el-form>
             <el-form-item>
-              <el-input v-model="modifyInfo.cname" placeholder="名称"></el-input>
+              <el-input v-model="modifyInfo.cname" placeholder="班级名称"></el-input>
             </el-form-item>
             <el-form-item>
               <el-input v-model="modifyInfo.cinfo" placeholder="描述"></el-input>
@@ -83,6 +84,9 @@ export default {
     };
   },
   methods: {
+    stutz() {
+      this.$router.push('/class/stu');
+    },
     modify() {
       this.loading = true;
       this.$ajax(
@@ -186,14 +190,21 @@ export default {
   padding-top: 2rem;
   font-size: 2.3rem;
   font-weight: bold;
+  color: rgba(0, 255, 255, 0.815);
 }
 
 .bd {
-  padding-left: 15rem;
+  margin-left: 15rem;
   width: 75%;
+  /* border-radius: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.623);
+  border: 0.2rem solid rgb(70, 67, 67);
+  box-shadow: 0 0 1.2rem rgb(255, 255, 255); */
 }
 
 .el-table {
+  /* margin-left: 15rem;
+  width: 70%; */
   border-radius: 1.2rem;
   border: 3px solid rgb(70, 67, 67);
   box-shadow: 0 0 1.2rem rgb(255, 255, 255);
@@ -202,7 +213,7 @@ export default {
 .page {
   display: flex;
   justify-content: center;
-  padding: 1.4rem;
+  padding: 1.3rem;
 }
 
 .add-from {
