@@ -119,23 +119,23 @@
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.sname"></el-input>
+              <el-input v-model="modifyInfo.sname" placeholder="学生姓名"></el-input>
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.address"></el-input>
+              <el-input v-model="modifyInfo.address" placeholder="家庭住址"></el-input>
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.phone"></el-input>
+              <el-input v-model="modifyInfo.phone" placeholder="电话"></el-input>
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.qq"></el-input>
+              <el-input v-model="modifyInfo.qq" placeholder="QQ"></el-input>
             </el-form-item>
 
             <el-form-item>
-              <el-input v-model="modifyInfo.wechat"></el-input>
+              <el-input v-model="modifyInfo.wechat" placeholder="微信"></el-input>
             </el-form-item>
 
             <el-form-item>
@@ -289,7 +289,7 @@ export default {
   font-size: 2.3rem;
   font-weight: bold;
   padding-top: 2rem;
-  color: rgb(82, 97, 231);
+  color: rgb(63, 80, 235);
 }
 
 .selbd {
@@ -305,8 +305,8 @@ export default {
 
 .el-table {
   border-radius: 1.2rem;
-  border: 0.22rem solid rgb(15, 151, 15);
-  box-shadow: 0 0 1.3rem rgb(255, 255, 255);
+  border: 0.26rem solid rgb(13, 180, 13);
+  box-shadow: 0 0 1.3rem rgb(226, 219, 219);
 }
 
 .bt {
