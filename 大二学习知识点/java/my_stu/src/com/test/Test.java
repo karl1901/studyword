@@ -3,8 +3,12 @@ package com.test;
 import java.util.List;
 
 import com.dao.IStu;
+import com.dao.ITer;
 import com.dao.StuDao;
+import com.dao.TerDao;
 import com.entity.Stu;
+import com.entity.Teacher;
+import com.util.DBhelp;
 
 public class Test {
 
@@ -13,6 +17,7 @@ public class Test {
 		// System.out.println(DBhelp.getcon());
 
 		IStu is = new StuDao();
+		ITer it = new TerDao();
 
 		// // add stu
 		// Stu stu = new Stu(3, "鲍勃", 15, "男", "baobo", "ptptpt", "2021-01-01",
@@ -41,6 +46,26 @@ public class Test {
 		// for (Stu stu : myl) {
 		// System.out.println(stu.toString());
 		// }
+
+		// // 测试登录的方法
+		// Stu stu = is.Login("karl", "karl2020");
+		// System.out.println(stu.toString());
+
+		// // 增加老师的方法
+		// Teacher ter = new Teacher(4, "karl", 14, "boy", "karls", "karl2021",
+		// 1);
+		// int n = it.addTer(ter);
+		// System.out.println(n);
+
+		// // 查询老师的方法
+		// List<Teacher> myl = it.getTer("karl", "女");
+		// for (Teacher teacher : myl) {
+		// System.out.println(teacher.toString());
+		// }
+
+		// 删除老师的方法
+		int n = it.delTer(5);
+		System.out.println(n);
 
 	}
 

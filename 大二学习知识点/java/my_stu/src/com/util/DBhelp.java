@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 public class DBhelp {
 
 	private final static String name = "com.mysql.cj.jdbc.Driver";
-	private final static String url = "jdbc:mysql://localhost:3306/test?&useSSL=false&serverTimezone=UTC&serverTimezone=GMT%2B8";
+	private final static String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8";
 
 	static {
 		try {

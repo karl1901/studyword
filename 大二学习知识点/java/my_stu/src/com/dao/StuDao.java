@@ -144,4 +144,35 @@ public class StuDao implements IStu {
 		return n;
 	}
 
+	@Override
+	public Stu Login(String username, String password) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Stu stu = new Stu();
+		try {
+			con = DBhelp.getcon();
+			String sql = "select * from my_stu where username=? and password=?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				stu.setSid(rs.getInt(1));
+				stu.setSname(rs.getString(2));
+				stu.setAge(rs.getInt(3));
+				stu.setSex(rs.getString(4));
+				stu.setUsername(rs.getString(5));
+				stu.setPassword(rs.getString(6));
+				stu.setRtime(rs.getString(7));
+				stu.setBtime(rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+		} finally {
+			DBhelp.myClose(con, ps, rs);
+		}
+		return stu;
+	}
+
 }
