@@ -3,9 +3,12 @@ package com.test;
 import java.util.List;
 
 import com.dao.IStu;
+import com.dao.IStu_class;
 import com.dao.ITer;
 import com.dao.StuDao;
+import com.dao.Stu_classDao;
 import com.dao.TerDao;
+import com.dto.Stu_class;
 import com.entity.Stu;
 import com.entity.Teacher;
 import com.util.DBhelp;
@@ -18,6 +21,7 @@ public class Test {
 
 		IStu is = new StuDao();
 		ITer it = new TerDao();
+		IStu_class isc = new Stu_classDao();
 
 		// // add stu
 		// Stu stu = new Stu(3, "鲍勃", 15, "男", "baobo", "ptptpt", "2021-01-01",
@@ -47,8 +51,8 @@ public class Test {
 		// System.out.println(stu.toString());
 		// }
 
-		// // 测试登录的方法
-		// Stu stu = is.Login("karl", "karl2020");
+		// // 测试学生登录的方法
+		// Stu stu = is.Login("xiaomei", "1234567");
 		// System.out.println(stu.toString());
 
 		// // 增加老师的方法
@@ -63,9 +67,19 @@ public class Test {
 		// System.out.println(teacher.toString());
 		// }
 
-		// 删除老师的方法
-		int n = it.delTer(5);
-		System.out.println(n);
+		// // 删除老师的方法
+		// int n = it.delTer(5);
+		// System.out.println(n);
+
+		// // 登录老师的方法
+		// Teacher ter = it.Login("huhuiyu", "123456");
+		// System.out.println(ter.toString());
+
+		// // 测试sql视图
+		// List<Stu_class> myl = isc.getAll();
+		// for (Stu_class stuClass : myl) {
+		// System.out.println(stuClass.toString());
+		// }
 
 	}
 
