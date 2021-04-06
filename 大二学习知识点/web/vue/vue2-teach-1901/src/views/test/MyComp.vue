@@ -27,15 +27,36 @@
       <input type="text" v-model="userinfo.nickname" />
       {{ userinfo }}
     </div>
+    <!-- 组件的附加内容 -->
+    <div>
+      <h1>定制内容的组件============</h1>
+      <my-other-comp>
+        <template slot="buttom">
+          <div>
+            内容由组件控制
+          </div>
+        </template>
+        <div>karl</div>
+        <!-- 
+          vue会将所有不在命名solt中的其他内容
+          全部添加到默认solt中 
+        -->
+        <template slot="top">
+          <div>出现在name是top的插槽位置</div>
+        </template>
+        <div>karls</div>
+      </my-other-comp>
+    </div>
   </div>
 </template>
 <script>
 // 导入组件
 import MyComp from '../../components/MyComp';
+import MyOtherComp from '../../components/MyOther';
 export default {
   name: 'TestMyComp',
   // 引用组件
-  components: { MyComp },
+  components: { MyComp, MyOtherComp },
   data() {
     return {
       compVisible: false,
