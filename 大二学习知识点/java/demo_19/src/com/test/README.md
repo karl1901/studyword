@@ -11,6 +11,7 @@ boolean：`exists`：判断文件是否存在
 boolean：`createNewFile()`：创建文件  
 boolean：`mkdirs()`：创建文件夹  
 boolean：`delete()`：删除文件(慎用！！！)  
+string：`length()`：文件大小(单位：字节/Byte)
 
 ## 方法：
 
