@@ -41,6 +41,9 @@
       <nav class="page">
         <el-pagination :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" :page-sizes="[2, 5, 10]" layout="prev,pager,sizes,next,jumper,total" @size-change="query" @current-change="query"></el-pagination>
       </nav>
+      <div class="page">
+        <page :page="page" @page-change="query"></page>
+      </div>
     </div>
     <!-- 修改的对话框 -->
     <div>
@@ -66,8 +69,10 @@
 </template>
 
 <script>
+import Page from '../../components/Page';
 export default {
   name: 'Dept',
+  components: { Page },
   data() {
     return {
       loading: false,

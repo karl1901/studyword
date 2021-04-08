@@ -96,6 +96,10 @@
       <nav class="page">
         <el-pagination :total="page.total" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber" @current-change="query"></el-pagination>
       </nav>
+
+      <div>
+        <page :page="page" :layout="'prev,sizes,pager,next'" :sizes="[2,5,10]" @page-change="query"></page>
+      </div>
     </div>
 
     <!-- 修改对话框 -->
@@ -129,8 +133,10 @@
   </div>
 </template>
 <script>
+import Page from '../../components/Page';
 export default {
   name: 'Employee',
+  components: { Page },
   data() {
     return {
       modifyVisible: false,
