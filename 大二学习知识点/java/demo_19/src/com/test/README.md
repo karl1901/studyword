@@ -22,6 +22,7 @@ string：`length()`：文件大小(单位：字节/Byte)
 
 > File类  
 在java中，不管是文件还是文件夹都是叫做File对象  
+>  
 > createNewFile方法是创建一个文件  
 mkdir方法是创建一个文件夹  
 exists判断所关联的文件是否存在  
