@@ -62,10 +62,11 @@ server.ajax = function(url, param, cb, method, thisArg) {
 };
 
 // 上传文件大小限制
-const MAX_FILE_SIZE = 2 * 1024 * 1024;
+const MAX_FILE_SIZE = 1.5 * 1024 * 1024;
 // ajax文件上传，url,后端ip地址；file，上传的文件对象
 // params,附加的请求参数(json格式)；cb,回调
 server.sendFile = function(url, file, params, cb) {
+  console.log('文件信息：', file);
   // 限制文件上传大小
   if (file.size > MAX_FILE_SIZE) {
     cb({ message: '文件大小超过限制', code: 500, success: false });
