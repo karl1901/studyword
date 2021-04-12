@@ -19,6 +19,8 @@
     <button @click="testmycomp">mycomp</button>
     ==
     <button @click="testmyothercomp">myothercomp</button>
+    ==
+    <button @click="testfile">file</button>
     <hr />
     ==link==
     <button @click="linklinks">links</button>
@@ -67,6 +69,9 @@ export default {
     },
     testmyothercomp() {
       this.$router.push('/test/myothercomp');
+    },
+    testfile(){
+      this.$router.push('/test/file');
     },
     linklinks() {
       this.$router.push('/link/links');
