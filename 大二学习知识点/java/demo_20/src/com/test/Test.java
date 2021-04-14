@@ -8,8 +8,6 @@ import java.io.FileOutputStream;
 
 import javax.swing.ImageIcon;
 
-import com.sun.prism.Image;
-
 public class Test {
 
 	/**
@@ -93,7 +91,7 @@ public class Test {
 		// bis1.close();
 		// fos.close();
 		// System.out.println("写入图片完成!");
-
+		
 	}
 
 }
