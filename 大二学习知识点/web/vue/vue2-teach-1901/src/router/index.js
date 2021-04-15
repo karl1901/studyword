@@ -12,6 +12,8 @@ import link_routes from './link';
 import employee_routes from './employee';
 // 班级和学生信息管理
 import class_routes from './class';
+// 文件管理路由配置
+import file_routes from './file';
 
 Vue.use(VueRouter);
 
@@ -28,7 +30,8 @@ const routes = [
   .concat(euser_routes)
   .concat(link_routes)
   .concat(employee_routes)
-  .concat(class_routes);
+  .concat(class_routes)
+  .concat(file_routes);
 
 const router = new VueRouter({
   routes

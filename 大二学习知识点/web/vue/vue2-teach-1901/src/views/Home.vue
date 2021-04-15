@@ -39,6 +39,9 @@
     <button @click="classcla">班级管理</button>
     ==
     <button @click="classstu">学生管理</button>
+    <hr />
+    ==file==
+    <button @click="filehome">home</button>
   </div>
 </template>
 
@@ -70,7 +73,7 @@ export default {
     testmyothercomp() {
       this.$router.push('/test/myothercomp');
     },
-    testfile(){
+    testfile() {
       this.$router.push('/test/file');
     },
     linklinks() {
@@ -93,6 +96,9 @@ export default {
     },
     classstu() {
       this.$router.push('/class/stu');
+    },
+    filehome() {
+      this.$router.push('/file/home');
     }
   }
 };
