@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <el-pagination @current-change="changePage" @size-change="changeSize" :layout="layout" :page-sizes="sizes" :total="page.total" :page-count="page.pageCount" :page-size="page.pageSize" :current-page="page.pageNumber"></el-pagination>
+      <el-pagination @current-change="changePage" @size-change="changeSize" :layout="layout" :page-sizes="sizes" :total="page.total" :page-count="page.pageCount" :page-size.sync="page.pageSize" :current-page.sync="page.pageNumber"></el-pagination>
     </nav>
   </div>
 </template>

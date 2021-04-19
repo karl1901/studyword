@@ -76,6 +76,10 @@ export default {
       );
     },
     login() {
+      if (this.tbUser.username.trim() == '') {
+        this.$message.error('用户名必须填写');
+        return;
+      }
       this.loading = true;
       this.tbUser.password = this.$md5(this.tbUser.password);
       this.$ajax(
@@ -121,7 +125,7 @@ export default {
 
 <style scoped>
 .login-form {
-  background-image: url('https://file.moyublog.com/d/file/2021-02-21/cef834efb32c802ea86a38821dd22e6c.jpg');
+  background-image: url('https://cn.bing.com/th?id=OHR.WatPhraSiSanphet_ZH-CN5830557189_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
