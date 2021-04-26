@@ -14,7 +14,7 @@
 
         <el-form-item>
           <el-button type="success" @click="add" round>添加</el-button>
-          <el-button type="success" @click="query" v-loading="loading" icon="el-icon-refresh-right" round></el-button>
+          <el-button type="success" @click="query" v-loading="loading" icon="el-icon-refresh-right" circle></el-button>
           <el-button type="success" @click="stutz" round>学生管理</el-button>
         </el-form-item>
       </el-form>
@@ -179,7 +179,7 @@ export default {
 .body {
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url('https://file.moyublog.com/titlepic/a582f8fbf48bb3952613eccab7de55fc.jpg');
+  background-image: url('https://cn.bing.com/th?id=OHR.Ceking_ZH-CN7314711047_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
   background-size: cover;
 }
 
@@ -206,7 +206,7 @@ export default {
   /* margin-left: 15rem;
   width: 70%; */
   border-radius: 1.2rem;
-  border: 3px solid rgb(70, 67, 67);
+  border: 0.2rem solid rgb(35, 238, 52);
   box-shadow: 0 0 1.2rem rgb(255, 255, 255);
 }
 

@@ -279,7 +279,7 @@ export default {
 .body {
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url('https://file.moyublog.com/d/file/2021-03-29/cbbb60ba25e7af3da4be4b88a78dab56.jpg');
+  background-image: url('https://cn.bing.com/th?id=OHR.NewRiverGorge_ZH-CN6951411872_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp');
   background-size: cover;
 }
 

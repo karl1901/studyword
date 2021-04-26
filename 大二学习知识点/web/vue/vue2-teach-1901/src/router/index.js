@@ -14,6 +14,8 @@ import employee_routes from './employee';
 import class_routes from './class';
 // 文件管理路由配置
 import file_routes from './file';
+// 地图路由配置
+import map_basic from './map';
 
 Vue.use(VueRouter);
 
@@ -31,7 +33,8 @@ const routes = [
   .concat(link_routes)
   .concat(employee_routes)
   .concat(class_routes)
-  .concat(file_routes);
+  .concat(file_routes)
+  .concat(map_basic);
 
 const router = new VueRouter({
   routes
