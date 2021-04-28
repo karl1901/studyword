@@ -10,9 +10,15 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.entity.Stu;
 
@@ -46,8 +52,7 @@ public class FileUtil {
 	}
 
 	// 下载(边读边写)
-	public static boolean FileReadWrite(String rpath, String wpath)
-			throws Exception {
+	public static boolean FileReadWrite(String rpath, String wpath) throws Exception {
 		boolean f = false;
 		// 声明的全局变量，finally才能调用关闭的方法
 		FileInputStream fis = null;
@@ -64,7 +69,7 @@ public class FileUtil {
 			fos = new FileOutputStream(file1); // 获取文件写流
 			bos = new BufferedOutputStream(fos); // 写的缓存流
 			// 下载
-			// 字节数组，限制每次读取速度为10字节
+			// 字节数组，限制每次读取10字节的大小
 			byte[] bs = new byte[10];
 			while (bis.read(bs) != -1) { // 读取有内容就进入循环
 				bos.write(bs);
@@ -116,8 +121,7 @@ public class FileUtil {
 	}
 
 	// 文件字符流的写入
-	public static boolean FileStrWrite(String pathname, String str)
-			throws Exception {
+	public static boolean FileStrWrite(String pathname, String str) throws Exception {
 		boolean f = false;
 		FileWriter fw = null;
 		BufferedWriter bw = null;
@@ -152,8 +156,7 @@ public class FileUtil {
 	}
 
 	// 对象流(序列化)
-	public static boolean ObjWrite(Object obj, String pathname)
-			throws Exception {
+	public static boolean ObjWrite(Object obj, String pathname) throws Exception {
 		boolean f = false;
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
@@ -194,8 +197,7 @@ public class FileUtil {
 	}
 
 	// 对象流(集合的序列化)
-	public static boolean ObjWrite(List<Object> myl, String pathname)
-			throws Exception {
+	public static boolean ObjWrite(List<Object> myl, String pathname) throws Exception {
 		boolean f = false;
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
@@ -233,6 +235,124 @@ public class FileUtil {
 			fis.close();
 		}
 		return myl;
+	}
+
+	// 网络流(网页代码的下载--字符流)
+	public static StringBuffer NetReadWrite(String httpspath, String pathname) throws Exception {
+		StringBuffer sb = new StringBuffer(); // 给我们看的内容
+		InputStream is = null;
+		InputStreamReader isr = null;
+		BufferedReader br = null;
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		try {
+			URL url = new URL(httpspath);
+			// 通过网络对象获取读取流(字节流)
+			is = url.openStream();
+			// 把字节流转化为字符流
+			isr = new InputStreamReader(is, "UTF-8");
+			// 缓存流
+			br = new BufferedReader(isr);
+
+			// 写(文件的写--file)
+			File file = new File(pathname);
+			fw = new FileWriter(file);
+			bw = new BufferedWriter(fw);
+
+			// 边读边写
+			String str = ""; // 用来做读取判断依据的
+			while ((str = br.readLine()) != null) { // 读取
+				bw.write(str); // 写
+				if (str != null) { // 写入了内容
+					sb.append(str);
+				}
+				bw.newLine(); // 下一行
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getStackTrace();
+		} finally {
+			bw.close();
+			fw.close();
+			br.close();
+			isr.close();
+			is.close();
+		}
+		return sb;
+	}
+
+	// 获取网站代码
+	public static StringBuffer NetReadWrite(String httpspath) throws Exception {
+		StringBuffer sb = new StringBuffer(); // 给我们看的内容
+		InputStream is = null;
+		InputStreamReader isr = null;
+		BufferedReader br = null;
+		try {
+			URL url = new URL(httpspath);
+			// 通过网络对象获取读取流(字节流)
+			is = url.openStream();
+			// 把字节流转化为字符流
+			isr = new InputStreamReader(is, "UTF-8");
+			// 缓存流
+			br = new BufferedReader(isr);
+
+			// 边读边写
+			String str = ""; // 用来做读取判断依据的
+			while ((str = br.readLine()) != null) { // 读取
+				if (str != null) { // 写入了内容
+					sb.append(str);
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getStackTrace();
+		} finally {
+			br.close();
+			isr.close();
+			is.close();
+		}
+		return sb;
+	}
+
+	// 通过网络流取下载指定内容
+	public static boolean GetNet(String httpspath, String pathname, String filename) throws Exception {
+		boolean f = false;
+		// 1、获取网站的所有代码
+		StringBuffer sb = FileUtil.NetReadWrite(httpspath);
+		// System.out.println(sb);
+		// 2、去和用户传过来的特定规则进行匹配
+		Pattern p = Pattern.compile(filename);
+		Matcher m = p.matcher(sb);
+		// 获取项目所在路径
+		int end = httpspath.lastIndexOf("/");
+		String httpname = httpspath.substring(0, end + 1);
+		while (m.find()) {
+			// System.out.println(m.group(1)); // 打印匹配到的字符串
+			String pathimage = httpname + m.group(1);
+			// System.out.println(pathimage); // 打印图片所在网络路径
+			// 获取所有图片的网络流对象
+			URL url = new URL(pathimage);
+			InputStream is = url.openStream();
+			BufferedInputStream bis = new BufferedInputStream(is);
+
+			// 获取网络图片名称及后缀名
+			int x = m.group(1).lastIndexOf("/");
+			String name = m.group(1).substring(x + 1);
+			File file = new File(pathname + "\\" + name);
+			FileOutputStream fos = new FileOutputStream(file);
+			BufferedOutputStream bos = new BufferedOutputStream(fos);
+			// 边读边写
+			int n = 0;
+			while ((n = bis.read()) != -1) { // 读
+				bos.write(n); // 写
+			}
+			bos.close();
+			fos.close();
+			bis.close();
+			is.close();
+			f = true;
+		}
+		return f;
 	}
 
 }

@@ -67,6 +67,20 @@ public class Test {
 		// System.out.println(object);
 		// }
 
+		// 测试网络流(把网站代码下载到本地)
+		// String httpspath = "http://pb.kangxianghui.top";
+		// String pathname = "C:\\Users\\23712\\Desktop\\ss\\下载\\pb.html";
+		// StringBuffer sb = FileUtil.NetReadWrite(httpspath, pathname);
+		// System.out.println(sb);
+
+		// 测试网络流读取下载指定的内容
+		// String httpspath = "https://kangxianghui.top/album/index.html";
+		// String filename =
+		// "<img\\ssrc=\"([^\">]+)\"\\sclass=\"([^\">]+)\"\\s/?>";
+		// String pathname = "C:\\Users\\23712\\Desktop\\ss\\下载\\img\\";
+		// boolean f = FileUtil.GetNet(httpspath, pathname, filename);
+		// System.out.println(f);
+
 	}
 
 }
