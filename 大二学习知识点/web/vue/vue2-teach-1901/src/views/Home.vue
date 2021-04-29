@@ -44,9 +44,11 @@
     <hr />
     ==file==
     <button @click="filehome">home-文件管理</button>
-    <hr>
+    <hr />
     ==map==
     <button @click="mapbasic">basic-高德地图</button>
+    ==
+    <button @click="maplocator">locator-高德地图</button>
   </div>
 </template>
 
@@ -110,6 +112,9 @@ export default {
     },
     mapbasic() {
       this.$router.push('/map/basic');
+    },
+    maplocator() {
+      this.$router.push('/map/locator');
     }
   }
 };

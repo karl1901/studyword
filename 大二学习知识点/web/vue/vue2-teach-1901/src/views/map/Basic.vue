@@ -4,8 +4,7 @@
       <div id="map-container"></div>
     </div>
     <div>
-      地址搜索
-      <input type="text" id="txtSearch" />
+      <input type="text" id="txtSearch" placeholder="地址搜索" />
     </div>
   </div>
 </template>
@@ -24,9 +23,10 @@ export default {
   mounted() {
     // 创建地图
     map = new AMap.Map('map-container', {
-      zoom: 15
+      zoom: 15,
       // pitch: 75,
       // viewMode: '3D'
+      mapStyle: 'amap://styles/fresh' //设置地图的显示样式
     });
     // 一些赌徒插件的使用
     AMap.plugin(['AMap.ToolBar', 'AMap.Geolocation', 'AMap.AutoComplete', 'AMap.PlaceSearch', 'AMap.Scale'], function() {
@@ -42,14 +42,14 @@ export default {
       // 定位插件
       let geo = new AMap.Geolocation({
         // 是否使用高精度定位，默认：true
-        enableHighAccuracy: true,
+        enableHighAccuracy: false,
         // 设置定位超时时间，默认：无穷大
         timeout: 10000,
         // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
         buttonOffset: new AMap.Pixel(10, 20),
-        // 定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
         zoomToAccuracy: true,
-        // 定位按钮的排放位置,RB表示右下
+        //  定位按钮的排放位置,  RB表示右下
         buttonPosition: 'RB'
       });
 
@@ -109,6 +109,8 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: -Scroll;
+  overflow-y: hidden;
 }
 
 .main > div:nth-child(1) {
@@ -116,7 +118,13 @@ export default {
 }
 
 .main > div:nth-child(2) {
-  padding: 1rem;
+  top: 1.7rem;
+  left: 5rem;
+  position: fixed;
+}
+
+.main > div:nth-child(2) input {
+  padding: 0.5rem;
 }
 
 #map-container {
