@@ -14,13 +14,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.MalformedURLException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 import java.net.URL;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.entity.Stu;
 
 public class FileUtil {
 
@@ -353,6 +353,53 @@ public class FileUtil {
 			f = true;
 		}
 		return f;
+	}
+
+	// 字节套流(字节--字符)：写
+	public static void SocketWrite(Socket sk, String str) throws Exception {
+		OutputStream os = sk.getOutputStream();
+		// 把字节流转化为字符流
+		OutputStreamWriter osw = new OutputStreamWriter(os);
+		// 缓存流
+		BufferedWriter bw = new BufferedWriter(osw);
+		// 开始写内容
+		if (str != null) { // 有内容
+			bw.write(str); // 写
+			bw.newLine(); // 换行
+			bw.flush();
+		}
+	}
+
+	// 字节套流(字节--字符)：读
+	public static String SocketRead(Socket sk) throws Exception {
+		String str = null;
+		InputStream is = sk.getInputStream();
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+		str = br.readLine();
+		return str;
+	}
+
+	// 关闭字节套流的所有接口
+	public static void Myclose(Socket sk) throws Exception {
+		OutputStream os = sk.getOutputStream();
+		OutputStreamWriter osw = new OutputStreamWriter(os);
+		BufferedWriter bw = new BufferedWriter(osw);
+
+		InputStream is = sk.getInputStream();
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
+
+		if (br != null) {
+			br.close();
+			isr.close();
+			is.close();
+		}
+		if (bw != null) {
+			bw.close();
+			osw.close();
+			os.close();
+		}
 	}
 
 }

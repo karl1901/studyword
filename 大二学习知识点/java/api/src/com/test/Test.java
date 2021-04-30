@@ -1,12 +1,5 @@
 package com.test;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.entity.Stu;
-import com.util.FileUtil;
-
 public class Test {
 
 	/**
