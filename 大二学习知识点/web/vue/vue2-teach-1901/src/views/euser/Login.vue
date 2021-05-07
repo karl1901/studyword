@@ -93,9 +93,11 @@ export default {
       this.$router.push('/euser/reg');
     },
     loadkong() {
-      this.tbUser.username = '';
-      this.tbUser.password = '';
-      this.imgcode = '';
+      this.formdata.tbUser = {
+        username: '',
+        password: ''
+      };
+      this.formdata.imgcode = '';
       this.$ajax(
         '/tools/imageCode ',
         {},
