@@ -1,8 +1,4 @@
-# 饿了么UI-对后端数据库的增删改查
-
----
-
-## vue2.x上课用模板项目
+# vue2.x上课用模板项目
 
 - 使用方式
   - 复制本项目
@@ -16,8 +12,5 @@
   - 路由配置分配到router目录中的不同文件中，例如test.js都是测试功能页面，路由路径都是test开头
   - ajax请求的使用请查看views/test/Ajax.vue
   - iconfont，公用css，工具类，自定义指令，自定义过滤器，饿了么ui的使用请查看views/test/Tools.vue
-
----
-
-- [**返回**](https://code.aliyun.com/kangxianghui/studywrod/tree/master/%E5%A4%A7%E4%BA%8C%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/web/vue)
-- [**首页**](https://code.aliyun.com/kangxianghui/studywrod/tree/master)
+- WangEditor(富文本编辑器)
+  - 执行`npm i wangeditor --save`安装

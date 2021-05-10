@@ -44,6 +44,10 @@
     <hr />
     ==file==
     <button @click="filehome">home-文件管理</button>
+    ==
+    <button @click="filewangeditor">WangEditor-富文本编辑器演示</button>
+    ==
+    <button @click="filemyeditor">MyEditor-富文本编辑器组件封装</button>
     <hr />
     ==map==
     <button @click="mapbasic">basic-高德地图</button>
@@ -109,6 +113,12 @@ export default {
     },
     filehome() {
       this.$router.push('/file/home');
+    },
+    filewangeditor() {
+      this.$router.push('/file/wangeditor');
+    },
+    filemyeditor() {
+      this.$router.push('/file/myeditor');
     },
     mapbasic() {
       this.$router.push('/map/basic');

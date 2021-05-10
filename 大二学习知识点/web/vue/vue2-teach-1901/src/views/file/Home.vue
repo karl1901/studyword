@@ -14,6 +14,10 @@
         </el-form-item>
 
         <el-form-item>
+          <el-input v-model="queryInfo.contentType" placeholder="文件类型模糊查询"></el-input>
+        </el-form-item>
+
+        <el-form-item>
           <el-button @click="query" icon="el-icon-search" type="primary" round>查询</el-button>
           <el-button @click="reset" icon="el-icon-refresh" type="warning" round>刷新</el-button>
           <el-button @click="toAdd" icon="el-icon-upload" type="success" round>上传</el-button>
@@ -37,7 +41,9 @@
           <template slot-scope="scope">
             <el-button @click="download(scope.row.fid)" type="primary" icon="el-icon-download" plain>下载</el-button>
             <el-button v-if="isImage(scope.row)" @click="showImage(scope.row)" type="success" plain>预览</el-button>
-            <el-button @click="del(scope.row)" type="danger" icon="el-icon-delete" circle></el-button>
+            <br>
+            <el-button @click="showFileUrl(scope.row.fid)" type="primary" class="el-icon-link" plain></el-button>
+            <el-button @click="del(scope.row)" type="danger" icon="el-icon-delete" plain></el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -93,7 +99,8 @@ export default {
       },
       queryInfo: {
         fileinfo: '',
-        filename: ''
+        filename: '',
+        contentType: ''
       },
       list: [],
       loading: false,
@@ -108,6 +115,10 @@ export default {
     };
   },
   methods: {
+    showFileUrl(fid) {
+      let app = this;
+      app.$message(app.$getDownloadUrl(fid));
+    },
     del(file) {
       let app = this;
       app
