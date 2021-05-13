@@ -1,0 +1,12 @@
+.imgs {
+  display: flex;
+  justify-content: center;
+}
+
+.imgs > div {
+  margin: 1rem;
+}
+
+.imgs img {
+  height: 200px;
+}

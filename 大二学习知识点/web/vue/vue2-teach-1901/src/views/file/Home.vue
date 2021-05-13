@@ -28,6 +28,7 @@
     <!-- 数据表格 -->
     <div>
       <el-table :data="list">
+        <el-table-column label="文件编号" prop="fid"></el-table-column>
         <el-table-column label="文件名称" prop="filename"></el-table-column>
         <el-table-column label="文件描述" prop="fileinfo"></el-table-column>
         <el-table-column label="文件类型" prop="contentType"></el-table-column>
@@ -41,7 +42,7 @@
           <template slot-scope="scope">
             <el-button @click="download(scope.row.fid)" type="primary" icon="el-icon-download" plain>下载</el-button>
             <el-button v-if="isImage(scope.row)" @click="showImage(scope.row)" type="success" plain>预览</el-button>
-            <br>
+            <br />
             <el-button @click="showFileUrl(scope.row.fid)" type="primary" class="el-icon-link" plain></el-button>
             <el-button @click="del(scope.row)" type="danger" icon="el-icon-delete" plain></el-button>
           </template>
@@ -146,7 +147,7 @@ export default {
         '/file/upload',
         app.file,
         {
-          'tbFIle.fileinfo': this.addInfo.fileinfo
+          'tbFile.fileinfo': this.addInfo.fileinfo
         },
         function(data) {
           app.$message(data.message);
