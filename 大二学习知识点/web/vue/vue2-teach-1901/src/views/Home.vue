@@ -53,6 +53,9 @@
     <button @click="mapbasic">basic-高德地图</button>
     ==
     <button @click="maplocator">locator-高德地图</button>
+    <hr />
+    ==portable==
+    <button @click="portablehome">home-门户信息</button>
   </div>
 </template>
 
@@ -60,9 +63,12 @@
 export default {
   name: 'Home',
   data() {
-    return { title: 'karl模板项目首页' };
+    return { title: 'karl--Vue项目首页' };
   },
   methods: {
+    portablehome() {
+      this.$router.push('portable/home');
+    },
     userlogin() {
       this.$router.push('/user/login');
     },

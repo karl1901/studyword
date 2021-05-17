@@ -16,6 +16,8 @@ import class_routes from './class';
 import file_routes from './file';
 // 地图路由配置
 import map_basic from './map';
+// 门户信息管理配置
+import portable_routes from './portable';
 
 Vue.use(VueRouter);
 
@@ -34,7 +36,8 @@ const routes = [
   .concat(employee_routes)
   .concat(class_routes)
   .concat(file_routes)
-  .concat(map_basic);
+  .concat(map_basic)
+  .concat(portable_routes);
 
 const router = new VueRouter({
   routes

@@ -13,6 +13,20 @@
   };
 
   const ajax = {
+    // 转换数据结构
+    converData(data) {
+      // 服务器的结果是数组，转化为自己想要的格式
+      let result = {};
+      for (let i = 0; i < data.length; i++) {
+        let m = data[i];
+        result[m.messageKey] = m.message;
+      }
+      return result;
+    },
+
+    getAccessKey() {
+      return '5fcf133e-1324-4e34-9008-f19538cb42ce';
+    },
     send: function(url, params, cb, method) {
       url = server.baseUrl + url;
       method = method ? method : 'post';
