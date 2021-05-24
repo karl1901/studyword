@@ -32,7 +32,7 @@
       <div>欢迎：{{loginUser.username}}</div>
       <div class="imgs">
         <div v-for="img in images" :key="img.fid">
-          <img :src="getImg(img.fid)" alt="">
+          <img :src="img.fid | fileurl" alt="">
         </div>
       </div>
     </div>
