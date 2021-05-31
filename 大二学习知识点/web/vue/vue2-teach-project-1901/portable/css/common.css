@@ -1,0 +1,46 @@
+body {
+  margin: 0px;
+}
+
+.one {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 1.3rem 0rem;
+  color: rgb(0, 0, 0);
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.3rem;
+}
+
+.two input {
+  border: 3px solid rgb(93, 103, 105);
+  border-radius: 1rem;
+  padding: 0.3rem;
+  outline: none;
+}
+
+.two input:hover {
+  border: 3px solid rgb(24, 198, 241);
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+.two button {
+  margin-left: 1rem;
+  border: 3px solid rgb(93, 103, 105);
+  border-radius: 1rem;
+}
+
+.two button:hover {
+  margin-left: 1rem;
+  background-color: #fff;
+  border: 3px solid rgb(24, 198, 241);
+  border-radius: 1rem;
+}
+
+.three {
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试页面</title>
+  <link rel="stylesheet" href="css/iconfont.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="one">
+      {{title}}
+      <i class="iconfont">&#xe628;</i>
+    </div>
+
+    <div class="two">
+      <input type="text" v-model="echo" placeholder="请求信息">
+      <button @click="ajaxTest">ajax请求测试</button>
+    </div>
+
+    <div class="three">
+      {{result}}
+    </div>
+    <hr>
+    <div>
+      门户信息：{{portable}}
+    </div>
+  </div>
+
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.10.1/qs.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/spark-md5/3.0.0/spark-md5.min.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/test.js"></script>
+</body>
+
+</html>

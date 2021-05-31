@@ -8,11 +8,7 @@
 
 /* 自己的iconfont在线项目代码（我这里是teach-projects） */
 @font-face {
-  font-family: 'iconfont';  /* project id 1552754 */
-  src: url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.eot');
-  src: url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1552754_dxtzl3ogo8w.svg#iconfont') format('svg');
+  font-family: 'iconfont'; /* project id 1552754 */
+  src: url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.eot');
+  src: url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.woff2') format('woff2'), url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.woff') format('woff'), url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.ttf') format('truetype'), url('//at.alicdn.com/t/font_1552754_a8ozvou3rvl.svg#iconfont') format('svg');
 }
