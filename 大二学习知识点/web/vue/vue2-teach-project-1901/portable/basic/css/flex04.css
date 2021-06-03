@@ -1,0 +1,57 @@
+body {
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  width: 25%;
+}
+
+.container > div > div {
+  border: 2px solid red;
+}
+
+/* if(screen<=768px) */
+@media screen and (max-width: 768px) {
+  .container > div {
+    width: 100%;
+  }
+}
+
+/* if(screen>=769 && screen<=1000px) */
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .container > div {
+    width: 50%;
+  }
+}
+
+/* if(screen>=1001 && screen<=1266px) */
+@media screen and (min-width: 1001px) and (max-width: 1366px) {
+  .container > div {
+    width: 33.3333333333333%;
+  }
+}
+
+/* 媒体查询的意义就是在不同分辨率下可以有不同样式 */
+
+.desktop {
+  display: block;
+}
+
+.phone {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .phone {
+    display: block;
+  }
+}
