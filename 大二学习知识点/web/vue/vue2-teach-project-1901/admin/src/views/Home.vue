@@ -166,7 +166,8 @@ export default {
 
 .ys {
   background-color: rgba(255, 255, 255, 0.658);
-  width: 22rem;
+  width: 20rem;
+  height: 28rem;
 }
 
 .jz {
