@@ -1,5 +1,7 @@
 # vue2.x上课用模板项目
 
+---
+
 - 使用方式
   - 复制本项目
   - 修改项目(目录)名称
@@ -14,3 +16,8 @@
   - iconfont，公用css，工具类，自定义指令，自定义过滤器，饿了么ui的使用请查看views/test/Tools.vue
 - WangEditor(富文本编辑器)
   - 执行`npm i wangeditor --save`安装
+
+---
+
+- [**返回**](https://code.aliyun.com/kangxianghui/studywrod/tree/master/%E5%A4%A7%E4%BA%8C%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/web/vue)
+- [**首页**](https://code.aliyun.com/kangxianghui/studywrod/tree/master)
