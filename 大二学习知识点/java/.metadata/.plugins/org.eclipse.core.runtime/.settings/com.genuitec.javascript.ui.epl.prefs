@@ -1,9 +1,0 @@
-#Tue Sep 29 10:58:34 CST 2020
-useAnnotationsPrefPage=true
-org.eclipse.dltk.javascript.Templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
-hoverModifierMasks=org.eclipse.dltk.ui.BestMatchHover;0;org.eclipse.dltk.javascript.internal.debug.ui.JavaScriptDebugHover;0;org.eclipse.dltk.ui.ProblemHover;0;org.eclipse.dltk.ui.DocumentationHover;0;org.eclipse.dltk.ui.ScriptSourceHover;131072;org.eclipse.dltk.ui.AnnotationHover;0;
-eclipse.preferences.version=1
-XML_ALL=0,0,0
-sourceHoverBackgroundColor=255,255,225
-hoverModifiers=org.eclipse.dltk.ui.BestMatchHover;0;org.eclipse.dltk.javascript.internal.debug.ui.JavaScriptDebugHover;\!0;org.eclipse.dltk.ui.ProblemHover;\!0;org.eclipse.dltk.ui.DocumentationHover;\!0;org.eclipse.dltk.ui.ScriptSourceHover;Shift;org.eclipse.dltk.ui.AnnotationHover;\!0;
-useQuickDiffPrefPage=true

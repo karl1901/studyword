@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title"></title>
+  <!-- 导入第三方css -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 本地样式 -->
+  <style>
+    body {
+      margin: 0px;
+      background: rgb(233, 230, 227);
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+    }
+
+    .main div {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #titles {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    #infos {
+      font-size: 1.1rem;
+      font-family: '楷体';
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div class="main">
+      <el-form>
+        <el-form-item>
+          <!-- 标题 -->
+          <div>
+            <div id="titles">{{title}}</div>
+          </div>
+        </el-form-item>
+        <el-form-item>
+          <!-- 昵称输入框 -->
+          <el-input v-model="name" placeholder="昵称" prefix-icon="el-icon-user-solid" clearable></el-input>
+        </el-form-item>
+        <el-form-item>
+          <!-- 信息内容输入框 -->
+          <el-input v-model="txt" placeholder="信息内容..." prefix-icon="el-icon-s-order" clearable></el-input>
+        </el-form-item>
+        <el-form-item>
+          <div>
+            <div>
+              <!-- 功能按钮组 -->
+              <el-button-group>
+                <el-button icon="el-icon-s-promotion" type="success" @click="Send">发送</el-button>
+                <el-button icon="el-icon-refresh-left" type="warning" @click="Reset">重填</el-button>
+              </el-button-group>
+            </div>
+          </div>
+        </el-form-item>
+        <el-form-item>
+          <!-- 聊天信息显示区 -->
+          <div id="infos"></div>
+        </el-form-item>
+      </el-form>
+    </div>
+
+  </div>
+
+</body>
+
+<!-- 导入第三方js -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!-- 导入本地js -->
+<script src="chat.js"></script>
+
+</html>

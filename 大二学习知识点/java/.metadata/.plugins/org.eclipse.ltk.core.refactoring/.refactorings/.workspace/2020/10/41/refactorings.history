@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="将Java 项目“kaoshi”重命名为“kaoshi01”&#x0D;&#x0A;－ 原始元素：“kaoshi”&#x0D;&#x0A;－ 重命名的元素：“kaoshi”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名 Java 项目“kaoshi”" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=kaoshi" name="kaoshi01" references="true" stamp="1602068547878" version="1.0"/>
-</session>
