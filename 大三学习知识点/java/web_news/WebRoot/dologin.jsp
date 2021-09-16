@@ -29,6 +29,15 @@
 		session.setAttribute("token", uname);
 		// 给通行证设置时效(单位：秒)
 		session.setMaxInactiveInterval(30);
+
+		// COokie-保存用户信息
+		// 创建一个Cookie文件
+		//Cookie cookie = new Cookie("tokens", uname);
+		// 给Cookie设置时效(单位：秒)
+		//cookie.setMaxAge(60 * 60 * 24 * 7);
+		// 把Cookie放置到response
+		//response.addCookie(cookie);
+
 		n = 1;
 	}
 	if (n > 0) {

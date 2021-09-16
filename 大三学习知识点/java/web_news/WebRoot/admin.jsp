@@ -9,13 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>添加主题--管理后台</title>
 <link href="CSS/admin.css" rel="stylesheet" type="text/css" />
-<%
-	// 获取session(返回值：对象)
-	Object obj = session.getAttribute("token");
-	if (obj == null) { // 客户端没有通行证
-		response.sendRedirect("login.html");
-	}
-%>
+<%@include file="kp.jsp"%>
 </head>
 <body>
 	<div id="header">
@@ -32,8 +26,8 @@
 	<div id="admin_bar">
 		<div id="status">
 			管理员：
-			<%=session.getAttribute("token")%>登录 &#160;&#160;&#160;&#160; <a
-				href="#">login out</a>
+			<%=session.getAttribute("token")%>
+			&#160;&#160;&#160;&#160; <a href="loginout.jsp">login out</a>
 		</div>
 		<div id="channel"></div>
 	</div>
