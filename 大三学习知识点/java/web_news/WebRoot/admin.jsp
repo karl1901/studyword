@@ -1,3 +1,6 @@
+<%@page import="com.entity.News"%>
+<%@page import="com.bizimpl.NewsBiz"%>
+<%@page import="com.biz.INewsBiz"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
@@ -27,7 +30,16 @@
 		<div id="status">
 			管理员：
 			<%=session.getAttribute("token")%>
-			&#160;&#160;&#160;&#160; <a href="loginout.jsp">login out</a>
+			&#160;&#160;&#160;&#160; <a href="loginout.jsp">login out</a> 访问量：
+			<%
+ 	// 获取application中的内容
+ 	ArrayList<String> myl = (ArrayList<String>) application.getAttribute("fwl");
+ 	if (myl != null) { // 有人访问
+ 		out.print(myl.size());
+ 	} else {
+ 		out.print(0);
+ 	}
+ %>
 		</div>
 		<div id="channel"></div>
 	</div>
@@ -71,29 +83,10 @@
 					//获取当前页码
 					String pagemin = request.getParameter("min");
 
-					//加载MYSQL运行包
-					Class.forName("com.mysql.cj.jdbc.Driver");
-					//需要连接数据库名称
-					String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8";
-					//获取数据连接
-					Connection con = DriverManager.getConnection(url, "root", "010928");
-					//模糊查询的SQL条件
-					String str = "";
-					if (ntitle != null) {
-						str = " where ntitle like '%" + ntitle + "%'";
-					}
 					int sel = 3;
-					String sql = "select * from news" + str + " limit ?,?";
-					PreparedStatement ps = con.prepareStatement(sql);
-					//统计新闻表里面一共有多少条新闻
-					String sq = "select count(*) from news" + str;
-					PreparedStatement ps1 = con.prepareStatement(sq);
-					ResultSet rs1 = ps1.executeQuery();
 					int pa = 0; //控制页码
 					int count = 0;
-					if (rs1.next()) {
-						count = rs1.getInt(1);
-					}
+
 					//求最大页码
 					int max = 0;
 					if (count % sel == 0) {
@@ -132,15 +125,17 @@
 						pa = Integer.parseInt(indexpage);
 					}
 
-					ps.setInt(1, pa);
-					ps.setInt(2, sel);
-					ResultSet rs = ps.executeQuery();
-					while (rs.next()) {
+					// 调用查询所有的方法
+					INewsBiz inb = new NewsBiz();
+					List<News> myn = inb.getAll(pa, sel);
+
+					for (int i = 0; i < myn.size(); i++) {
 				%>
-				<li><a href="news_read.jsp?nid=<%=rs.getInt(1)%>"><%=rs.getString(3)%></a><span>
-						作者：<%=rs.getString(6)%> &#160;&#160;&#160;&#160; <a
-						href='updatenews.jsp?nid=<%=rs.getInt(1)%>'>修改</a>
-						&#160;&#160;&#160;&#160; <a href='dodel.jsp?nid=<%=rs.getInt(1)%>'
+				<li><a href="news_read.jsp?nid=<%=myn.get(i).getNid()%>"><%=myn.get(i).getNtitle()%></a><span>
+						作者：<%=myn.get(i).getNauthor()%> &#160;&#160;&#160;&#160; <a
+						href='updatenews.jsp?nid=<%=myn.get(i).getNid()%>'>修改</a>
+						&#160;&#160;&#160;&#160; <a
+						href='dodel.jsp?nid=<%=myn.get(i).getNid()%>'
 						onclick='return clickdel()'>删除</a>
 				</span></li>
 				<%
