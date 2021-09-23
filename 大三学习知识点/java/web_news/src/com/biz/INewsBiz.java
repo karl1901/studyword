@@ -24,4 +24,7 @@ public interface INewsBiz {
 	// 修改新闻
 	public abstract int updateNews(int nid, News news);
 
+	// 获取新闻总条数
+	public abstract int getMax();
+
 }

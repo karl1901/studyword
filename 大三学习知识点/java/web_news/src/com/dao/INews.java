@@ -8,7 +8,7 @@ import com.entity.News;
 
 public interface INews {
 
-	// 查询所有新闻的方法
+	// 查询所有新闻的方法(带分页)
 	public abstract List<News> getAll(int index, int page);
 
 	// 模糊查询
@@ -25,5 +25,8 @@ public interface INews {
 
 	// 修改新闻
 	public abstract int updateNews(int nid, News news);
+
+	// 获取新闻总条数
+	public abstract int getMax();
 
 }

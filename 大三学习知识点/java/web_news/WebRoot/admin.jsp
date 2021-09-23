@@ -1,7 +1,7 @@
 <%@page import="com.entity.News"%>
 <%@page import="com.bizimpl.NewsBiz"%>
 <%@page import="com.biz.INewsBiz"%>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>添加主题--管理后台</title>
 <link href="CSS/admin.css" rel="stylesheet" type="text/css" />
-<%@include file="kp.jsp"%>
+<%-- <%@include file="kp.jsp"%> --%>
 </head>
 <body>
 	<div id="header">
@@ -77,57 +77,23 @@
 					//获取用户选择的页面
 					request.setCharacterEncoding("UTF-8");
 					String indexpage = request.getParameter("pa"); //获取传过来的参数
-					//获取数据来判定是上一页还是下一页
-					String down = request.getParameter("down");
-					String up = request.getParameter("up");
-					//获取当前页码
-					String pagemin = request.getParameter("min");
 
-					int sel = 3;
-					int pa = 0; //控制页码
-					int count = 0;
-
-					//求最大页码
-					int max = 0;
-					if (count % sel == 0) {
-						max = count / sel;
-					} else {
-						max = count / sel + 1;
-					}
-					//求当前页码数
-					int min = 1;
-					if (pagemin != null) {
-						min = Integer.parseInt(pagemin);
-					}
-					if (up != null) {
-						min--;
-						if (min <= 1) { //不能超过最小页码
-							min = 1;
-						}
-					}
-					if (down != null) {
-						min++;
-						if (min >= max) { //不能超过最大页码
-							min = max;
-						}
-					}
-
-					//System.out.println("新闻总条数："+count);
-					//根据得到新闻的总条数去获取最大页码(尾页)
-					int maxpage = 0;
-					if (count % sel == 0) {
-						maxpage = (count / sel - 1) * sel;
-					} else {
-						maxpage = count / sel * sel;
-					}
-
-					if (indexpage != null) { //参数有内容
+					int pa = 0; // 初始情况
+					int sel = 4; // 每页四条
+					if (indexpage != null) { // 点击上一页或下一页
 						pa = Integer.parseInt(indexpage);
 					}
 
 					// 调用查询所有的方法
 					INewsBiz inb = new NewsBiz();
 					List<News> myn = inb.getAll(pa, sel);
+					// 获取新闻总行数
+					int max = inb.getMax();
+					// 获取最大页码数
+					int maxpage = max / sel;
+					if (max % sel != 0) {
+						maxpage = max / sel + 1;
+					}
 
 					for (int i = 0; i < myn.size(); i++) {
 				%>
@@ -142,14 +108,11 @@
 					}
 				%>
 				<p align="right">
-					<a
-						href="admin.jsp?pa=<%=0%>&min=<%=1%>&ntitle=<%=ntitle == null ? "" : ntitle%>">首页</a>
-					<a
-						href="admin.jsp?pa=<%=pa <= 0 ? 0 : pa - sel%>&up=up&min=<%=min%>&ntitle=<%=ntitle == null ? "" : ntitle%>">上一页</a>
-					当前页数:[<%=min%>/<%=max%>]&nbsp; <a
-						href="admin.jsp?pa=<%=pa >= maxpage ? maxpage : pa + sel%>&down=down&min=<%=min%>&ntitle=<%=ntitle == null ? "" : ntitle%>">下一页</a>
-					<a
-						href="admin.jsp?pa=<%=maxpage%>&min=<%=max%>&ntitle=<%=ntitle == null ? "" : ntitle%>">末页</a>
+					<a href="admin.jsp?pa=<%=0%>">首页</a> <a
+						href="admin.jsp?pa=<%=(pa - sel) < 0 ? 0 : pa - sel%>">上一页</a>
+					当前页数:[<%=(pa + sel) / sel%>/<%=maxpage%>]&nbsp; <a
+						href="admin.jsp?pa=<%=(pa + sel) > max ? pa : pa + sel%>">下一页</a>
+					<a href="admin.jsp?pa=<%=maxpage * sel - sel%>">末页</a>
 				</p>
 			</ul>
 		</div>

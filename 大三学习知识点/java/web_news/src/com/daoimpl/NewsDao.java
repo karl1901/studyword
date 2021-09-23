@@ -136,4 +136,26 @@ public class NewsDao implements INews {
 		return 0;
 	}
 
+//	获取新闻总条数
+	public int getMax() {
+		Connection con = null; // 获取数据库连接
+		PreparedStatement ps = null; // 执行sql语句接口
+		ResultSet rs = null; // 接收返回结果接口
+		int max = 0; // 新闻条数
+		try {
+			con = DBhelp.getCon();
+			String sql = "select count(*) from news";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				max = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBhelp.myClose(con, ps, rs);
+		}
+		return max;
+	}
+
 }

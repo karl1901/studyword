@@ -47,4 +47,10 @@ public class NewsBiz implements INewsBiz {
 		return 0;
 	}
 
+//	获取新闻总条数
+	public int getMax() {
+		int max = in.getMax();
+		return max;
+	}
+
 }

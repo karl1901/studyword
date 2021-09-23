@@ -1,3 +1,6 @@
+<%@page import="com.entity.News"%>
+<%@page import="com.bizimpl.NewsBiz"%>
+<%@page import="com.biz.INewsBiz"%>
 <%@page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
@@ -91,41 +94,28 @@
 							request.setCharacterEncoding("UTF-8");
 							int nid = Integer.parseInt(request.getParameter("nid"));
 							System.out.println("新闻编号：" + nid);
-							//加载MYSQL运行包
-							Class.forName("com.mysql.cj.jdbc.Driver");
-							//需要连接数据库名称
-							String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8";
-							//获取数据连接
-							Connection con = DriverManager.getConnection(url, "root", "010928");
-							//查询单个新闻数据sql语句
-							String sql = "select * from news where nid=?";
-							PreparedStatement ps = con.prepareStatement(sql);
-							ps.setInt(1, nid);
-							ResultSet rs = ps.executeQuery();
-							if (rs.next()) {
+							INewsBiz inb = new NewsBiz();
+							News news = inb.getNews(nid);
 						%>
 						<tr width="100%">
-							<td colspan="2" align="center"><%=rs.getString(3)%></td>
+							<td colspan="2" align="center"><%=news.getNtitle()%></td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr /></td>
 						</tr>
 						<tr>
-							<td align="center"><%=rs.getString(7)%></td>
-							<td align="left"><%=rs.getString(6)%></td>
+							<td align="center"><%=news.getNtime()%></td>
+							<td align="left"><%=news.getNauthor()%></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center"></td>
 						</tr>
 						<tr>
-							<td colspan="2"><%=rs.getString(4)%></td>
+							<td colspan="2"><%=news.getNabuut()%></td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr /></td>
 						</tr>
-						<%
-							}
-						%>
 					</table>
 				</ul>
 				<ul class="classlist">
