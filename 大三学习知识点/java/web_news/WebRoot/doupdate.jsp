@@ -1,3 +1,6 @@
+<%@page import="com.bizimpl.NewsBiz"%>
+<%@page import="com.biz.INewsBiz"%>
+<%@page import="com.entity.News"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -14,28 +17,14 @@
 	String nabuut = request.getParameter("nabuut"); //新闻内容
 	String nimage = request.getParameter("file"); //新闻图片
 	String nauthor = request.getParameter("nauthor"); //发布作者
-	//获取时间类的对象
-	Date date = new Date();
-	//获取系统当前时间
-	String ntime = date.toLocaleString();
-
-	//加载MYSQL运行包
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	//需要连接数据库名称
-	String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8";
-	//获取数据连接
-	Connection con = DriverManager.getConnection(url, "root", "010928");
-	//修改的sql语句
-	String sql = "update news set ntype=?,ntitle=?,nabuut=?,nimage=?,nauthor=?" + ",ntime=? where nid=?";
-	PreparedStatement ps = con.prepareStatement(sql);
-	ps.setInt(1, ntype);
-	ps.setString(2, ntitle);
-	ps.setString(3, nabuut);
-	ps.setString(4, nimage);
-	ps.setString(5, nauthor);
-	ps.setString(6, ntime);
-	ps.setInt(7, nid);
-	int n = ps.executeUpdate();
+	News news = new News();
+	news.setNtitle(ntitle);
+	news.setNtype(ntype);
+	news.setNabuut(nabuut);
+	news.setNimage(nimage);
+	news.setNauthor(nauthor);
+	INewsBiz inb = new NewsBiz();
+	int n = inb.updateNews(nid, news);
 	if (n > 0) { //修改成功！
 		out.print("<script>alert('修改成功！');</script>");
 		out.print("<script>location.href='admin.jsp';</script>");

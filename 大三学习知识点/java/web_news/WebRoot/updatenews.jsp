@@ -1,3 +1,9 @@
+<%@page import="com.entity.NewsType"%>
+<%@page import="com.bizimpl.NewsTypeBiz"%>
+<%@page import="com.biz.INewsTypeBiz"%>
+<%@page import="com.entity.News"%>
+<%@page import="com.bizimpl.NewsBiz"%>
+<%@page import="com.biz.INewsBiz"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -48,42 +54,21 @@
 				<%
 					request.setCharacterEncoding("UTF-8");
 					int nid = Integer.parseInt(request.getParameter("nid"));
-					//out.print("新闻编号:"+nid);
-					//加载MYSQL运行包
-					Class.forName("com.mysql.cj.jdbc.Driver");
-					//需要连接数据库名称
-					String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8";
-					//获取数据连接
-					Connection con = DriverManager.getConnection(url, "root", "010928");
-					PreparedStatement ps = con.prepareStatement("select * from news where nid=?");
-					ps.setInt(1, nid);
-					ResultSet rs = ps.executeQuery();
-					//新闻表的所有字段号名称(不包含nid)
-					int ntype = 0; //新闻类别编号
-					String ntitle = null; //新闻标题
-					String nabuut = null; //新闻内容
-					String nimage = null; //图片路径
-					String nauthor = null;//新闻作者
-					String ntime = null; //发布时间
-					while (rs.next()) {
-						ntype = rs.getInt(2);
-						ntitle = rs.getString(3);
-						nabuut = rs.getString(4);
-						nimage = rs.getString(5);
-						nauthor = rs.getString(6);
-						ntime = rs.getString(7);
+					// 根据nid查询所属新闻详情
+					INewsBiz inb = new NewsBiz();
+					News news = inb.getNews(nid);
 				%>
 				<p>
 					<label> 主题 </label> <select name="ntype">
 						<%
-							ps = con.prepareStatement("select * from newstype");
-								rs = ps.executeQuery();
-								while (rs.next()) {
+							INewsTypeBiz iny = new NewsTypeBiz();
+							List<NewsType> list = iny.getAll();
+							for (NewsType ny : list) {
 						%>
-						<option value="<%=rs.getInt(1)%>"
-							<%if (ntype == rs.getInt(1))
-						out.print("selected='selected'");%>>
-							<%=rs.getString(2)%>
+						<option value="<%=news.getNid()%>"
+							<%if (ny.getNtype() == news.getNtype())
+					out.print("selected='selected'");%>>
+							<%=ny.getTypename()%>
 						</option>
 						<%
 							}
@@ -91,27 +76,24 @@
 					</select>
 				</p>
 				<p>
-					<label> 标题 </label> <input value="<%=ntitle%>" name="ntitle"
-						type="text" class="opt_input" />
+					<label> 标题 </label> <input value="<%=news.getNtitle()%>"
+						name="ntitle" type="text" class="opt_input" />
 				</p>
 				<p>
-					<label> 作者 </label> <input value="<%=nauthor%>" name="nauthor"
-						type="text" class="opt_input" />
+					<label> 作者 </label> <input value="<%=news.getNauthor()%>"
+						name="nauthor" type="text" class="opt_input" />
 				</p>
 				<p>
 					<label> 内容 </label>
-					<textarea name="nabuut" cols="70" rows="10"><%=nabuut%></textarea>
+					<textarea name="nabuut" cols="70" rows="10"><%=news.getNabuut()%></textarea>
 				</p>
 				<p>
 					<label> 上传图片 </label> <input name="file" type="file"
 						class="opt_input" />
 				</p>
-				<input name="nid" type="hidden" value="<%=nid%>">
-				<%
-					}
-				%>
-				<input type="submit" value="提交" class="opt_sub" /> <input
-					type="reset" value="重置" class="opt_sub" />
+				<input name="nid" type="hidden" value="<%=news.getNid()%>"><input
+					type="submit" value="提交" class="opt_sub" /> <input type="reset"
+					value="重置" class="opt_sub" />
 			</form>
 		</div>
 	</div>

@@ -111,7 +111,7 @@
 					<a href="admin.jsp?pa=<%=0%>">首页</a> <a
 						href="admin.jsp?pa=<%=(pa - sel) < 0 ? 0 : pa - sel%>">上一页</a>
 					当前页数:[<%=(pa + sel) / sel%>/<%=maxpage%>]&nbsp; <a
-						href="admin.jsp?pa=<%=(pa + sel) > max ? pa : pa + sel%>">下一页</a>
+						href="admin.jsp?pa=<%=(pa + sel) >= max ? pa : pa + sel%>">下一页</a>
 					<a href="admin.jsp?pa=<%=maxpage * sel - sel%>">末页</a>
 				</p>
 			</ul>

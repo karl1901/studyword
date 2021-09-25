@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.dao.INews;
@@ -133,7 +134,31 @@ public class NewsDao implements INews {
 
 //	修改新闻
 	public int updateNews(int nid, News news) {
-		return 0;
+		Connection con = null; // 获取数据库连接
+		PreparedStatement ps = null; // 执行sql语句接口
+		int n = 0;
+		// 获取时间类的对象
+		Date date = new Date();
+		// 获取系统当前时间
+		String ntime = date.toLocaleString();
+		try {
+			con = DBhelp.getCon();
+			String sql = "update news set ntype=?,ntitle=?,nabuut=?,nimage=?,nauthor=?,ntime=? where nid=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, news.getNtype());
+			ps.setString(2, news.getNtitle());
+			ps.setString(3, news.getNabuut());
+			ps.setString(4, news.getNimage());
+			ps.setString(5, news.getNauthor());
+			ps.setString(6, ntime);
+			ps.setInt(7, nid);
+			n = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBhelp.myClose(con, ps);
+		}
+		return n;
 	}
 
 //	获取新闻总条数

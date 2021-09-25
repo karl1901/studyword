@@ -39,12 +39,12 @@ public class NewsBiz implements INewsBiz {
 
 //	删除新闻
 	public int delNews(int nid) {
-		return 0;
+		return in.delNews(nid);
 	}
 
 //	修改新闻
 	public int updateNews(int nid, News news) {
-		return 0;
+		return in.updateNews(nid, news);
 	}
 
 //	获取新闻总条数
