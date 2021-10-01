@@ -1,14 +1,5 @@
-<%@page import="com.entity.NewsType"%>
-<%@page import="com.bizimpl.NewsTypeBiz"%>
-<%@page import="com.biz.INewsTypeBiz"%>
-<%@page import="com.entity.News"%>
-<%@page import="com.bizimpl.NewsBiz"%>
-<%@page import="com.biz.INewsBiz"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.ResultSet"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -51,47 +42,33 @@
 		<div id="opt_area">
 			<h1 id="opt_type">修改新闻：</h1>
 			<form action="update.do" method="post">
-				<%
-					request.setCharacterEncoding("UTF-8");
-					int nid = Integer.parseInt(request.getParameter("nid"));
-					// 根据nid查询所属新闻详情
-					INewsBiz inb = new NewsBiz();
-					News news = inb.getNews(nid);
-				%>
 				<p>
 					<label> 主题 </label> <select name="ntype">
-						<%
-							INewsTypeBiz iny = new NewsTypeBiz();
-							List<NewsType> list = iny.getAll();
-							for (NewsType ny : list) {
-						%>
-						<option value="<%=ny.getNtype()%>"
-							<%if (ny.getNtype() == news.getNtype())
-					out.print("selected='selected'");%>>
-							<%=ny.getTypename()%>
-						</option>
-						<%
-							}
-						%>
+						<!-- 					items:放集合，var:给集合取别名 -->
+						<c:forEach items="${newstype}" var="newstype">
+							<!-- 							test:判断条件 -->
+							<option value="${newstype.ntype}"
+								<c:if test="${newstype.ntype==news.ntype}">selected="selected"</c:if>>${newstype.typename}</option>
+						</c:forEach>
 					</select>
 				</p>
 				<p>
-					<label> 标题 </label> <input value="<%=news.getNtitle()%>"
-						name="ntitle" type="text" class="opt_input" />
+					<label> 标题 </label> <input value="${news.ntitle}" name="ntitle"
+						type="text" class="opt_input" />
 				</p>
 				<p>
-					<label> 作者 </label> <input value="<%=news.getNauthor()%>"
-						name="nauthor" type="text" class="opt_input" />
+					<label> 作者 </label> <input value="${news.nauthor}" name="nauthor"
+						type="text" class="opt_input" />
 				</p>
 				<p>
 					<label> 内容 </label>
-					<textarea name="nabuut" cols="70" rows="10"><%=news.getNabuut()%></textarea>
+					<textarea name="nabuut" cols="70" rows="10">${news.nabuut}</textarea>
 				</p>
 				<p>
 					<label> 上传图片 </label> <input name="file" type="file"
 						class="opt_input" />
 				</p>
-				<input name="nid" type="hidden" value="<%=news.getNid()%>"><input
+				<input name="nid" type="hidden" value="${news.nid}"><input
 					type="submit" value="提交" class="opt_sub" /> <input type="reset"
 					value="重置" class="opt_sub" />
 			</form>

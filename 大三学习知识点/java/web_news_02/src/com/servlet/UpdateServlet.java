@@ -7,14 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import com.biz.INewsBiz;
-import com.biz.IUserBiz;
 import com.bizimpl.NewsBiz;
-import com.bizimpl.UserBiz;
 import com.entity.News;
-import com.entity.User;
 
 public class UpdateServlet extends HttpServlet {
 

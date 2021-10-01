@@ -89,29 +89,21 @@
 			<div class="content">
 				<ul class="classlist">
 					<table width="80%" align="center">
-						<%
-							//获取主页面跳过来的nid--新闻编号
-							request.setCharacterEncoding("UTF-8");
-							int nid = Integer.parseInt(request.getParameter("nid"));
-							System.out.println("新闻编号：" + nid);
-							INewsBiz inb = new NewsBiz();
-							News news = inb.getNews(nid);
-						%>
 						<tr width="100%">
-							<td colspan="2" align="center"><%=news.getNtitle()%></td>
+							<td colspan="2" align="center">${read_news.ntitle}</td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr /></td>
 						</tr>
 						<tr>
-							<td align="center"><%=news.getNtime()%></td>
-							<td align="left"><%=news.getNauthor()%></td>
+							<td align="center">${read_news.ntime}</td>
+							<td align="left">${read_news.nauthor}</td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center"></td>
 						</tr>
 						<tr>
-							<td colspan="2"><%=news.getNabuut()%></td>
+							<td colspan="2">${read_news.nabuut}</td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr /></td>

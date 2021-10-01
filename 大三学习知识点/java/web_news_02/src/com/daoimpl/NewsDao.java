@@ -153,7 +153,6 @@ public class NewsDao implements INews {
 			ps.setString(6, ntime);
 			ps.setInt(7, nid);
 			n = ps.executeUpdate();
-			System.out.println(n);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

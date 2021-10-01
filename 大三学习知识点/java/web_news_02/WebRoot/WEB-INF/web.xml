@@ -26,6 +26,15 @@
 		<servlet-name>del</servlet-name>
 		<url-pattern>/del.do</url-pattern>
 	</servlet-mapping>
+	<!-- 获取修改新闻内容xml配置 -->
+	<servlet>
+		<servlet-name>selectnews</servlet-name>
+		<servlet-class>com.servlet.SelectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>selectnews</servlet-name>
+		<url-pattern>/selectnews.do</url-pattern>
+	</servlet-mapping>
 	<!-- 修改新闻xml配置 -->
 	<servlet>
 		<servlet-name>update</servlet-name>
@@ -34,5 +43,14 @@
 	<servlet-mapping>
 		<servlet-name>update</servlet-name>
 		<url-pattern>/update.do</url-pattern>
+	</servlet-mapping>
+	<!-- 获取查看新闻内容xml配置 -->
+	<servlet>
+		<servlet-name>readnews</servlet-name>
+		<servlet-class>com.servlet.ReadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>readnews</servlet-name>
+		<url-pattern>/readnews.do</url-pattern>
 	</servlet-mapping>
 </web-app>

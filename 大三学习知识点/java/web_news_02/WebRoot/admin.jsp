@@ -97,9 +97,9 @@
 
 					for (int i = 0; i < myn.size(); i++) {
 				%>
-				<li><a href="news_read.jsp?nid=<%=myn.get(i).getNid()%>"><%=myn.get(i).getNtitle()%></a><span>
+				<li><a href="readnews.do?nid=<%=myn.get(i).getNid()%>"><%=myn.get(i).getNtitle()%></a><span>
 						作者：<%=myn.get(i).getNauthor()%> &#160;&#160;&#160;&#160; <a
-						href='updatenews.jsp?nid=<%=myn.get(i).getNid()%>'>修改</a>
+						href='selectnews.do?nid=<%=myn.get(i).getNid()%>'>修改</a>
 						&#160;&#160;&#160;&#160; <a
 						href='del.do?nid=<%=myn.get(i).getNid()%>'
 						onclick='return clickdel()'>删除</a>
