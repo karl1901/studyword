@@ -19,17 +19,18 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <style type="text/css">
+/* 登录表单样式 */
 .login-form {
 	display: flex;
 	justify-content: center;
 }
-
+/* 标题样式 */
 .titles {
 	display: flex;
 	justify-content: center;
 	font-size: 1.3rem;
 }
-
+/* 登录表单按钮样式 */
 .btns {
 	display: flex;
 	justify-content: center;
@@ -40,21 +41,32 @@
 <body>
 
 	<div id="app">
+
+		<!-- 登录表单 -->
 		<div class="login-form">
-			<el-form> <el-form-item>
+			<el-form> <el-form-item> <!-- 			标题 -->
 			<div class="titles">
 				<div>{{title}}</div>
 			</div>
-			</el-form-item> <el-form-item> <el-input placeholder="账号"
-				v-model="zh"></el-form-item> <el-form-item> <el-input
-				placeholder="密码" v-model="pwd" show-password></el-form-item> <el-form-item>
+			</el-form-item> <el-form-item> <!-- 			账号输入框 --> <el-input
+				placeholder="账号" v-model="zh"></el-form-item> <el-form-item>
+			<!-- 				密码输入框 --> <el-input placeholder="密码" v-model="pwd"
+				show-password></el-form-item> <el-form-item>
 			<div class="btns">
+				<!-- 			登录表单按钮 -->
 				<el-button type="success" @click="login">登录</el-button>
 				<el-button type="warning" @click="reset">重填</el-button>
 			</div>
+			</el-form-item> <el-form-item>
+			<div class="btns">
+				<!-- 			注册页面跳转按钮 -->
+				<a href="reg.jsp">没有账号？去注册</a>
+			</div>
 			</el-form-item> </el-form>
 		</div>
+
 	</div>
+
 </body>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
