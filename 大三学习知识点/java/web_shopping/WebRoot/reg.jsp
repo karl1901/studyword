@@ -245,11 +245,41 @@
 						}
 					}
 				}
-				// 				跳转注册处理页面(带参)
-				location.href = "reg.do?name=" + this.name + "&zh=" + this.zh + "&pwd=" + this.pwd + "&age=" + age
-				+ "&sex=" + this.sex + "&tel=" + this.tel + "&addres=" + this.addres;
+				// 				跳转注册处理页面(get请求，带参)
+				// 				location.href = "reg.do?name=" + this.name + "&zh=" + this.zh + "&pwd=" + this.pwd + "&age=" + age
+				// 				+ "&sex=" + this.sex + "&tel=" + this.tel + "&addres=" + this.addres;
+
+				// 				声明要提交的数据集合
+				var params = {
+					name : this.name,
+					zh : this.zh,
+					pwd : this.pwd,
+					age : age,
+					sex : this.sex,
+					tel : this.tel,
+					addres : this.addres
+				};
+				// 				调用post请求方法，传入地址和数据集合
+				this.httpPost('reg.do', params);
+
 				// 				清空表单
 				this.reset();
+			},
+			//发送POST请求跳转到指定页面的方法
+			httpPost (URL, PARAMS) {
+				var temp = document.createElement('form');
+				temp.action = URL;
+				temp.method = 'post';
+				temp.style.display = 'none';
+				for (var x in PARAMS) {
+					var opt = document.createElement('textarea');
+					opt.name = x;
+					opt.value = PARAMS[x];
+					temp.appendChild(opt);
+				}
+				document.body.appendChild(temp);
+				temp.submit();
+				return temp;
 			},
 			// 			重填的方法
 			reset () {

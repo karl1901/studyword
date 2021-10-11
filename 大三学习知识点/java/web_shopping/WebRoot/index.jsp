@@ -104,10 +104,35 @@
 					})
 					return;
 				}
-				// 				跳转登录处理页面(带参)
-				location.href = "login.do?zh=" + this.zh + "&pwd=" + this.pwd;
+				// 				跳转登录处理页面(get请求，带参)
+				// 				location.href = "login.do?zh=" + this.zh + "&pwd=" + this.pwd;
+
+				// 				声明要提交的数据集合
+				var params = {
+					zh : this.zh,
+					pwd : this.pwd,
+				};
+				// 				调用post请求方法，传入地址和数据集合
+				this.httpPost('login.do', params);
+
 				// 				清空表单
 				this.reset();
+			},
+			//发送POST请求跳转到指定页面的方法
+			httpPost (URL, PARAMS) {
+				var temp = document.createElement('form');
+				temp.action = URL;
+				temp.method = 'post';
+				temp.style.display = 'none';
+				for (var x in PARAMS) {
+					var opt = document.createElement('textarea');
+					opt.name = x;
+					opt.value = PARAMS[x];
+					temp.appendChild(opt);
+				}
+				document.body.appendChild(temp);
+				temp.submit();
+				return temp;
 			},
 			// 			重填的方法
 			reset () {
