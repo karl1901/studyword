@@ -24,5 +24,14 @@
 		<servlet-name>reg</servlet-name>
 		<url-pattern>/reg.do</url-pattern>
 	</servlet-mapping>
+	<!-- 获取商品配置 -->
+	<servlet>
+		<servlet-name>goods</servlet-name>
+		<servlet-class>com.servlet.GoodsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>goods</servlet-name>
+		<url-pattern>/goods.do</url-pattern>
+	</servlet-mapping>
 
 </web-app>

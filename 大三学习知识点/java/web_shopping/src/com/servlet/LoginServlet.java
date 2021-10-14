@@ -2,6 +2,7 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.biz.IGoodsBiz;
 import com.biz.IUserBiz;
+import com.bizimpl.GoodsBiz;
 import com.bizimpl.UserBiz;
+import com.entity.Goods;
 import com.entity.User;
 
 public class LoginServlet extends HttpServlet {
