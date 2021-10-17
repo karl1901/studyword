@@ -20,7 +20,7 @@ public class DBhelp {
 	}
 
 //	获取数据库连接
-	public final static Connection getCon() {
+	public static Connection getCon() {
 		Connection con = null;
 		try {
 			con = DriverManager.getConnection(url, "karl", "Karl010928...");
@@ -41,7 +41,7 @@ public class DBhelp {
 		}
 	}
 
-	public static void myClose(Connection con, PreparedStatement ps) {
+	public final static void myClose(Connection con, PreparedStatement ps) {
 		try {
 			if (con != null && con.isClosed()) {
 				con.close();
