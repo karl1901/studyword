@@ -25,7 +25,7 @@
 
 <body>
 	<div>
-		欢迎：<a href="#">${user.uname }</a>
+		欢迎：<a href="#">${user.uname }</a> | <a href="index.jsp">返回</a>
 	</div>
 	<div>
 		<h2>商品集合</h2>
@@ -56,13 +56,11 @@
 					<td>${g.bprice }</td>
 					<td>${g.binfo }</td>
 					<td><img alt="" src="${g.bimage }" width="120px" height="80px"></td>
-					<td><a href="shop.do?bid=${g.bid }">购买</a></td>
+					<td><a href="getgoods.do?bid=${g.bid }">加入购物车</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
-	<div>
-		<a href="index.jsp">返回</a>
-	</div>
+	<div></div>
 </body>
 </html>

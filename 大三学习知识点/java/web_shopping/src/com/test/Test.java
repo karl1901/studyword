@@ -28,6 +28,14 @@ public class Test {
 //			System.out.println(a.toString());
 //		}
 
+//		根据编号，查询单个商品
+//		System.out.println(igb.getGoods(5));
+
+//		Integer a = 1000, b = 1000;
+//		Integer c = 100, d = 100;
+//		System.out.println(a == b);
+//		System.out.println(c == d);
+
 	}
 
 }

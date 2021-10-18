@@ -43,4 +43,32 @@ public class GoodsDao implements IGoods {
 		return myl;
 	}
 
+//	根据商品编号，获取商品的方法
+	@Override
+	public Goods getGoods(int bid) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Goods goods = new Goods();
+		try {
+			con = DBhelp.getCon();
+			String sql = "select * from goods where bid = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, bid);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				goods.setBid(rs.getInt(1));
+				goods.setBname(rs.getString(2));
+				goods.setBprice(rs.getDouble(3));
+				goods.setBinfo(rs.getString(4));
+				goods.setBimage(rs.getString(5));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBhelp.myClose(con, ps, rs);
+		}
+		return goods;
+	}
+
 }
