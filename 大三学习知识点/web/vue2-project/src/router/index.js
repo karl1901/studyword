@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import vant_router from './vant';
 
 Vue.use(VueRouter);
 
@@ -38,8 +39,13 @@ const routes = [
     path: '/usermain',
     name: 'UserMain',
     component: () => import('../views/UserMain.vue')
+  },
+  {
+    path: '/reg',
+    name: 'Reg',
+    component: () => import('../views/Reg.vue')
   }
-];
+].concat(vant_router);
 
 const router = new VueRouter({
   mode: 'history',
