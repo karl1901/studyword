@@ -6,3 +6,15 @@
 - [项目https-分享](https://code.aliyun.com/kangxianghui/studywrod/tree/master/project%20link)
 - [*黑暗骑士的网站*](https://huhuiyu.top/)
 - [**我的个人网站主页**](https://kangxianghui.top)
+
+## 个人推荐
+
+### 一、前端--IDE
+
+- 1、VsCode (搭配`Dracula Official`主题)  
+
+### 二、后端--IDE
+
+- 1、MyEclipse (搭配`RecognEyes`主题)  
+- 2、Spring Tool Suite (搭配`Dark`主题)  
+- 3、IntelliJ IDEA (搭配`Hiberbee Dark`或`Coderpillr Dusk`主题均可)  
