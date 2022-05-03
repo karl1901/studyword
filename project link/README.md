@@ -2,7 +2,7 @@
 
 ---
 
-### Study-Computer学习知识点项目
+### 计算机学习知识点项目
 - **阿里云-https：**  
 **https://code.aliyun.com/kangxianghui/studywrod.git**  
 - **Github-https：**  
@@ -10,7 +10,7 @@
 - **Gitee-https：**  
 **https://gitee.com/kang-xianghui/studyword.git**  
 
-### Server服务器部署教程
+### 服务器教程
 - **阿里云-https：**  
 **https://code.aliyun.com/kangxianghui/server.git**  
 - **Github-https：**  
