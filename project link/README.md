@@ -1,8 +1,9 @@
-# 项目HTTPS分享
+# 项目GIT链接分享
 
 ---
 
-### 计算机学习知识点项目
+### 计算机学习知识点
+
 - **阿里云-https：**  
 **https://code.aliyun.com/kangxianghui/studywrod.git**  
 - **Github-https：**  
@@ -11,6 +12,7 @@
 **https://gitee.com/kang-xianghui/studyword.git**  
 
 ### 服务器教程
+
 - **阿里云-https：**  
 **https://code.aliyun.com/kangxianghui/server.git**  
 - **Github-https：**  
@@ -21,6 +23,6 @@
 ---
 
 > **注：**  
-> 本项目连接需要通过**Git克隆**到本地(**切勿推送、提交项目!**)  
-> ---本连接仅供需要学习或借鉴计算机知识的学者下载  
-> **作者：karl-辉哥**  
+> 本项目链接需要通过**Git克隆**到本地  
+> 本链接仅供**需要学习**或**借鉴计算机知识**的学者下载  
+> **作者：karl-辉**  
