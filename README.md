@@ -14,6 +14,8 @@
 [--回到顶部--](#karl-计算机学习知识点)  
 - 推荐主题：`Dracula Official`  
 ![img01](images/微信截图_20220527130120.png)  
+- 推荐主题：`Monokai Pro`  
+![img0101d](images/Snipaste_2023-05-31_09-42-36.png)  
 - 2、**Atom**  
 [--回到顶部--](#karl-计算机学习知识点)  
 - 推荐主题：`One Dark`  
